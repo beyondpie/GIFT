@@ -1,4 +1,4 @@
-inferBind: GIFT
+GIFT
 =========
 
 An algorithm called GIFT to infer the chemogenmic information based on drug-protein interactions.  
