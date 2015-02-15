@@ -28,7 +28,7 @@ void read_matrix_int(const char *array,gsl_matrix_int* Matrix)
         exit(1);
     }
     fclose(inputfile);
-    cout<<"I found the bug~"<<endl;
+   //cout<<"I found the bug~"<<endl;
 }
 
 void read_matrix_double(const char *str,gsl_matrix* Matrix)
@@ -48,7 +48,7 @@ void read_matrix_double(const char *str,gsl_matrix* Matrix)
         exit(1);
     }
     fclose(inputfile);
-    cout<<"I found the bug~"<<endl;
+    //cout<<"I found the bug~"<<endl;
 }
 
 void write_matrix_double(const char *str,gsl_matrix* Matrix)

@@ -2,7 +2,7 @@
 # ./obj: object file path
 # ./bin: binary file path
 
-NAME = InferDPB
+NAME = GIFT
 GCC = g++
 CFLAGS = -lboost_thread -lgsl -lgslcblas -lstdc++ -Wall -O3 
 OBJDIR = obj
