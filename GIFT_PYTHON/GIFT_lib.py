@@ -5,13 +5,15 @@ GIFT_lib
 
 GIFT_lib is a python package to run the GIFT algorithm.
 https://github.com/songpeng/GIFT
+TODO: list of the functions and classes in this module.
 """
 
+# import should from general to specific way.
+import argparse
+import numpy
 import pubchemfp # TODO: get compounds' pubchem fingerprints
 import rdkitfp # TODO: get compounds' rdkit based fingerprints
 import chemfp.bitops as chembit # fast calculate the jaccard disctance
-import argparse
-import numpy
 
 __author__ = "Songpeng Zu"
 __copyright__ = "Copyright 2015, Bioinformatics Lab, Department of Automation, Tsinghua University"
