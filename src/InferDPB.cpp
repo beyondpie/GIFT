@@ -52,7 +52,7 @@ void read_matrix_double(const char *str,gsl_matrix* Matrix)
 }
 
 void write_matrix_double(const char *str,gsl_matrix* Matrix)
-{
+ail{
     FILE *outputfile;
     //const char *array = str.c_str();
     outputfile = fopen(str,"w");
