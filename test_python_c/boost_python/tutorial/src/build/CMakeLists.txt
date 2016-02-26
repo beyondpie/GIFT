@@ -8,7 +8,8 @@ ENDIF()
 
 FIND_PACKAGE(Boost) #/usr/local/include/boost
 IF(Boost_FOUND)
-  INCLUDE_DIRECTORIES("${Boost_INCLUDE_DIRS}" "/usr/include/python2.7")
+#  INCLUDE_DIRECTORIES("${Boost_INCLUDE_DIRS}" "/usr/include/python2.7") # for linux
+  INCLUDE_DIRECTORIES("${Boost_INCLUDE_DIRS}" "/Users/wangchao/home/songpeng/software/Anaconda/anaconda/include/python2.7") # For mac
   SET(Boost_USE_STATIC_LIBS OFF)
   SET(Boost_USE_MULTITHREADED ON)
   SET(Boost_USE_STATIC_RUNTIME OFF)
