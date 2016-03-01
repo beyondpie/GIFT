@@ -1,0 +1,11 @@
+fn = 0.85
+fp = 0.0001
+threadNum = 1
+EMIterationNum = 300
+task = train
+loglikeliRecord = false
+chemFingerPrintsRecord = PUBCHEM
+proteinFingerPrintsRecord = Pfam_2011_07
+comProteinInteractionsRecord = DrugBank_2011_07
+outFilePrefixCPIs = CPIs
+outFilePrefixTrain = chemFP2proFP
