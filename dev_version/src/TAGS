@@ -1,0 +1,48 @@
+
+/Users/wangchao/home/songpeng/git-recipes/GIFT/src/EM_Boost.cpp,44
+int main(int argc,char *argv[])main11,383
+
+/Users/wangchao/home/songpeng/git-recipes/GIFT/src/InferDPB.cpp,1261
+void read_matrix_int(const char *array,gsl_matrix_int* Matrix)read_matrix_int14,632
+void read_matrix_double(const char *str,gsl_matrix* Matrix)read_matrix_double34,1192
+void write_matrix_double(const char *str,gsl_matrix* Matrix)write_matrix_double54,1740
+void write_vector_double(const char *str,vector<double> &delta)write_vector_double73,2271
+void vector_inition(vector<int> empty_v,vector<vector<int> > &vector_use,int row)vector_inition91,2678
+void vector_assign_int(vector<vector<int> > &vector_use,gsl_matrix_int* Matrix)vector_assign_int97,2832
+void E_step_Boost(gsl_matrix* O,vector<vector<int> > &Drug_Sub,vector<vector<int> > &Protein_Domain,E_step_Boost114,3197
+void E_step(gsl_matrix* O,vector<vector<int> > &Drug_Sub,vector<vector<int> > &Protein_Domain,\E_step142,3984
+void M_step_Boost(vector<vector<int> > &Sub_Drug,vector<vector<int> > &Domain_Protein,\M_step_Boost164,4610
+void M_step(int SubNum,int DomNum,vector<vector<int> > &Sub_Drug,vector<vector<int> > &Domain_Protein,\M_step197,5730
+void LoglikehoodEM(double &loglikehood,int DrugNum,int ProNum,vector<vector<int> > &Drug_Sub,\LoglikehoodEM218,6364
+void EM(vector<vector<int> > &Drug_Sub,gsl_matrix_int* Drug_Protein,vector<vector<int> > &Sub_Drug,\EM250,7323
+
+/Users/wangchao/home/songpeng/git-recipes/GIFT/src/InferDPB.h,796
+#define __INFERDPB_H____INFERDPB_H__9,382
+const int NFILE = 10; // Number of files can be input.NFILE31,779
+const int NAMELEN = 256; // Length of file names.NAMELEN32,834
+const int GETIN = 65536; // Maximum of bufferGETIN33,884
+const int STEP = 300;  // EM loop number.STEP34,930
+struct inputparainputpara39,1067
+    double fn;fn41,1086
+    double fp;fp42,1101
+    int threadNum;threadNum43,1116
+    char filepath[NFILE][NAMELEN];filepath44,1135
+struct matrix_dimmatrix_dim47,1174
+    int row;row49,1194
+    int col;col50,1207
+struct parameterparameter53,1224
+	int DrugNum;DrugNum55,1243
+	int SubNum;SubNum56,1257
+	int ProNum;ProNum57,1270
+	int DomNum;DomNum58,1283
+	int threadNum;threadNum59,1296
+        double fn;fn60,1312
+        double fp;fp61,1331
+
+/Users/wangchao/home/songpeng/git-recipes/GIFT/src/PreInfer.cpp,202
+void Usage()Usage14,410
+int getoption(int iargc,char **iargv, inputpara &para)getoption35,1729
+int fileglance(const char *filepath,const char *sep,bool rh,bool ch, matrix_dim &p)fileglance94,3446
+
+/Users/wangchao/home/songpeng/git-recipes/GIFT/src/PreInfer.h,42
+#define PREINFERDPB_HPREINFERDPB_H9,381
