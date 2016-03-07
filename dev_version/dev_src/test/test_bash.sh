@@ -5,7 +5,7 @@
 # 2016-03-04
 
 # set executable gift
-gift=../out/gift
+gift=../bin/gift
 # test help func
 ${gift} -h
 ${gift} -help
