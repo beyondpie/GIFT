@@ -19,3 +19,4 @@
 *.exe
 *.out
 *.app
+/dev_version/dev_src/test/test_function/gift.h
