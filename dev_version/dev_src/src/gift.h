@@ -28,13 +28,13 @@ namespace gift {
   const std::string updateTime{"2016-03-06"};
 
   // read and write matrix, temp use vector<vector> as container.
-  template <typename T> void readMatrix(const std::ifstream&,
+  template <typename T> int readMatrix(const std::ifstream&,
                                         std::vector<std::vector<T> >&);
-  template <typename T> void writeMatrix(const std::ifstream&,
+  template <typename T> int writeMatrix(const std::ifstream&,
                                          std::vector<std::vector<T> >&);
   // help function and outRecord function.
-  void helpGift();
-  void outRecord(parameters&, EM&);
+  int helpGift();
+  int outRecord(parameters&, EM&);
 
   // classes
   class parameters {
@@ -43,10 +43,10 @@ namespace gift {
     parameters ();
     parameters (std::ifstream&) {};
 
-    void setDrugNum(unsigned int);
-    void setSubNum(unsigned int);
-    void setProteinNum(unsigned int);
-    void setDomainNum(unsigned int);
+    int setDrugNum(unsigned int);
+    int setSubNum(unsigned int);
+    int setProteinNum(unsigned int);
+    int setDomainNum(unsigned int);
 
     // public members
     bool loglikeliRecord;
@@ -72,15 +72,15 @@ namespace gift {
     // Default Destruction
     ~EM();
     // Core of EM.
-    void EStep();
-    void MStep();
-    void initEM();
-    void loglikeli();
-    void trainEM();
-    void predictEM();
-    void setLoglikely(double);
-    void outTrain(std::ofstream&);
-    void outPredict(std::ofstream&);
+    int EStep();
+    int MStep();
+    int initEM();
+    int loglikeli();
+    int trainEM();
+    int predictEM();
+    int setLoglikely(double);
+    int outTrain(std::ofstream&);
+    int outPredict(std::ofstream&);
   private:
     double fn;
     double fp;
