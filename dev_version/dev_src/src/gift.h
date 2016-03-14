@@ -1,8 +1,8 @@
 // The head file for the method of gift.
 
-// GIFT is used to predicte the interactions between compounds substructures and
-// protein domains from the known drug-protein interactions.
-// See the details:
+// GIFT is used to predicte the interactions between compounds
+// substructures and protein domains from the known drug-protein
+// interactions. See the details:
 // http://bioinformatics.oxfordjournals.org/content/31/15/2523.abstract
 
 // Author: Songpeng Zu
@@ -32,32 +32,40 @@ namespace gift {
                                        std::vector<std::vector<T> >&);
   template <typename T> int writeMatrix(const std::ifstream&,
                                         std::vector<std::vector<T> >&);
+
+  int rowColFile(const std::ifstream &, rowCol&);
   // help function and outRecord function.
   int helpGift();
   int outRecord(parameters&, EM&);
 
   // classes
+  struct rowCol {
+    rowCol(int row, int col): rowNum(row), colNum(col) {}
+    rowCol(): rowNum(1), colNum(1) {}
+    int rowNum;
+    int colNum;
+  }
   class parameters {
   public:
     // initialization: default and from init file.
     parameters ();
-    parameters (std::ifstream&) {};
+    parameters (std::ifstream&);
 
-    int setDrugNum(unsigned int);
-    int setSubNum(unsigned int);
-    int setProteinNum(unsigned int);
-    int setDomainNum(unsigned int);
+    int setDrugNum(int);
+    int setSubNum(int);
+    int setProteinNum(int);
+    int setDomainNum(int);
 
     // public members
     bool loglikelyRecord;
     double fn;
     double fp;
-    unsigned int thread;
-    unsigned int iterationNum;
-    unsigned int drugNum;
-    unsigned int subNum;
-    unsigned int domainNum;
-    unsigned int proteinNum;
+    int thread;
+    int iterationNum;
+    int drugNum;
+    int subNum;
+    int domainNum;
+    int proteinNum;
     std::string task;
     std::string chemfpRec;
     std::string proteinfpRec;
@@ -84,17 +92,17 @@ namespace gift {
   private:
     double fn;
     double fp;
-    unsigned int thread;
-    unsigned int iterationNum;
-    unsigned int drugNum;
-    unsigned int subNum;
-    unsigned int domainNum;
-    unsigned int proteinNum;
+    int thread;
+    int iterationNum;
+    int drugNum;
+    int subNum;
+    int domainNum;
+    int proteinNum;
     std::string task;
     // or use static with pointer.
-    std::vector<std::vector<unsigned int> > * drug2sub;
-    std::vector<std::vector<unsigned int> > * proein2sub;
-    std::vector<std::vector<unsigned int> > * drug2protein;
+    std::vector<std::vector<int> > * drug2sub;
+    std::vector<std::vector<int> > * proein2sub;
+    std::vector<std::vector<int> > * drug2protein;
     std::vector<std::vector<double > > * drugSub2proteinSub;
     std::vector<double> * loglikely;
   };// end of class EM
