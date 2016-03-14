@@ -64,6 +64,7 @@ BOOST_AUTO_TEST_SUITE_END() // end of test_class_parameters.
 BOOST_AUTO_TEST_SUITE( test_class_EM )
 
 BOOST_AUTO_TEST_CASE( test_dataMembers ){
+
 }
 
 BOOST_AUTO_TEST_SUITE_END()
