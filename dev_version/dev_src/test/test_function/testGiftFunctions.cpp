@@ -25,13 +25,27 @@ unsiged testStrEq(const std::string a, const std::string b){
 }
 
 // Init of class of parameters.
-gift::parameters tmp_a;
+gift::parameters tmp_a; // test default inition.
 std::ifstream test_init ("test_init-predict.gift");
+std::ifstream test_d2p_file ("test_drug2protein"); // QUESTION
 gift::parameters param (test_init);
 test_init.close();
 
+BOOST_AUTO_TEST_SUITE( test_gift_input_func)
+
+BOOST_AUTO_TEST_CASE( test_readMatrix ){
+  std::vector<std::vector<int> > test_d2p;
+  BOOST_TEST( readMatrix<int>(test_d2p_file,test_d2p) == 0);
+}
+BOOST_AUTO_TEST_CASE( test_helpfunc ){
+  BOOST_TEST( helpGift() == 0);
+}
+
+BOOST_AUTO_TEST_SUITE_END() // end of test_gift_input_func
+
 BOOST_AUTO_TEST_SUITE( test_class_parameters )
-BOOST_AUTO_TEST_CASE( test_dataMembers, *uft::tolerance(0.00001)){
+
+  BOOST_AUTO_TEST_CASE( test_dataMembers, *uft::tolerance(0.00001)){
   BOOST_TEST(param.fn == 0.85);
   BOOST_TEST(testStrEq(param.task,"train"));
   BOOST_TEST(!param.loglikelyRecord);
@@ -39,12 +53,19 @@ BOOST_AUTO_TEST_CASE( test_dataMembers, *uft::tolerance(0.00001)){
   BOOST_TEST(param.drugNum == 0);
 }
 BOOST_AUTO_TEST_CASE( test_funcMembers ){
+  BOOST_TEST(param.setDrugNum(100));
+  BOOST_TEST(param.drugNum == 100);
+  BOOST_TEST(param.setProteinNum(10));
+  BOOST_TEST(param.proteinNum == 10);
 }
+
 BOOST_AUTO_TEST_SUITE_END() // end of test_class_parameters.
 
 BOOST_AUTO_TEST_SUITE( test_class_EM )
+
 BOOST_AUTO_TEST_CASE( test_dataMembers ){
 }
+
 BOOST_AUTO_TEST_SUITE_END()
 
 // When want to use self main.

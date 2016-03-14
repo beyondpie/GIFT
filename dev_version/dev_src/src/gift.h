@@ -29,9 +29,9 @@ namespace gift {
 
   // read and write matrix, temp use vector<vector> as container.
   template <typename T> int readMatrix(const std::ifstream&,
-                                        std::vector<std::vector<T> >&);
+                                       std::vector<std::vector<T> >&);
   template <typename T> int writeMatrix(const std::ifstream&,
-                                         std::vector<std::vector<T> >&);
+                                        std::vector<std::vector<T> >&);
   // help function and outRecord function.
   int helpGift();
   int outRecord(parameters&, EM&);
@@ -49,7 +49,7 @@ namespace gift {
     int setDomainNum(unsigned int);
 
     // public members
-    bool loglikeliRecord;
+    bool loglikelyRecord;
     double fn;
     double fp;
     unsigned int thread;
@@ -75,7 +75,7 @@ namespace gift {
     int EStep();
     int MStep();
     int initEM();
-    int loglikeli();
+    int loglikely();
     int trainEM();
     int predictEM();
     int setLoglikely(double);
