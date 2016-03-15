@@ -33,7 +33,7 @@ namespace gift {
   template <typename T> int writeMatrix(const std::ifstream&,
                                         std::vector<std::vector<T> >&);
 
-  int rowColFile(const std::ifstream &, rowCol&);
+  int rowColFile(const std::string, rowCol&); // QUESTION: FIND rowCol.
   // help function and outRecord function.
   int helpGift();
   int outRecord(parameters&, EM&);
@@ -45,6 +45,7 @@ namespace gift {
     int rowNum;
     int colNum;
   }
+
   class parameters {
   public:
     // initialization: default and from init file.
@@ -73,12 +74,18 @@ namespace gift {
     std::string outFilePrefixCPIs;
     std::string outFilePrefixTrain;
   }; // end of class parameters
+
   class EM {
   public:
     // Inition with parameters
     EM(parameters&);
     // Default Destruction
     ~EM();
+    // Set the pointers to several matrix.
+    int setPointerDrug2Sub(std::vector<std::vector<int> >&);
+    int setPointerProtein2Sub(std::vector<std::vector<int> > &);
+    int setPointerDrug2Protein(std::vector<std::vector<int> >&);
+    int setPointerDrugSub2ProteinSub(std::vector<std::vector<int> >&);
     // Core of EM.
     int EStep();
     int MStep();
