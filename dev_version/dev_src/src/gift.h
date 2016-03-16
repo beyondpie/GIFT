@@ -28,12 +28,16 @@ namespace gift {
   const std::string updateTime{"2016-03-06"};
 
   // read and write matrix, temp use vector<vector> as container.
+  // default column seperated by comma or tab.
   template <typename T> int readMatrix(const std::ifstream&,
-                                       std::vector<std::vector<T> >&);
+                                       std::vector<std::vector<T> >&,
+                                       std::string delims = "\t,");
   template <typename T> int writeMatrix(const std::ifstream&,
-                                        std::vector<std::vector<T> >&);
+                                        std::vector<std::vector<T> >&,
+                                        std::string delims = "\t,");
 
-  int rowColFile(const std::string, rowCol&); // QUESTION: FIND rowCol.
+  // default column seperated by comma or tab.
+  int rowColFile(const std::string, rowCol&, std::string delims="\t," ); // QUESTION: FIND rowCol.
   // help function and outRecord function.
   int helpGift();
   int outRecord(parameters&, EM&);
