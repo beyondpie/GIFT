@@ -27,23 +27,24 @@ namespace gift {
   const std::string version{"gift-2.0"};
   const std::string updateTime{"2016-03-06"};
 
-  // read and write matrix, temp use vector<vector> as container.
-  // default column seperated by comma or tab.
-  template <typename T> int readMatrix(const std::ifstream&,
-                                       std::vector<std::vector<T> >&,
-                                       std::string delims = "\t,");
-  template <typename T> int writeMatrix(const std::ifstream&,
-                                        std::vector<std::vector<T> >&,
-                                        std::string delims = "\t,");
+  typedef std::vector<std::vector<int> > IntArrayList;
+  typedef std::vector<std::vector<double> > numericMatrix;
 
-  // default column seperated by comma or tab.
-  int rowColFile(const std::string, rowCol&, std::string delims="\t," ); // QUESTION: FIND rowCol.
-  // help function and outRecord function.
+  int Matrix2Fingerpints(const std::string, IntArrayList&, std::string delims="\t,");
+  int writeMatrix(const std::string, numericMatrix&, std::string delims="\t,");
+  int readMatrix(const std::string, numericMatrix&, std::string delims="\t,");
+
+  class rowCol;
+  int rowColFile(const std::string, rowCol&, std::string delims="\t,");
   int helpGift();
+
+  class parameter;
+  class EM;
   int outRecord(parameters&, EM&);
 
   // classes
-  struct rowCol {
+  class rowCol {
+  public:
     rowCol(int row, int col): rowNum(row), colNum(col) {}
     rowCol(): rowNum(1), colNum(1) {}
     int rowNum;
@@ -54,7 +55,7 @@ namespace gift {
   public:
     // initialization: default and from init file.
     parameters ();
-    parameters (std::ifstream&);
+    parameters (const std::string);
 
     int setDrugNum(int);
     int setSubNum(int);
@@ -86,10 +87,10 @@ namespace gift {
     // Default Destruction
     ~EM();
     // Set the pointers to several matrix.
-    int setPointerDrug2Sub(std::vector<std::vector<int> >&);
-    int setPointerProtein2Sub(std::vector<std::vector<int> > &);
-    int setPointerDrug2Protein(std::vector<std::vector<int> >&);
-    int setPointerDrugSub2ProteinSub(std::vector<std::vector<int> >&);
+    int setPointerDrug2Sub(IntArrayList&);
+    int setPointerProtein2Sub(IntArrayList &);
+    int setPointerDrug2Protein(IntArrayList&);
+    int setPointerDrugSub2ProteinSub(IntArrayList&);
     // Core of EM.
     int EStep();
     int MStep();
@@ -98,8 +99,8 @@ namespace gift {
     int trainEM();
     int predictEM();
     int setLoglikely(double);
-    int outTrain(std::ofstream&);
-    int outPredict(std::ofstream&);
+    int outTrain(std::string&);
+    int outPredict(std::string&);
   private:
     double fn;
     double fp;
@@ -111,10 +112,10 @@ namespace gift {
     int proteinNum;
     std::string task;
     // or use static with pointer.
-    std::vector<std::vector<int> > * drug2sub;
-    std::vector<std::vector<int> > * proein2sub;
-    std::vector<std::vector<int> > * drug2protein;
-    std::vector<std::vector<double > > * drugSub2proteinSub;
+    IntArrayList * drug2sub;
+    IntArrayList * proein2sub;
+    IntArrayList * drug2protein;
+    numericMatrix * drugSub2proteinSub;
     std::vector<double> * loglikely;
   };// end of class EM
 
