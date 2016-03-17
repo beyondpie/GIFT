@@ -1,10 +1,13 @@
 // Libraries.
-#include<boost/algorihtm/string.hpp>
+#include<boost/algorithm/string.hpp>
+#include<boost/algorithm/string/join.hpp>
+#include<boost/range/adapter/transformed.hpp>>
+
 #include "gift.h"
 
 namespace gift{
 
-  int Matrix2Fingerpints(const std::string inputFile,IntArrayList & getFp,
+  int Matrix2Fingerpints(const std::string inputFile, IntArrayList & getFp,
                          std::string delims="\t,"){
     std::ifstream input;
     std::string line;
@@ -35,7 +38,7 @@ namespace gift{
     return 0;
   } // end of function.
 
-  int readMatrix(const std::string inputFile,numericMatirx& getMat,
+  int readMatrix(const std::string inputFile, numericMatirx& getMat,
                  std::string delims="\t,"){
     std::ifstream input;
     std::string line;
@@ -52,7 +55,7 @@ namespace gift{
         boost::algorithm::split(array,line,boost::is_any_of(delims));
         int arraylen = array.size();
         for(int i=0;i<arraylen;++i){
-          tempRec.push_back(stod(array[i],std::string::size_type* idx=0));
+          tempRec.push_back(std::stod(array[i],std::string::size_type* idx=0));
         } // end of for
         getMat.push_back(tempRec);
         tempRec.clear();
@@ -99,6 +102,29 @@ namespace gift{
     return 0;
   } // end of function.
 
-  int writeMatrix(const std::string outFileName,)
+  int writeMatrix(const std::string outFileName, numericMatrix& resultMat,
+                  std::string delims="\t"){
+    std::ofstream output = (outFileName,std::ofstream::out);
+    if (output.is_open()) {
+      using boost::algorithm::join;
+      using boost::adaptors::transformed;
+      for (numericMatrix::iterator it = resultMat.begin();
+           it != resultMat.end(); ++it) {
+        output << join(*it | transformed(static_cast<std::string(*)(double)>
+                                         (std::to_string) ), delims);
+      }// end of for
+      output.close();
+    } else {
+      std::cerr<< "Error opening file " <<outFileName<<std::endl;
+      return 1;
+    } // end of if else
+    return 0;
+  }// end of function
+  int helpGift(){ // LACK OF DEFINITION
+    return 0;
+  } // end of function
+  int outRecord(){ // LACK OF DEFINITION
+    return 0;
+  } // end of function
 
-}
+} // end of namespace gift.
