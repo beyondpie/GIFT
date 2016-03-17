@@ -1,3 +1,13 @@
+// functions without classes in the namespace gift.
+
+// Include in order:
+//   1. Matrix2Fingerprints;
+//   2. readMatrix;
+//   3. rowColFile;
+//   4. writeMatrix;
+//   5. helpGift;
+//   6. outRecord;
+
 // Libraries.
 #include<boost/algorithm/string.hpp>
 #include<boost/algorithm/string/join.hpp>
