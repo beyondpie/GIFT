@@ -53,8 +53,8 @@ namespace gift {
 
   class parameters {
   public:
-    // initialization: default and from init file.
-    parameters ();
+    //parameters ();
+    // Init with config file.
     parameters (const std::string);
 
     int setDrugNum(int);
@@ -67,7 +67,7 @@ namespace gift {
     double fn;
     double fp;
     int thread;
-    int iterationNum;
+    int iterNum;
     int drugNum;
     int subNum;
     int domainNum;
