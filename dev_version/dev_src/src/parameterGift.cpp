@@ -10,6 +10,7 @@ namespcae gift{
   inline const char* const BoolToString (bool b) {
     return b ? "true" : "false"
   } // end of function BoolToString
+
   parameters::parameters(const std::string configFile){
     std::cout<<"Now set parameters with configFile."<<std::endl;
     // use boost program_options to read configs from a given file.

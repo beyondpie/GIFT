@@ -57,10 +57,10 @@ namespace gift {
     // Init with config file.
     parameters (const std::string);
 
-    int setDrugNum(int);
-    int setSubNum(int);
-    int setProteinNum(int);
-    int setDomainNum(int);
+    inline int setDrugNum (int number) { drugNum = number; }
+    inline int setSubNum (int number) { subNum = number; }
+    inline int setProteinNum (int number) {proteinNum = number; }
+    inline int setDomainNum (int number) { domainNum = number; }
 
     // public members
     bool loglikelyRecord;
