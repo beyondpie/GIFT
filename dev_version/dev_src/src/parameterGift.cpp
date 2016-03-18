@@ -2,10 +2,14 @@
 
 // Libraries
 #include<boost/program_options.hpp>
+#incdlue<boost/any.hpp>
 
 #include "gift.h"
 
 namespcae gift{
+  inline const char* const BoolToString (bool b) {
+    return b ? "true" : "false"
+  } // end of function BoolToString
   parameters::parameters(const std::string configFile){
     std::cout<<"Now set parameters with configFile."<<std::endl;
     // use boost program_options to read configs from a given file.
@@ -65,8 +69,30 @@ namespcae gift{
     domainNum = 0;
     proteinNum = 0;
 
-    // notice the setting results.
+    // print the setting results.
     std::cout<<"parameters have been set."<<std::endl;
+    for (const auto& it : vm){
+      std::cout<< it.first.c_str() << ": ";
+      auto& value = it.second.value(); // return boost::any reference type.
+      // any_cast use the any * as input and return the pointer with type infor.
+      if (auto v = boost::any_cast<int>(&value) ) {
+        std::cout<< *v <<std::endl;
+      } else if (auto v = boost::any_cast<double>(&value) ) {
+        std::cout<< *v <<std::endl;
+      } else if (auto v = boost::any_cast<bool>(&value) ) {
+        std::cout<<BoolToString(*v)<<std::endl;
+      } else if (auto V = boost::any_cast<std::string>(&value) ) {
+        std::cout<<*string<<std::endl;
+      } else {
+        std::cout<< "Error type"<<std::endl;
+      } // end of if
+    } // end of for
+    std::cout<<"drugNum: " <<drugNum<<std::endl;
+    std::cout<<"subNum: "<<subNum<<std::endl;
+    std::cout<<"domainNum: "<<domainNum<<std::endl;
+    std::cout<<"proteinNum: "<<proteinNum<<std::endl;
+
     return 0;
   } // end of class parameter constructor.
+
 } // end of namespace gift.h
