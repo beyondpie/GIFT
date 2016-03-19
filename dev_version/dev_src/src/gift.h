@@ -57,10 +57,10 @@ namespace gift {
     // Init with config file.
     parameters (const std::string);
 
-    inline int setDrugNum (int number) { drugNum = number; }
-    inline int setSubNum (int number) { subNum = number; }
-    inline int setProteinNum (int number) {proteinNum = number; }
-    inline int setDomainNum (int number) { domainNum = number; }
+    inline int setDrugNum (int number) { drugNum = number; return 0; }
+    inline int setSubNum (int number) { subNum = number; return 0; }
+    inline int setProteinNum (int number) {proteinNum = number; return 0; }
+    inline int setDomainNum (int number) { domainNum = number; return 0; }
 
     // public members
     bool loglikelyRecord;
@@ -81,16 +81,30 @@ namespace gift {
   }; // end of class parameters
 
   class EM {
+    // In fact, usually only one EM objact is allowed.
   public:
     // Inition with parameters
     EM(parameters&);
     // Default Destruction
     ~EM();
     // Set the pointers to several matrix.
-    int setPointerDrug2Sub(IntArrayList&);
-    int setPointerProtein2Sub(IntArrayList &);
-    int setPointerDrug2Protein(IntArrayList&);
-    int setPointerDrugSub2ProteinSub(IntArrayList&);
+    inline int setPointerDrug2Sub(IntArrayList & d2s) {
+      drug2sub = &d2s;
+      return 0;
+    } // end of func
+    inline int setPointerProtein2Sub(IntArrayList & p2s) {
+      protein2sub = &p2s;
+      return 0;
+    } // end of func
+    inline int setPointerDrug2Protein(IntArrayList & d2p) {
+      drug2protein = &d2p;
+      return 0;
+    } // end of func
+    inline int setPointerDrugSub2ProteinSub(IntArrayList & ds2ps) {
+      drugSub2proteinSub = &ds2ps;
+      return 0;
+    } // end of func
+
     // Core of EM.
     int EStep();
     int MStep();
@@ -105,18 +119,17 @@ namespace gift {
     double fn;
     double fp;
     int thread;
-    int iterationNum;
+    int iterNum;
     int drugNum;
     int subNum;
     int domainNum;
     int proteinNum;
     std::string task;
-    // or use static with pointer.
-    IntArrayList * drug2sub;
-    IntArrayList * proein2sub;
-    IntArrayList * drug2protein;
-    numericMatrix * drugSub2proteinSub;
-    std::vector<double> * loglikely;
+    IntArrayList * drug2sub; // pointer to outside data.
+    IntArrayList * protein2sub; // pointer to outside data.
+    IntArrayList * drug2protein; // pointer to outside data.
+    numericMatrix * drugSub2proteinSub; // need to construct by EM.
+    std::vector<double> * loglikely; // need to construct by EM.
   };// end of class EM
 
 } // end of namepsace gift
