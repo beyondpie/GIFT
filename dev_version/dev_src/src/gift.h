@@ -84,9 +84,21 @@ namespace gift {
     // In fact, usually only one EM objact is allowed.
   public:
     // Inition with parameters
-    EM(parameters&);
-    // Default Destruction
-    ~EM();
+    EM(parameters& param)
+      : fn(param::fn)
+      , fp(param::fp)
+      , thread(param::thread)
+      , iterNum(param::iterNum)
+      , drugNum(param::drugNum)
+      , proteinNum(param::proteinNum)
+      , task(param::task)
+      , drug2sub(nullptr)
+      , protein2sub(nullptr)
+      , drug2protein(nullptr)
+      , druSub2proteinSub(nullptr)
+    { } // end of constuctor.
+
+    ~EM() { } // end of default destruction.
     // Set the pointers to several matrix.
     inline int setPointerDrug2Sub(IntArrayList & d2s) {
       drug2sub = &d2s;
@@ -105,10 +117,15 @@ namespace gift {
       return 0;
     } // end of func
 
+    // two init EM, i.e., the drugSub2proteinSub matrix.
+    // when the task is train, we use int initEM() to init the matrix
+    // when the task is predict, we directoly read the trained matrix.
+    //    int initEM();
+    //    int initEM(const std::string);
+
     // Core of EM.
     int EStep();
     int MStep();
-    int initEM();
     int loglikely();
     int trainEM();
     int predictEM();
@@ -125,11 +142,12 @@ namespace gift {
     int domainNum;
     int proteinNum;
     std::string task;
-    IntArrayList * drug2sub; // pointer to outside data.
-    IntArrayList * protein2sub; // pointer to outside data.
-    IntArrayList * drug2protein; // pointer to outside data.
-    numericMatrix * drugSub2proteinSub; // need to construct by EM.
-    std::vector<double> * loglikely; // need to construct by EM.
+    // pointer to outside data.
+    IntArrayList * drug2sub;
+    IntArrayList * protein2sub;
+    IntArrayList * drug2protein;
+    numericMatrix * drugSub2proteinSub;
+    std::vector<double> * loglikely;
   };// end of class EM
 
 } // end of namepsace gift
