@@ -11,17 +11,17 @@
 // Libraries.
 #include<boost/algorithm/string.hpp>
 #include<boost/algorithm/string/join.hpp>
-#include<boost/range/adapter/transformed.hpp>>
+#include<boost/range/adaptor/transformed.hpp>
 
 #include "gift.h"
 
 namespace gift{
 
   int Matrix2Fingerpints(const std::string inputFile, IntArrayList & getFp,
-                         std::string delims="\t,"){
+                         std::string delims){
     std::ifstream input;
     std::string line;
-    std::vector<string> array;
+    std::vector<std::string> array;
     std::vector<int> tempRec;
 
     input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
@@ -49,11 +49,11 @@ namespace gift{
     return 0;
   } // end of function.
 
-  int readMatrix(const std::string inputFile, numericMatirx& getMat,
-                 std::string delims="\t,"){
+  int readMatrix(const std::string inputFile, numericMatrix& getMat,
+                 std::string delims){
     std::ifstream input;
     std::string line;
-    std::vector<string> array;
+    std::vector<std::string> array;
     std::vector<double> tempRec;
 
     input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
@@ -66,12 +66,13 @@ namespace gift{
         boost::algorithm::split(array,line,boost::is_any_of(delims));
         int arraylen = array.size();
         for(int i=0;i<arraylen;++i){
-          tempRec.push_back(std::stod(array[i],std::string::size_type* idx=0));
+          std::string::size_type* idx = 0;
+          tempRec.push_back(std::stod(array[i], idx));
         } // end of for
         getMat.push_back(tempRec);
         tempRec.clear();
       } // end of while
-    } catch(std::ifstream::failure e) {
+    } catch (std::ifstream::failure e) {
       std::cerr <<"Exceptions open/read file "<<inputFile<<std::endl;
       return 1;
     } // end of catch
@@ -79,11 +80,11 @@ namespace gift{
   }// end of function.
 
   int rowColFile(const std::string inputFile, rowCol& matrixRec,
-                 std::string delims="\t,"){
+                 std::string delims){
     std::ifstream input;
     std::string line;
     int count = 0;
-    std::vector<string> array;
+    std::vector<std::string> array;
 
     input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     try {
@@ -114,8 +115,8 @@ namespace gift{
   } // end of function.
 
   int writeMatrix(const std::string outFileName, numericMatrix& resultMat,
-                  std::string delims="\t"){
-    std::ofstream output = (outFileName,std::ofstream::out);
+                  std::string delims){
+    std::ofstream output (outFileName,std::ofstream::out);
     if (output.is_open()) {
       using boost::algorithm::join;
       using boost::adaptors::transformed;
@@ -131,9 +132,11 @@ namespace gift{
     } // end of if else
     return 0;
   }// end of function
+
   int helpGift(){ // LACK OF DEFINITION
     return 0;
   } // end of function
+
   int outRecord(){ // LACK OF DEFINITION
     return 0;
   } // end of function

@@ -19,13 +19,12 @@
 #include<vector>
 // Boost library
 #include<boost/thread/thread.hpp>
-
 namespace gift {
   // gift information.
-  const std::string author{"Songpeng Zu"};
-  const std::string email{"zusongpeng@gmail.com"};
-  const std::string version{"gift-2.0"};
-  const std::string updateTime{"2016-03-06"};
+  const std::string author("Songpeng Zu");
+  const std::string email("zusongpeng@gmail.com");
+  const std::string version("gift-2.0");
+  const std::string updateTime("2016-03-06");
 
   typedef std::vector<std::vector<int> > IntArrayList;
   typedef std::vector<std::vector<double> > numericMatrix;
@@ -38,10 +37,9 @@ namespace gift {
   int rowColFile(const std::string, rowCol&, std::string delims="\t,");
   int helpGift();
 
-  class parameter;
+  class parameters;
   class EM;
   int outRecord(parameters&, EM&);
-
   // classes
   class rowCol {
   public:
@@ -49,7 +47,7 @@ namespace gift {
     rowCol(): rowNum(1), colNum(1) {}
     int rowNum;
     int colNum;
-  }
+  };
 
   class parameters {
   public:
@@ -85,17 +83,18 @@ namespace gift {
   public:
     // Inition with parameters
     EM(parameters& param)
-      : fn(param::fn)
-      , fp(param::fp)
-      , thread(param::thread)
-      , iterNum(param::iterNum)
-      , drugNum(param::drugNum)
-      , proteinNum(param::proteinNum)
-      , task(param::task)
+      : fn(param.fn)
+      , fp(param.fp)
+      , thread(param.thread)
+      , iterNum(param.iterNum)
+      , drugNum(param.drugNum)
+      , proteinNum(param.proteinNum)
+      , task(param.task)
       , drug2sub(nullptr)
       , protein2sub(nullptr)
       , drug2protein(nullptr)
-      , druSub2proteinSub(nullptr)
+      , drugSub2proteinSub(nullptr)
+      , loglikely(nullptr)
     { } // end of constuctor.
 
     ~EM() { } // end of default destruction.
@@ -112,7 +111,7 @@ namespace gift {
       drug2protein = &d2p;
       return 0;
     } // end of func
-    inline int setPointerDrugSub2ProteinSub(IntArrayList & ds2ps) {
+    inline int setPointerDrugSub2ProteinSub(numericMatrix & ds2ps) {
       drugSub2proteinSub = &ds2ps;
       return 0;
     } // end of func
@@ -126,7 +125,7 @@ namespace gift {
     // Core of EM.
     int EStep();
     int MStep();
-    int loglikely();
+    int recLoglikely();
     int trainEM();
     int predictEM();
     int setLoglikely(double);

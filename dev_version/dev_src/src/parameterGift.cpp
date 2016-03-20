@@ -81,9 +81,9 @@ namespcae gift{
       } else if (auto v = boost::any_cast<double>(&value) ) {
         std::cout<< *v <<std::endl;
       } else if (auto v = boost::any_cast<bool>(&value) ) {
-        std::cout<<BoolToString(*v)<<std::endl;
-      } else if (auto V = boost::any_cast<std::string>(&value) ) {
-        std::cout<<*string<<std::endl;
+        std::cout<< BoolToString(*v) <<std::endl;
+      } else if (auto v = boost::any_cast<std::string>(&value) ) {
+        std::cout<< *v <<std::endl;
       } else {
         std::cout<< "Error type"<<std::endl;
       } // end of if

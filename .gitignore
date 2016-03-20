@@ -20,3 +20,6 @@
 *.out
 *.app
 /dev_version/dev_src/test/test_function/gift.h
+/dev_version/dev_src/src/GPATH
+/dev_version/dev_src/src/GRTAGS
+/dev_version/dev_src/src/GTAGS
