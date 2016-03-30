@@ -150,7 +150,7 @@ void E_step(gsl_matrix* O,vector<vector<int> > &Drug_Sub,vector<vector<int> > &P
     stead.fn = fn;
     stead.fp = fp;
     stead.DrugNum = DrugNum;
-    stead.ProNum = ProNum; 
+    stead.ProNum = ProNum;
     stead.threadNum = threadNum;
     for (i=0; i<threadNum; i++)
     {

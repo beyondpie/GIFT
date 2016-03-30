@@ -6,9 +6,9 @@
 
 #include "gift.h"
 
-namespcae gift{
-  inline const char* const BoolToString (bool b) {
-    return b ? "true" : "false"
+namespace gift{
+  inline const char* BoolToString (bool b) {
+    return b ? "true" : "false";
   } // end of function BoolToString
 
   parameters::parameters(const std::string configFile){
@@ -45,13 +45,13 @@ namespcae gift{
        "outFile prefix for predicted drug-protein interactions")
       ("outFilePrefixTrain",
        po::value<std::string>(&outFilePrefixTrain)->default_value("chemFP2proFP"),
-       "outFile prefix for predicted compound FPs-protein FPs interactions")
+       "outFile prefix for predicted compound FPs-protein FPs interactions");
     po::variables_map vm;
     std::ifstream input;
     input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     try {
       // Allowed empty file with default values.
-      input.open(inputFile, std::ifstream::in);
+      input.open(configFile, std::ifstream::in);
     //   if (input.peek() == std::ifstream::traits_type::eof()) {
     //     std::cerr<<inputFile<<" is empty." << std::endl;
     //     return 1;
@@ -60,7 +60,6 @@ namespcae gift{
       po::notify(vm);
     } catch (std::ifstream::failure e) {
       std::cerr <<"Exceptions open/read file "<<configFile<<std::endl;
-      return 1;
     } // end of try catch
 
     // default training data parameters.
@@ -92,8 +91,6 @@ namespcae gift{
     std::cout<<"subNum: "<<subNum<<std::endl;
     std::cout<<"domainNum: "<<domainNum<<std::endl;
     std::cout<<"proteinNum: "<<proteinNum<<std::endl;
-
-    return 0;
   } // end of class parameter constructor.
 
-} // end of namespace gift.h
+}; // end of namespace gift.h

@@ -18,7 +18,7 @@
 #include<string>
 #include<vector>
 // Boost library
-#include<boost/thread/thread.hpp>
+//#include<boost/thread/thread.hpp>
 namespace gift {
   // gift information.
   const std::string author("Songpeng Zu");
@@ -94,6 +94,7 @@ namespace gift {
       , protein2sub(nullptr)
       , drug2protein(nullptr)
       , drugSub2proteinSub(nullptr)
+      , observedDrug2Protein(nullptr)
       , loglikely(nullptr)
     { } // end of constuctor.
 
@@ -123,7 +124,9 @@ namespace gift {
     //    int initEM(const std::string);
 
     // Core of EM.
+    void EStepThread(int threadNth);
     int EStep();
+    void MStepThread(int threadNth);
     int MStep();
     int recLoglikely();
     int trainEM();
@@ -146,6 +149,7 @@ namespace gift {
     IntArrayList * protein2sub;
     IntArrayList * drug2protein;
     numericMatrix * drugSub2proteinSub;
+    numericMatrix * observedDrug2Protein;
     std::vector<double> * loglikely;
   };// end of class EM
 
