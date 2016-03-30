@@ -93,4 +93,4 @@ namespace gift{
     std::cout<<"proteinNum: "<<proteinNum<<std::endl;
   } // end of class parameter constructor.
 
-}; // end of namespace gift.h
+} // end of namespace gift.h
