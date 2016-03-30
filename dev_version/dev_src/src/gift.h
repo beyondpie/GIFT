@@ -40,6 +40,8 @@ namespace gift {
   class parameters;
   class EM;
   int outRecord(parameters&, EM&);
+  template <typename func>
+  int functionThread(func, int, EM*);
   // classes
   class rowCol {
   public:
@@ -91,7 +93,9 @@ namespace gift {
       , proteinNum(param.proteinNum)
       , task(param.task)
       , drug2sub(nullptr)
+      , sub2drug(nullptr)
       , protein2sub(nullptr)
+      , sub2protein(nullptr)
       , drug2protein(nullptr)
       , drugSub2proteinSub(nullptr)
       , observedDrug2Protein(nullptr)
@@ -128,7 +132,7 @@ namespace gift {
     int EStep();
     void MStepThread(int threadNth);
     int MStep();
-    int recLoglikely();
+    double recLoglikely();
     int trainEM();
     int predictEM();
     int setLoglikely(double);
@@ -146,7 +150,9 @@ namespace gift {
     std::string task;
     // pointer to outside data.
     IntArrayList * drug2sub;
+    IntArrayList * sub2drug;
     IntArrayList * protein2sub;
+    IntArrayList * sub2protein;
     IntArrayList * drug2protein;
     numericMatrix * drugSub2proteinSub;
     numericMatrix * observedDrug2Protein;
