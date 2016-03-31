@@ -101,6 +101,7 @@ namespace gift {
       , drug2protein(nullptr)
       , drugSub2proteinSub(nullptr)
       , observedDrug2Protein(nullptr)
+      , vardrugSub2proteinSub(nullptr)
       , loglikely(nullptr)
     { } // end of constuctor.
 
@@ -162,6 +163,7 @@ namespace gift {
     IntArrayList * drug2protein;
     numericMatrix * drugSub2proteinSub;
     numericMatrix * observedDrug2Protein;
+    numericMatrix * vardrugSub2proteinSub;
     std::vector<double> * loglikely;
   };// end of class EM
 

@@ -1,7 +1,7 @@
 // Implementation of class EM in namespace gift.
 
 // Libraries
-#include<cmath> // for log and exp.
+#include<cmath> // for log, exp, and pow.
 #include<ctime> // for c time style.
 #include<chrono> // for record timing
 #include<boost/thread/thread.hpp>
@@ -30,7 +30,6 @@ namespace gift {
         tmp += log(1 - (*drugSub2proteinSub)[m][n]);
       } // end of loop n
     } // end of loop m
-
     return exp(tmp);
   } // end of function.
 
@@ -111,6 +110,39 @@ namespace gift {
   } // end of function
 
   int EM::varEM(){
+    numericMatrix quesiDev;
+    std::vector<double> tmpDev;
+    // Note: not check drugSub2proteinsub values larger than 0.95.
+    for (int i=0;i<drugNum;++i) {
+      for (int j=0;j<proteinNum;++j){
+        tmpDev.push_back(iterdrugSub2ProteinSub(i,j));
+      } // end of loop j
+      quesiDev.push_back(tmpDev);
+      tmpDev.empty();
+    } // end of loop i
+
+    for(int i=0;i<subNum;++i){
+      for(int j=0;j<domainNum;++j){
+        double tmp_t = 0;
+        //std::vector<double> tmp_t_array;
+        double tmp_s = 0;
+        //std::vector<double> tmp_s_array;
+        double tmpLikely = (*observedDrug2Protein)[i][j];
+        double tmp_sum = 0;
+        for(auto const & m : (*sub2drug)[i]){
+          for(auto const & n : (*sub2protein)[j]){
+            tmp_t = std::find((*drug2protein)[m].begin(),(*drug2protein)[m].end(),n)
+              == (*drug2protein)[m].end() ? 1/pow(1-tmpLikely,2.0) : 1/pow(tmpLikely,2.0);
+            // tmp_t_array.push_back(tmp_t);
+            tmp_s = (1-fn-fp) * quesiDev[m][n] / (1 - (*drugSub2proteinSub)[i][j]);
+            //tmp_s_array.push_back(tmp_s);
+            tmp_sum += pow(tmp_s,2.0)*tmp_t;
+          } // end of loop n
+        } // end of loop m
+        // need initialize var matrix.
+        (*vardrugSub2proteinSub)[i][j] = tmp_sum;
+      } // end of loop j
+    } // end of loop i
     return 0;
   } // end of function
 
@@ -137,7 +169,7 @@ namespace gift {
       } // end of loop j
     } // end of loop protein
     return 0;
-  } // end of function
+  } // end of function√
 
   int EM::predictEMByBoth(IntList & drugList, IntList & proteinList,
                           numericMatrix & drug2ProteinPredict) {
