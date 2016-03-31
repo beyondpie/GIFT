@@ -23,16 +23,21 @@ namespace gift {
     return 0;
   } // end of function.
 
+  double EM::iterdrugSub2ProteinSub(int drugIndex,int proteinIndex){
+    double tmp = 0;
+    for(auto const & m : (*drug2sub)[drugIndex]){
+      for(auto const & n : (*protein2sub)[proteinIndex]){
+        tmp += log(1 - (*drugSub2proteinSub)[m][n]);
+      } // end of loop n
+    } // end of loop m
+
+    return exp(tmp);
+  } // end of function.
+
   void EM::EStepThread(int threadNth){
     for(int i=threadNth;i<drugNum;i+=thread){
       for(int j=0;j<proteinNum;++j){
-        double tmp = 0;
-        for (auto const &m : (*drug2sub)[i]) {
-          for (auto const &n : (*protein2sub)[j]) {
-            tmp += log( 1 - (*drugSub2proteinSub)[m][n] );
-          } // end of for loop n
-        } // end of for loop m
-        tmp = exp(tmp);
+        double tmp = iterdrugSub2ProteinSub(i,j);
         (*observedDrug2Protein)[i][j] = (1-fn)*(1-tmp) + fp*tmp;
       } // end of for loop j
     } // end of for loop i
@@ -68,13 +73,7 @@ namespace gift {
     double loglikely = 0;
     for(int i=0;i<drugNum;++i) {
       for(int j=0;j<proteinNum;++j) {
-        double tmp = 0;
-        for(auto const & m : (*drug2sub)[i]) {
-          for(auto const & n : (*protein2sub)[j]) {
-            tmp += log( 1 - (*drugSub2proteinSub)[m][n]);
-          } // end of loop n
-        } // end of loop m
-        tmp = exp(tmp);
+        double tmp = iterdrugSub2ProteinSub(i,j);
         std::vector<int>::iterator it = std::find((*drug2protein)[i].begin(),
                                              (*drug2protein)[i].end(),j);
         loglikely += it==(*drug2protein)[i].end() ?
@@ -85,6 +84,7 @@ namespace gift {
   } // end of function.
 
   int EM::trainEM(){
+    // lack of loglikely record
     for(int i=0;i<iterNum;++i){
       std::cout<<"Current iteration number is " << i << std::endl;
       std::chrono::steady_clock::time_point tBegin =
@@ -110,4 +110,42 @@ namespace gift {
     return 0;
   } // end of function
 
+  int EM::varEM(){
+    return 0;
+  } // end of function
+
+  int EM::predictEMByDrug(IntList & drugList,
+                          numericMatrix & drug2ProteinPredict){
+    // Identification of existence of drugSub2proteinsub in the main function.
+    //if (!drugSub2proteinSub) {
+    //  std::cerr<<"ERROR: The DrugSub2ProteinSub matrix is null." <<std::endl;
+    //}
+    for(auto const & drug : drugList){
+      for(int j=0;j<proteinNum;++j){
+        drug2ProteinPredict[drug][j] = iterdrugSub2ProteinSub(drug,j);
+      } // end of loop j
+    } // end of loop drug
+    return 0;
+  } // end of function
+
+  int EM::predictEMByProtein(IntList & proteinList,
+                             numericMatrix & drug2ProteinPredict) {
+    // Note: keep the matrix drug2protein.
+    for(auto const & protein : proteinList){
+      for(int j=0;j<drugNum;++j){
+        drug2ProteinPredict[j][protein] = iterdrugSub2ProteinSub(j,protein);
+      } // end of loop j
+    } // end of loop protein
+    return 0;
+  } // end of function
+
+  int EM::predictEMByBoth(IntList & drugList, IntList & proteinList,
+                          numericMatrix & drug2ProteinPredict) {
+    for(auto const & drug : drugList){
+      for(auto const & protein : proteinList){
+        drug2ProteinPredict[drug][protein]=iterdrugSub2ProteinSub(drug,protein);
+      } // end of loop protein
+    } // end of loop drug
+    return 0;
+  } // end of function
 } // end of namespace gift.

@@ -26,8 +26,10 @@ namespace gift {
   const std::string version("gift-2.0");
   const std::string updateTime("2016-03-06");
 
+  typedef std::vector<int> IntList;
   typedef std::vector<std::vector<int> > IntArrayList;
   typedef std::vector<std::vector<double> > numericMatrix;
+
 
   int Matrix2Fingerpints(const std::string, IntArrayList&, std::string delims="\t,");
   int writeMatrix(const std::string, numericMatrix&, std::string delims="\t,");
@@ -128,13 +130,17 @@ namespace gift {
     //    int initEM(const std::string);
 
     // Core of EM.
+    double iterdrugSub2ProteinSub(int drugIndex, int proteinIndex);
     void EStepThread(int threadNth);
     int EStep();
     void MStepThread(int threadNth);
     int MStep();
     double recLoglikely();
     int trainEM();
-    int predictEM();
+    int predictEMByDrug(IntList &, numericMatrix &);
+    int predictEMByProtein(IntList &, numericMatrix &);
+    int predictEMByBoth(IntList & drugs, IntList & proteins, numericMatrix &);
+    int varEM();
     int setLoglikely(double);
     int outTrain(std::string&);
     int outPredict(std::string&);
