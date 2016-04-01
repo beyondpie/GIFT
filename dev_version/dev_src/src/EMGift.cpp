@@ -101,6 +101,12 @@ namespace gift {
       std::cout<<"Time difference (s): "
        <<std::chrono::duration_cast<std::chrono::seconds>(tBegin-tEnd).count()
                <<std::endl;
+
+      if (loglikelyRecord || i<=recLogLeastNum || i >= iterNum-recLogLeastNum) {
+        double tmplog = recLoglikely();
+        std::cout<<"Current loglikelyhood is " << tmplog << std::endl;
+        setLoglikely(tmplog);
+      } // end of if
     } // end of loop i
     std::chrono::system_clock::time_point endTime =
       std::chrono::system_clock::now();
@@ -180,4 +186,15 @@ namespace gift {
     } // end of loop drug
     return 0;
   } // end of function
+
+  int EM::outTrainResult(std::string outFileName){
+    writeMatrix(outFileName, *drugSub2proteinSub);
+    return 0;
+  } // end of function
+
+  int EM::outTrainVariance(std::string outFileName){
+    writeMatrix(outFileName, *vardrugSub2proteinSub);
+    return 0;
+  } // end of function
+
 } // end of namespace gift.

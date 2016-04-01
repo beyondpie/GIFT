@@ -26,10 +26,21 @@ namespace gift {
   const std::string version("gift-2.0");
   const std::string updateTime("2016-03-06");
 
+  // gift namespace variables
+  const int recLogLeastNum = 5;
   typedef std::vector<int> IntList;
   typedef std::vector<std::vector<int> > IntArrayList;
   typedef std::vector<std::vector<double> > numericMatrix;
 
+  IntArrayList drug2roteinList;
+  IntArrayList drug2subList;
+  IntArrayList sub2drugList;
+  IntArrayList protein2domainList;
+  IntArrayList domain2proteinList;
+  numericMatrix drugSub2proteinSubMatrix;
+  numericMatrix observedDrug2ProteinMatrix;
+  numericMatrix vardrugSub2proteinSubMatrix;
+  std::vector<double> loglikelyArray;
 
   int Matrix2Fingerpints(const std::string, IntArrayList&, std::string delims="\t,");
   int writeMatrix(const std::string, numericMatrix&, std::string delims="\t,");
@@ -87,7 +98,8 @@ namespace gift {
   public:
     // Inition with parameters
     EM(parameters& param)
-      : fn(param.fn)
+      : loglikelyRecord(param.loglikelyRecord)
+      , fn(param.fn)
       , fp(param.fp)
       , thread(param.thread)
       , iterNum(param.iterNum)
@@ -137,15 +149,20 @@ namespace gift {
     void MStepThread(int threadNth);
     int MStep();
     double recLoglikely();
+    inline int setLoglikely(double logscore) {
+      (*loglikely).push_back(logscore);
+      return 0;
+    } // end of function
     int trainEM();
     int predictEMByDrug(IntList &, numericMatrix &);
     int predictEMByProtein(IntList &, numericMatrix &);
     int predictEMByBoth(IntList & drugs, IntList & proteins, numericMatrix &);
     int varEM();
-    int setLoglikely(double);
-    int outTrain(std::string&);
-    int outPredict(std::string&);
+    int outTrainResult(std::string);
+    int outTrainVariance(std::string);
+    int outPredict(std::string);
   private:
+    bool loglikelyRecord;
     double fn;
     double fp;
     int thread;
