@@ -50,7 +50,7 @@ namespace gift{
     std::ifstream input;
     input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     try {
-      // Allowed empty file with default values.
+      // Allowed file's content is empty.
       input.open(configFile, std::ifstream::in);
     //   if (input.peek() == std::ifstream::traits_type::eof()) {
     //     std::cerr<<inputFile<<" is empty." << std::endl;
@@ -62,6 +62,8 @@ namespace gift{
       std::cerr <<"Exceptions open/read file "<<configFile<<std::endl;
     } // end of try catch
 
+    // load data for gift.
+    int Matrix2Fingerpints(std::string,drug2roteinList,std::string delims[="\t,"])
     // default training data parameters.
     // they will be set when read data files.
     drugNum = 0;
@@ -93,4 +95,13 @@ namespace gift{
     std::cout<<"proteinNum: "<<proteinNum<<std::endl;
   } // end of class parameter constructor.
 
+  int parameters::InitDrugSub2ProteinSub(std::string delims){
+    // This function must be run after class parameter initionlization.
+    if (task.compare("predict")) {
+      readMatrix(drugSub2proteinSubFileName,drugSub2proteinSubMatrix,delims);
+    } else {
+
+    } // end of if else
+    return 0;
+  } // end of function
 } // end of namespace gift.h

@@ -65,6 +65,11 @@ namespace gift {
   };
 
   class parameters {
+  // Further design recommmendation:
+  // parameters should be the SINGLETON, a specific desing pattern.
+  // And the outside in gift  data should be stored inside parameters with shared ptr.
+  // EM control the drugSub2proteinsub matrix, variance Matrix.
+  // In fact, EM is like one visitor for the class parameter.
   public:
     //parameters ();
     // Init with config file.
@@ -75,7 +80,20 @@ namespace gift {
     inline int setProteinNum (int number) {proteinNum = number; return 0; }
     inline int setDomainNum (int number) { domainNum = number; return 0; }
 
-    // public members
+    int InitDrugSub2ProteinSub(std::string delims="\t,");
+
+    // DATA MEMBERS
+    // input data file name
+    std::string drug2proteinFileName;
+    std::string drug2subFileName;
+    std::string protein2subFileName;
+    std::string drugSub2proteinSubFileName;
+    // input name list file name
+    std::string drugNameListFile;
+    std::string drugSubNameListFile;
+    std::string proteinNameListFile;
+    std::string proteinSubNameListFile;
+    // input parameters for EM
     bool loglikelyRecord;
     double fn;
     double fp;
@@ -85,12 +103,23 @@ namespace gift {
     int subNum;
     int domainNum;
     int proteinNum;
+    std::string inputDelims;
+    std::string outputDelims;
     std::string task;
+    // input file version information.
     std::string chemfpRec;
     std::string proteinfpRec;
     std::string CPIsRec;
-    std::string outFilePrefixCPIs;
-    std::string outFilePrefixTrain;
+    // input file names for prediction.
+    // If both files are given, we only predict the interactions between them.
+    // It means we now support only one-time prediction.
+    std::string predictDrugsFileName;
+    std::string predictProteinsFileName;
+    // output file name
+    std::string outRecordFileName;
+    std::string outPredictCPIsFileName;
+    std::string outDrugSub2ProteinSubFileName;
+    std::string outVarDrugSub2proteinSubFileName;
   }; // end of class parameters
 
   class EM {
