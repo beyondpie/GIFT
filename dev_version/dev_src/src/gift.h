@@ -18,6 +18,8 @@
 #include<string>
 #include<vector>
 // Boost library
+#include<boost/thread/thread.hpp>
+#include<boost/bind.hpp>
 //#include<boost/thread/thread.hpp>
 namespace gift {
   // gift information.
@@ -53,8 +55,20 @@ namespace gift {
   class parameters;
   class EM;
   int outRecord(parameters&, EM&);
+  // put template or inline function in one file.
   template <typename func>
-  int functionThread(func, int, EM*);
+  int functionThread(func useFun,int thread, EM * point) {
+    boost::thread * y;
+    boost::thread_group * x = new boost::thread_group;
+    for(int i=0;i<thread;++i){
+      y = new boost::thread(useFun,point,i);
+      x->add_thread(y);
+    } // end of loop i
+    x->join_all();
+    delete x;
+    return 0;
+  } // end of function.
+
   // classes
   class rowCol {
   public:
@@ -67,9 +81,11 @@ namespace gift {
   class parameters {
   // Further design recommmendation:
   // parameters should be the SINGLETON, a specific desing pattern.
-  // And the outside in gift  data should be stored inside parameters with shared ptr.
-  // EM control the drugSub2proteinsub matrix, variance Matrix.
-  // In fact, EM is like one visitor for the class parameter.
+  // And the outside in gift  data should be stored inside parameters
+  //  with shared ptr.
+  // Note: some people did not agree with traditional singleton, since it
+  // is just like global variables. And it is not easy to keep thread safe
+  // since the use of static variables.
   public:
     //parameters ();
     // Init with config file.

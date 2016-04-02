@@ -4,24 +4,9 @@
 #include<cmath> // for log, exp, and pow.
 #include<ctime> // for c time style.
 #include<chrono> // for record timing
-#include<boost/thread/thread.hpp>
-#include<boost/bind.hpp>
 #include "gift.h"
 
 namespace gift {
-
-  template <typename func>
-  int functionThread(func useFun,int thread, EM * point) {
-    boost::thread * y;
-    boost::thread_group * x = new boost::thread_group;
-    for(int i=0;i<thread;++i){
-      y = new boost::thread(useFun,point,i);
-      x->add_thread(y);
-    } // end of loop i
-    x->join_all();
-    delete x;
-    return 0;
-  } // end of function.
 
   double EM::iterdrugSub2ProteinSub(int drugIndex,int proteinIndex){
     double tmp = 0;
