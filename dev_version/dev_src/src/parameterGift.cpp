@@ -95,12 +95,38 @@ namespace gift{
     std::cout<<"proteinNum: "<<proteinNum<<std::endl;
   } // end of class parameter constructor.
 
-  int parameters::InitDrugSub2ProteinSub(std::string delims){
+  int parameters::InitDrugSub2ProteinSub(){
     // This function must be run after class parameter initionlization.
+    std::cout<< "Initialize the drugSub2proteinSub Matrix." << std::endl;
     if (task.compare("predict")) {
-      readMatrix(drugSub2proteinSubFileName,drugSub2proteinSubMatrix,delims);
+      readMatrix(drugSub2proteinSubFileName,drugSub2proteinSubMatrix,
+                 inputDelims);
+      std::cout<< "Finish: read from file."<<std::endl;
     } else {
-
+      //
+      std::vector<double> assoTmp; // temp array based on the assocaiton method.
+      int N = 0;
+      int subNumTmp = 0;
+      int I = 0;
+      std::vector<int>::iterator it;
+      for (int i=0;i<subNum;++i){
+        subNumTmp = sub2drugList[i].size();
+        for (int j=0;j<domainNum;++j){
+          N = domain2proteinList[j].size() * subNumTmp;
+          for (const auto drug : sub2drugList[i]){
+            for (const auto protein : domain2proteinList[j]){
+              it = std::find(drug2proteinList[drug].begin(),
+                             drug2proteinList[drug].end(), protein);
+              I += it==drug2proteinList[drug].end() ? 0 : 1;
+            } // end of loop protein
+          } // end of loop drug
+          assoTmp.push_back(I/N);
+        } // end of loop j
+        drugSub2proteinSubMatrix.push_back(assoTmp);
+        assoTmp.empty();
+      } // end of loop i
+      std::cout<<"Finish: initialize with associatiom method and emprical Bayes."
+               <<std::endl;
     } // end of if else
     return 0;
   } // end of function

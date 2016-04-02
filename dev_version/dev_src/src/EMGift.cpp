@@ -55,11 +55,13 @@ namespace gift {
 
   double EM::recLoglikely() {
     double loglikely = 0;
+    double tmp;
+    std::vector<int>::iterator it;
     for(int i=0;i<drugNum;++i) {
       for(int j=0;j<proteinNum;++j) {
-        double tmp = iterdrugSub2ProteinSub(i,j);
-        std::vector<int>::iterator it = std::find((*drug2protein)[i].begin(),
-                                             (*drug2protein)[i].end(),j);
+        tmp = iterdrugSub2ProteinSub(i,j);
+        it = std::find((*drug2protein)[i].begin(),
+                       (*drug2protein)[i].end(),j);
         loglikely += it==(*drug2protein)[i].end() ?
           log(1-(1-fn)*(1-tmp)-fp*tmp) : log((1-fn)*(1-tmp) + fp*tmp);
       } // end of loop j

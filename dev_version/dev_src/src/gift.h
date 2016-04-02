@@ -5,6 +5,12 @@
 // interactions. See the details:
 // http://bioinformatics.oxfordjournals.org/content/31/15/2523.abstract
 
+// Note: in this version, we don't support
+//   1. the association method.
+//   2. the cross-validation method and draw the AUC curve.
+//   3. check for drugs/protein without fingerprints.
+//   4. check for fingerpints involved in few drugs/proteins.
+
 // Author: Songpeng Zu
 // Email: zusongpeng@gmail.com
 // Date: 2016-03-06
@@ -34,7 +40,7 @@ namespace gift {
   typedef std::vector<std::vector<int> > IntArrayList;
   typedef std::vector<std::vector<double> > numericMatrix;
 
-  IntArrayList drug2roteinList;
+  IntArrayList drug2proteinList;
   IntArrayList drug2subList;
   IntArrayList sub2drugList;
   IntArrayList protein2domainList;
@@ -55,6 +61,7 @@ namespace gift {
   class parameters;
   class EM;
   int outRecord(parameters&, EM&);
+
   // put template or inline function in one file.
   template <typename func>
   int functionThread(func useFun,int thread, EM * point) {
@@ -96,7 +103,7 @@ namespace gift {
     inline int setProteinNum (int number) {proteinNum = number; return 0; }
     inline int setDomainNum (int number) { domainNum = number; return 0; }
 
-    int InitDrugSub2ProteinSub(std::string delims="\t,");
+    int InitDrugSub2ProteinSub();
 
     // DATA MEMBERS
     // input data file name
@@ -111,6 +118,8 @@ namespace gift {
     std::string proteinSubNameListFile;
     // input parameters for EM
     bool loglikelyRecord;
+    double alphaEB; // Emprical Bayesian estimated parameter.
+    double betaEB; // Emprical Bayesian estimated parameter.
     double fn;
     double fp;
     int thread;
@@ -185,8 +194,6 @@ namespace gift {
     // when the task is train, we use int initEM() to init the matrix
     // when the task is predict, we directoly read the trained matrix.
     //    int initEM();
-    //    int initEM(const std::string);
-
     // Core of EM.
     double iterdrugSub2ProteinSub(int drugIndex, int proteinIndex);
     void EStepThread(int threadNth);
