@@ -50,16 +50,18 @@ namespace gift {
   numericMatrix vardrugSub2proteinSubMatrix;
   std::vector<double> loglikelyArray;
 
+  class rowCol;
+  class EM;
+  class parameters;
+
+  // gift global functions.
   int Matrix2Fingerpints(const std::string, IntArrayList&, std::string delims="\t,");
   int writeMatrix(const std::string, numericMatrix&, std::string delims="\t,");
   int readMatrix(const std::string, numericMatrix&, std::string delims="\t,");
 
-  class rowCol;
   int rowColFile(const std::string, rowCol&, std::string delims="\t,");
   int helpGift();
 
-  class parameters;
-  class EM;
   int outRecord(parameters&, EM&);
 
   // put template or inline function in one file.
@@ -76,7 +78,7 @@ namespace gift {
     return 0;
   } // end of function.
 
-  // classes
+  // classes definition.
   class rowCol {
   public:
     rowCol(int row, int col): rowNum(row), colNum(col) {}
@@ -129,7 +131,6 @@ namespace gift {
     int domainNum;
     int proteinNum;
     std::string inputDelims;
-    std::string outputDelims;
     std::string task;
     // input file version information.
     std::string chemfpRec;
@@ -140,7 +141,8 @@ namespace gift {
     // It means we now support only one-time prediction.
     std::string predictDrugsFileName;
     std::string predictProteinsFileName;
-    // output file name
+    // output file name and format
+    std::string outputDelims;
     std::string outRecordFileName;
     std::string outPredictCPIsFileName;
     std::string outDrugSub2ProteinSubFileName;

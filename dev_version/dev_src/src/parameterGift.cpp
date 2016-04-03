@@ -62,14 +62,20 @@ namespace gift{
       std::cerr <<"Exceptions open/read file "<<configFile<<std::endl;
     } // end of try catch
 
-    // load data for gift.
-    int Matrix2Fingerpints(std::string,drug2roteinList,std::string delims[="\t,"])
+    // load global data for gift.
+    Matrix2Fingerpints(drug2proteinFileName,drug2proteinList,inputDelims);
+    Matrix2Fingerpints(protein2subFileName,protein2domainList,inputDelims);
+    Matrix2Fingerpints(drug2subFileName,drug2subList,inputDelims);
+    InitDrugSub2ProteinSub();
     // default training data parameters.
     // they will be set when read data files.
-    drugNum = 0;
-    subNum = 0;
-    domainNum = 0;
-    proteinNum = 0;
+    rowCol tmp;
+    rowColFile(drug2subFileName,tmp,inputDelims);
+    drugNum = tmp.rowNum;
+    subNum = tmp.colNum;
+    rowColFile(protein2subFileName,tmp,inputDelims);
+    domainNum = tmp.colNum;
+    proteinNum = tmp.rowNum;
 
     // print the setting results.
     std::cout<<"parameters have been set."<<std::endl;
@@ -120,7 +126,8 @@ namespace gift{
               I += it==drug2proteinList[drug].end() ? 0 : 1;
             } // end of loop protein
           } // end of loop drug
-          assoTmp.push_back(I/N);
+          // revise association method with Emiprical Bayes.
+          assoTmp.push_back((I+alphaEB)/(alphaEB+betaEB+N));
         } // end of loop j
         drugSub2proteinSubMatrix.push_back(assoTmp);
         assoTmp.empty();
