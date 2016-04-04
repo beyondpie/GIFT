@@ -18,6 +18,31 @@ namespace gift{
     po::options_description desc("GIFT Parameter options");
     // Does it work for class members?
     desc.add_options()
+      // input data file name
+      ("drug2proteinFileName",
+       po::value<std::string>(&drug2proteinFileName),
+       "file name for drug protein interactions")
+      ("drug2subFileName",po::value<std::string>(&drug2subFileName),
+       "file name for drug to substructure")
+      ("protein2subFileName",po::value<std::string>(&protein2subFileName),
+       "file name for protein to substructure")
+      ("drugSub2proteinSubFileName",
+       po::value<std::string>(&drugSub2proteinSubFileName),
+       "file name for drugSub to proteinSub interaction probability")
+      // input name list file name
+      ("drugNameListFile",po::value<std::string>(&drugNameListFile),
+       "file name for drug names")
+      ("drugSubNameListFile",po::value<std::string>(&drugSubNameListFile),
+       "file name for drug substructures names")
+      ("proteinNameListFile",po::value<std::string>(&proteinNameListFile),
+       ("file name for protein names"))
+      ("proteinSubNameListFile",po::value<std::string>(&proteinSubNameListFile),
+       "file name for protein substructures names")
+      // input parameters for EM
+      ("alphaEB",po::value<double>(&alphaEB)->default_value(0.05),
+       "parameter for Empirical Bayesian estimates for initEM")
+      ("betaEB",po::value<double>(&betaEB)->default_value(0.05),
+       "parameter for Empirical Bayesian estimates for initEM")
       ("fp", po::value<double>(&fp)->default_value(0.85),
        "false positive rate")
       ("fn", po::value<double>(&fn)->default_value(0.0001),
@@ -31,6 +56,9 @@ namespace gift{
       ("loglikelyRecord",
        po::value<bool>(&loglikelyRecord)->default_value(false),
        "whether or not to record the loglikely in every step")
+      ("inputDelims",po::value<std::string>(&inputDelims)->default_value("\t,"),
+       "sep charater for input files")
+      // input file version information.
       ("chemFingerPrintRecord",
        po::value<std::string>(&chemfpRec)->default_value("ComFP: PUBCHEM"),
        "source and version of chemical fingerprints")
@@ -40,12 +68,26 @@ namespace gift{
       ("comProteinInteractionRecord",
        po::value<std::string>(&CPIsRec)->default_value("DrugBank: 2011-07"),
        "source and version of compound-protien interactions")
-      ("outFilePrefixCPIs",
-       po::value<std::string>(&outFilePrefixCPIs)->default_value("CPIs"),
-       "outFile prefix for predicted drug-protein interactions")
-      ("outFilePrefixTrain",
-       po::value<std::string>(&outFilePrefixTrain)->default_value("chemFP2proFP"),
-       "outFile prefix for predicted compound FPs-protein FPs interactions");
+      // input file names for prediction
+      ("predictDrugsFileName",po::value<std::string>(&predictDrugsFileName),
+       "file name for drug names used to be predicted by gift")
+      ("predictProteinFileName",po::value<std::string>(&predictProteinsFileName),
+       "file name for protein names used to be predicted by gift")
+      // output file name and format
+      ("outputDelims",po::value<std::string>(&outputDelims)->default_value("\t,"),
+       "sep character for output files")
+      ("outRecordFileName",
+       po::value<std::string>(&outRecordFileName)->default_value("CPIs"),
+       "file name for output records")
+      ("outPredictCPIsFileName",
+       po::value<std::string>(&outPredictCPIsFileName),
+       "file name for output CPIs")
+      ("outDrugSub2ProteinSubFileName",
+       po::value<std::string>(&outDrugSub2ProteinSubFileName),
+       "file name for output drugSub2proteinSub")
+      ("outVarDrugSub2proteinSubFileName",
+       po::value<std::string>(&outVarDrugSub2proteinSubFileName),
+       "file name for output variance of drugSub2proteinSub");
     po::variables_map vm;
     std::ifstream input;
     input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
