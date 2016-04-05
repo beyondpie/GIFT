@@ -214,7 +214,7 @@ namespace gift {
     int varEM();
     int outTrainResult(std::string);
     int outTrainVariance(std::string);
-    int outPredict(std::string);
+    //int outPredict(std::string);
   private:
     bool loglikelyRecord;
     double fn;
