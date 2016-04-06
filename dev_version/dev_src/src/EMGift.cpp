@@ -111,7 +111,7 @@ namespace gift {
         tmpDev.push_back(iterdrugSub2ProteinSub(i,j));
       } // end of loop j
       quesiDev.push_back(tmpDev);
-      tmpDev.empty();
+      tmpDev.clear();
     } // end of loop i
 
     for(int i=0;i<subNum;++i){
