@@ -109,6 +109,25 @@ namespace gift{
     Matrix2Fingerpints(protein2subFileName,protein2domainList,inputDelims);
     Matrix2Fingerpints(drug2subFileName,drug2subList,inputDelims);
     InitDrugSub2ProteinSub();
+
+    // load NameList.
+    InitDrugName2Index();
+    InitProteinName2Index();
+    InitDrugSubNameList();
+    InitProteinSubNameList();
+
+    // load predicted name list if task is prediction.
+    if (task == "predict") {
+      if (!predictDrugsFileName.empty()) {
+        readNameListFromFile(predictDrugsFileName,predictDrugNameList);
+      } else if (!predictProteinNameList.empty()) {
+        readNameListFromFile(predictProteinsFileName,predictProteinNameList);
+      } else {
+        std::cerr << "Task for prediction: "
+                  <<"Lack of predictDrug/ProteinName List Files" << std::endl;
+      } // end of if else if else
+    } // end of if
+
     // default training data parameters.
     // they will be set when read data files.
     rowCol tmp;
@@ -179,4 +198,29 @@ namespace gift{
     } // end of if else
     return 0;
   } // end of function
+
+  int parameters::InitDrugName2Index() {
+    nameList tmp;
+    readNameListFromFile(drugNameListFile,tmp);
+    readName2IndexHash(tmp,drugName2Index);
+    return 0;
+  } // end of function
+
+  int parameters::InitProteinName2Index() {
+    nameList tmp;
+    readNameListFromFile(proteinNameListFile, tmp);
+    readName2IndexHash(tmp,proteinName2Index);
+    return 0;
+  } // end of function
+
+  int parameters::InitDrugSubNameList() {
+    readNameListFromFile(drugSubNameListFile,drugSubNameList);
+    return 0;
+  } // end of function
+
+  int parameters::InitProteinSubNameList() {
+    readNameListFromFile(proteinSubNameListFile,proteinSubNameList);
+    return 0;
+  } // end of function
+
 } // end of namespace gift.h

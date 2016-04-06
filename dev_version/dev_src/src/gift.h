@@ -42,7 +42,6 @@ namespace gift {
   typedef std::vector<std::vector<double> > numericMatrix;
   typedef std::map<std::string,int> name2IndexHash;
   typedef std::vector<std::string> nameList;
-  typedef std::vector<int> indexList;
 
   IntArrayList drug2proteinList;
   IntArrayList drug2subList;
@@ -53,6 +52,14 @@ namespace gift {
   numericMatrix observedDrug2ProteinMatrix;
   numericMatrix vardrugSub2proteinSubMatrix;
   std::vector<double> loglikelyArray;
+
+  name2IndexHash drugName2Index;
+  name2IndexHash proteinName2Index;
+  nameList drugSubNameList;
+  nameList proteinSubNameList;
+
+  nameList predictDrugNameList;
+  nameList predictProteinNameList;
 
   class rowCol;
   class EM;
@@ -66,7 +73,7 @@ namespace gift {
 
   int readNameListFromFile(const std::string, nameList&);
   int readName2IndexHash(const nameList, name2IndexHash&);
-  int getIndexFromHash(const name2IndexHash&, const nameList, indexList&);
+  int getIndexFromHash(const name2IndexHash&, const nameList, IntList&);
 
   int rowColFile(const std::string, rowCol&, std::string delims="\t,");
   int helpGift();
@@ -114,6 +121,10 @@ namespace gift {
     inline int setDomainNum (int number) { domainNum = number; return 0; }
 
     int InitDrugSub2ProteinSub();
+    int InitDrugName2Index();
+    int InitProteinName2Index();
+    int InitDrugSubNameList();
+    int InitProteinSubNameList();
 
     // DATA MEMBERS
     // input data file name

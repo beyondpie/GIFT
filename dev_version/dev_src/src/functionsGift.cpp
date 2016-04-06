@@ -172,7 +172,7 @@ namespace gift{
 
   int getIndexFromHash(const name2IndexHash& name2Index,
                        const nameList fromNameList,
-                       indexList & toIndexList){
+                       IntList & toIndexList){
     for(const auto fromName : fromNameList){
       if (name2Index.find(fromName) != name2Index.end()){
         toIndexList.push_back( (name2Index.find(fromName))->second);
