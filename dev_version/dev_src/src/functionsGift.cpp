@@ -133,6 +133,57 @@ namespace gift{
     return 0;
   }// end of function
 
+  int readNameListFromFile(const std::string inputFile, nameList& tonameList){
+    // each line in the file represents one name.
+    // line should end with "\n", not "[\r\t]\n"
+    std::ifstream input;
+    std::string line;
+    input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    try {
+      input.open(inputFile,std::ifstream::in);
+      if (input.peek() == std::ifstream::traits_type::eof() ){
+        std::cerr << inputFile <<" is empty. "<<std::endl;
+        return 1;
+      } // end of if
+      while (std::getline(input,line)) {
+        tonameList.push_back(line);
+      } // end of while
+      input.close();
+    } catch (std::ifstream::failure e) {
+      std::cerr<<"Exceptions open/read file " << inputFile<<std::endl;
+    } // end of try catch
+    return 0;
+  } // end of function
+
+  int readName2IndexHash(const nameList fromNameList,
+                         name2IndexHash& name2Index){
+    // fromNameList should be in order.
+    if (fromNameList.empty()){
+      std::cerr<<"The fromNameList is empty. "<<std::endl;
+      return 1;
+    } // end of if
+    int recordIndex = 0;
+    for(const auto fromName : fromNameList){
+      name2Index.insert(std::pair<std::string,int>(fromName,recordIndex));
+      ++recordIndex;
+    } // end of loop fromNameList
+    return 0;
+  } // end of function
+
+  int getIndexFromHash(const name2IndexHash& name2Index,
+                       const nameList fromNameList,
+                       indexList & toIndexList){
+    for(const auto fromName : fromNameList){
+      if (name2Index.find(fromName) != name2Index.end()){
+        toIndexList.push_back( (name2Index.find(fromName))->second);
+      } else {
+        std::cout<<"Cannot find the key " << fromName <<
+          " fromNameList. Continue..." <<std::endl;
+      } // end of if else
+    } // end of loop fromNameList
+    return 0;
+  } // end of function
+
   int helpGift(){ // LACK OF DEFINITION
     return 0;
   } // end of function

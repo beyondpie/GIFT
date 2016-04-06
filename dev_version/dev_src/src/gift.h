@@ -23,6 +23,7 @@
 #include<fstream>
 #include<string>
 #include<vector>
+#include<map>
 // Boost library
 #include<boost/thread/thread.hpp>
 #include<boost/bind.hpp>
@@ -39,6 +40,9 @@ namespace gift {
   typedef std::vector<int> IntList;
   typedef std::vector<std::vector<int> > IntArrayList;
   typedef std::vector<std::vector<double> > numericMatrix;
+  typedef std::map<std::string,int> name2IndexHash;
+  typedef std::vector<std::string> nameList;
+  typedef std::vector<int> indexList;
 
   IntArrayList drug2proteinList;
   IntArrayList drug2subList;
@@ -55,13 +59,17 @@ namespace gift {
   class parameters;
 
   // gift global functions.
-  int Matrix2Fingerpints(const std::string, IntArrayList&, std::string delims="\t,");
+  int Matrix2Fingerpints(const std::string, IntArrayList&,
+                         std::string delims="\t,");
   int writeMatrix(const std::string, numericMatrix&, std::string delims="\t,");
   int readMatrix(const std::string, numericMatrix&, std::string delims="\t,");
 
+  int readNameListFromFile(const std::string, nameList&);
+  int readName2IndexHash(const nameList, name2IndexHash&);
+  int getIndexFromHash(const name2IndexHash&, const nameList, indexList&);
+
   int rowColFile(const std::string, rowCol&, std::string delims="\t,");
   int helpGift();
-
   int outRecord(parameters&, EM&);
 
   // put template or inline function in one file.
