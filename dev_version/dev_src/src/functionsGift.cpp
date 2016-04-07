@@ -9,6 +9,8 @@
 //   6. outRecord;
 
 // Libraries.
+#include<ctime> // for record timing.
+#include<chrono> // for record time.
 #include<boost/algorithm/string.hpp>
 #include<boost/algorithm/string/join.hpp>
 #include<boost/range/adaptor/transformed.hpp>
@@ -188,7 +190,24 @@ namespace gift{
     return 0;
   } // end of function
 
-  int outRecord(){ // LACK OF DEFINITION
+  int outRecord(parameters & EMparameters, EM& EMgift){
+    std::ofstream output (EMparameters.outRecordFileName,std::ofstream::out);
+    if (!output.is_open()){
+      std::cerr<<"Error open file "<<EMparameters.outRecordFileName<<std::endl;
+      return 1;
+    }// end of if
+    // Basic information about gift.
+    output<<"The author of gift is  " << author <<std::endl;
+    output<<"Contact information: " << email <<std::endl;
+    output<<"Current gift's version is "<< version <<std::endl;
+    output<<"Update time is " << updateTime <<std::endl;
+    // Running information.
+    std::chrono::system_clock::time_point timePos =
+      std::chrono::system_clock::now();
+    std::time_t timePosT = std::chrono::system_clock::to_time_t(timePos);
+    output<<"The job destination is "<<EMparameters.task;
+    output<<", which is finished at "<<std::ctime(&timePosT) <<std::endl;
+    output.close();
     return 0;
   } // end of function
 
