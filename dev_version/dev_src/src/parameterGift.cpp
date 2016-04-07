@@ -73,6 +73,12 @@ namespace gift{
        "file name for drug names used to be predicted by gift")
       ("predictProteinFileName",po::value<std::string>(&predictProteinsFileName),
        "file name for protein names used to be predicted by gift")
+      ("predictDrugsFileName_WithSubs",
+       po::value<std::string>(&predictDrugsFileName_WithSubs),
+       "file name for drugs names together with their substructures.")
+      ("predictProteinsFileName_WithSubs",
+       po::value<std::string>(&predictProteinsFileName_WithSubs),
+       "file name for protein names together with their substructures.")
       // output file name and format
       ("outputDelims",po::value<std::string>(&outputDelims)->default_value("\t,"),
        "sep character for output files")

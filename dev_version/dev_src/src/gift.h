@@ -160,6 +160,8 @@ namespace gift {
     // It means we now support only one-time prediction.
     std::string predictDrugsFileName;
     std::string predictProteinsFileName;
+    std::string predictDrugsFileName_WithSubs;
+    std::string predictProteinsFileName_WithSubs;
     // output file name and format
     std::string outputDelims;
     std::string outRecordFileName;

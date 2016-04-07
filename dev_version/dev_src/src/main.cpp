@@ -7,3 +7,12 @@
 
 #include<boost/program_options.hpp> // read the parameters
 #include "gift.h"
+
+int main(int argc, char ** argv){
+  // current problem: prediction with substructures given.
+
+  // read program options.
+  // run program based on task.
+  // output record.
+  return 0;
+} // end of main
