@@ -61,6 +61,11 @@ namespace gift {
   nameList predictDrugNameList;
   nameList predictProteinNameList;
 
+  nameList predictDrugNameList_WithSubs;
+  nameList predictProteinNameList_WithSubs;
+  IntArrayList predictDrug2SubList;
+  IntArrayList predictProtein2SubList;
+
   class rowCol;
   class EM;
   class parameters;
@@ -125,6 +130,7 @@ namespace gift {
     int InitProteinName2Index();
     int InitDrugSubNameList();
     int InitProteinSubNameList();
+    int InitPredictParameters() throw(std::string);
 
     // DATA MEMBERS
     // input data file name
@@ -160,6 +166,8 @@ namespace gift {
     // It means we now support only one-time prediction.
     std::string predictDrugsFileName;
     std::string predictProteinsFileName;
+    // files with subs, each line is a compound/protein, and first column is the
+    // compound/protein Names.
     std::string predictDrugsFileName_WithSubs;
     std::string predictProteinsFileName_WithSubs;
     // output file name and format

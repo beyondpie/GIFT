@@ -122,16 +122,22 @@ namespace gift{
     InitDrugSubNameList();
     InitProteinSubNameList();
 
-    // load predicted name list if task is prediction.
+    // load predicted name list and possible subs if task is prediction.
+    // use try catch for exceptions.
     if (task == "predict") {
+      int checkStatus = 0;
       if (!predictDrugsFileName.empty()) {
+        checkStatus += 1;
         readNameListFromFile(predictDrugsFileName,predictDrugNameList);
-      } else if (!predictProteinNameList.empty()) {
+      } // end of if for drugFile
+      if (!predictProteinNameList.empty()) {
         readNameListFromFile(predictProteinsFileName,predictProteinNameList);
-      } else {
+      } // end of if for proteinFile
+
+      if (checkStatus == 0) {
         std::cerr << "Task for prediction: "
                   <<"Lack of predictDrug/ProteinName List Files" << std::endl;
-      } // end of if else if else
+      } // end of
     } // end of if
 
     // default training data parameters.
@@ -226,6 +232,13 @@ namespace gift{
 
   int parameters::InitProteinSubNameList() {
     readNameListFromFile(proteinSubNameListFile,proteinSubNameList);
+    return 0;
+  } // end of function
+
+  int parameters::InitPredictParameters() throw(std::string) {
+    // when task is predict, we use this function to init the corresponding
+    // parameters.
+
     return 0;
   } // end of function
 
