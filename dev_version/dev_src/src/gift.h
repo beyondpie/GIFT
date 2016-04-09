@@ -77,6 +77,9 @@ namespace gift {
   int readMatrix(const std::string, numericMatrix&, std::string delims="\t,");
 
   int readNameListFromFile(const std::string, nameList&);
+  int readNameMatrixFromFile(const std::string, nameList&, IntArrayList&,
+                             std::string delims="\t,");
+
   int readName2IndexHash(const nameList, name2IndexHash&);
   int getIndexFromHash(const name2IndexHash&, const nameList, IntList&);
 
@@ -118,7 +121,7 @@ namespace gift {
   public:
     //parameters ();
     // Init with config file.
-    parameters (const std::string);
+    parameters (const std::string) throw(std::string);
 
     inline int setDrugNum (int number) { drugNum = number; return 0; }
     inline int setSubNum (int number) { subNum = number; return 0; }

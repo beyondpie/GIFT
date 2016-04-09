@@ -157,6 +157,39 @@ namespace gift{
     return 0;
   } // end of function
 
+  int readNameMatrixFromFile(const std::string inputFile, nameList& tonameList,
+                             IntArrayList& getFP, std::string delims){
+    std::ifstream input;
+    std::string line;
+    std::vector<std::string> array;
+    std::vector<int> tempRec;
+
+    input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    try {
+      input.open(inputFile, std::ifstream::in);
+      if (input.peek() == std::ifstream::traits_type::eof()) {
+        std::cerr<<inputFile<<" is empty. "<<std::endl;
+        return 1;
+      } // end of if
+      while(std::getline(input,line)) {
+        boost::algorithm::split(array,line,boost::is_any_of(delims));
+        tonameList.push_back(array[0]); // first column is name.
+        int arraylen = array.size();
+        for(int i=1;i<arraylen;++i){
+          if(array[i].compare("1") == 0) {
+            tempRec.push_back(i-1); // Use i-1, since first column is name.
+          } // end of if
+        } // end of loop for i.
+        getFP.push_back(tempRec);
+        tempRec.clear();
+      } // end of while
+    } catch (std::ifstream::failure e) {
+      std::cerr<<"Exceptions open/read file "<<inputFile<<std::endl;
+      return 1;
+    } // end of catch
+    return 0;
+  } // end of function
+
   int readName2IndexHash(const nameList fromNameList,
                          name2IndexHash& name2Index){
     // fromNameList should be in order.

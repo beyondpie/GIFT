@@ -11,7 +11,7 @@ namespace gift{
     return b ? "true" : "false";
   } // end of function BoolToString
 
-  parameters::parameters(const std::string configFile){
+  parameters::parameters(const std::string configFile) throw(std::string) {
     std::cout<<"Now set parameters with configFile."<<std::endl;
     // use boost program_options to read configs from a given file.
     namespace po = boost::program_options;
@@ -123,22 +123,7 @@ namespace gift{
     InitProteinSubNameList();
 
     // load predicted name list and possible subs if task is prediction.
-    // use try catch for exceptions.
-    if (task == "predict") {
-      int checkStatus = 0;
-      if (!predictDrugsFileName.empty()) {
-        checkStatus += 1;
-        readNameListFromFile(predictDrugsFileName,predictDrugNameList);
-      } // end of if for drugFile
-      if (!predictProteinNameList.empty()) {
-        readNameListFromFile(predictProteinsFileName,predictProteinNameList);
-      } // end of if for proteinFile
-
-      if (checkStatus == 0) {
-        std::cerr << "Task for prediction: "
-                  <<"Lack of predictDrug/ProteinName List Files" << std::endl;
-      } // end of
-    } // end of if
+    InitPredictParameters(); // throw std::string.
 
     // default training data parameters.
     // they will be set when read data files.
@@ -238,7 +223,32 @@ namespace gift{
   int parameters::InitPredictParameters() throw(std::string) {
     // when task is predict, we use this function to init the corresponding
     // parameters.
-
+    bool checkStatus = false;
+    if (!predictDrugsFileName.empty()){
+      checkStatus = true;
+      readNameListFromFile(predictDrugsFileName,predictDrugNameList);
+    } // end of if for drugfile
+    if (!predictProteinNameList.empty()){
+      checkStatus = true;
+      readNameListFromFile(predictDrugsFileName,predictProteinNameList);
+    } // end of if for proteinfile
+    if (!predictDrugNameList_WithSubs.empty()){
+      checkStatus  = true;
+      // NEED FUNCTION.
+      readNameMatrixFromFile(predictDrugsFileName_WithSubs,
+                             predictDrugNameList_WithSubs,
+                             predictDrug2SubList);
+    } // end of if for drug_withsubs file.
+    if (!predictProteinNameList_WithSubs.empty()){
+      checkStatus = true;
+      // NEED FUNCTION.
+      readNameMatrixFromFile(predictProteinsFileName_WithSubs,
+                             predictProteinNameList_WithSubs,
+                             predictProtein2SubList);
+    } // end of if for protein_withsubs file.
+    if (!checkStatus){
+      throw("Task for prediction, but no predicted files!");
+    } // end of if for checkStatus.
     return 0;
   } // end of function
 
