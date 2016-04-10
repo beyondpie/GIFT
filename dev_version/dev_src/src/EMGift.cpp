@@ -139,48 +139,52 @@ namespace gift {
     return 0;
   } // end of function
 
-  int EM::predictEMByDrug(IntList & drugList,
-                          numericMatrix & drug2ProteinPredict){
-    // Identification of existence of drugSub2proteinsub in the main function.
-    //if (!drugSub2proteinSub) {
-    //  std::cerr<<"ERROR: The DrugSub2ProteinSub matrix is null." <<std::endl;
-    //}
-    for(auto const & drug : drugList){
-      for(int j=0;j<proteinNum;++j){
-        drug2ProteinPredict[drug][j] = iterdrugSub2ProteinSub(drug,j);
-      } // end of loop j
-    } // end of loop drug
+  int predictEM(){
+
+    return 0;
+  } // end of function
+  // int EM::predictEMByDrug(IntList & drugList,
+  //                         numericMatrix & drug2ProteinPredict){
+  //   // Identification of existence of drugSub2proteinsub in the main function.
+  //   //if (!drugSub2proteinSub) {
+  //   //  std::cerr<<"ERROR: The DrugSub2ProteinSub matrix is null." <<std::endl;
+  //   //}
+  //   for(auto const & drug : drugList){
+  //     for(int j=0;j<proteinNum;++j){
+  //       drug2ProteinPredict[drug][j] = iterdrugSub2ProteinSub(drug,j);
+  //     } // end of loop j
+  //   } // end of loop drug
+  //   return 0;
+  // } // end of function
+
+  // int EM::predictEMByProtein(IntList & proteinList,
+  //                            numericMatrix & drug2ProteinPredict) {
+  //   // Note: keep the matrix drug2protein.
+  //   for(auto const & protein : proteinList){
+  //     for(int j=0;j<drugNum;++j){
+  //       drug2ProteinPredict[j][protein] = iterdrugSub2ProteinSub(j,protein);
+  //     } // end of loop j
+  //   } // end of loop protein
+  //   return 0;
+  // } // end of function√
+
+  // int EM::predictEMByBoth(IntList & drugList, IntList & proteinList,
+  //                         numericMatrix & drug2ProteinPredict) {
+  //   for(auto const & drug : drugList){
+  //     for(auto const & protein : proteinList){
+  //       drug2ProteinPredict[drug][protein]=iterdrugSub2ProteinSub(drug,protein);
+  //     } // end of loop protein
+  //   } // end of loop drug
+  //   return 0;
+  // } // end of function
+
+  int EM::outTrainResult(){
+    writeMatrix(outDrugSub2ProteinSubFileName, *drugSub2proteinSub);
     return 0;
   } // end of function
 
-  int EM::predictEMByProtein(IntList & proteinList,
-                             numericMatrix & drug2ProteinPredict) {
-    // Note: keep the matrix drug2protein.
-    for(auto const & protein : proteinList){
-      for(int j=0;j<drugNum;++j){
-        drug2ProteinPredict[j][protein] = iterdrugSub2ProteinSub(j,protein);
-      } // end of loop j
-    } // end of loop protein
-    return 0;
-  } // end of function√
-
-  int EM::predictEMByBoth(IntList & drugList, IntList & proteinList,
-                          numericMatrix & drug2ProteinPredict) {
-    for(auto const & drug : drugList){
-      for(auto const & protein : proteinList){
-        drug2ProteinPredict[drug][protein]=iterdrugSub2ProteinSub(drug,protein);
-      } // end of loop protein
-    } // end of loop drug
-    return 0;
-  } // end of function
-
-  int EM::outTrainResult(std::string outFileName){
-    writeMatrix(outFileName, *drugSub2proteinSub);
-    return 0;
-  } // end of function
-
-  int EM::outTrainVariance(std::string outFileName){
-    writeMatrix(outFileName, *vardrugSub2proteinSub);
+  int EM::outTrainVariance(){
+    writeMatrix(outVarDrugSub2proteinSubFileName, *vardrugSub2proteinSub);
     return 0;
   } // end of function
 

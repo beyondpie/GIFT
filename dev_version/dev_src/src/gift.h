@@ -73,6 +73,8 @@ namespace gift {
   // gift global functions.
   int Matrix2Fingerpints(const std::string, IntArrayList&,
                          std::string delims="\t,");
+  int Matrix2FingerprintsByColumn(const std::string, IntArrayList&,
+                                  std::string delims="\t,");
   int writeMatrix(const std::string, numericMatrix&, std::string delims="\t,");
   int readMatrix(const std::string, numericMatrix&, std::string delims="\t,");
 
@@ -194,15 +196,24 @@ namespace gift {
       , drugNum(param.drugNum)
       , proteinNum(param.proteinNum)
       , task(param.task)
-      , drug2sub(nullptr)
-      , sub2drug(nullptr)
-      , protein2sub(nullptr)
-      , sub2protein(nullptr)
-      , drug2protein(nullptr)
-      , drugSub2proteinSub(nullptr)
-      , observedDrug2Protein(nullptr)
-      , vardrugSub2proteinSub(nullptr)
-      , loglikely(nullptr)
+      , drug2sub(&drug2subList)
+      , sub2drug(&sub2drugList)
+      , protein2sub(&protein2domainList)
+      , sub2protein(&domain2proteinList)
+      , drug2protein(&drug2proteinList)
+      , drugSub2proteinSub(&drugSub2proteinSubMatrix)
+      , observedDrug2Protein(&observedDrug2ProteinMatrix)
+      , vardrugSub2proteinSub(&vardrugSub2proteinSubMatrix)
+      , loglikely(&loglikelyArray)
+      , predictDrugsFileName(param.predictDrugsFileName)
+      , predictProteinsFileName(param.predictProteinsFileName)
+      , predictDrugsFileName_WithSubs(param.predictDrugsFileName_WithSubs)
+      , predictProteinsFileName_WithSubs(param.predictProteinsFileName_WithSubs)
+      , outputDelims(param.outputDelims)
+      , outRecordFileName(param.outRecordFileName)
+      , outPredictCPIsFileName(param.outPredictCPIsFileName)
+      , outDrugSub2ProteinSubFileName(param.outDrugSub2ProteinSubFileName)
+      , outVarDrugSub2proteinSubFileName(param.outVarDrugSub2proteinSubFileName)
     { } // end of constuctor.
 
     ~EM() { } // end of default destruction.
@@ -240,12 +251,15 @@ namespace gift {
       return 0;
     } // end of function
     int trainEM();
-    int predictEMByDrug(IntList &, numericMatrix &);
-    int predictEMByProtein(IntList &, numericMatrix &);
-    int predictEMByBoth(IntList & drugs, IntList & proteins, numericMatrix &);
+    // Write an integrated predictEM instead.
+    int predictEM();
+    // int predictEMByDrug(IntList &, numericMatrix &);
+    // int predictEMByProtein(IntList &, numericMatrix &);
+    // int predictEMByBoth(IntList & drugs, IntList & proteins, numericMatrix &);
+
     int varEM();
-    int outTrainResult(std::string);
-    int outTrainVariance(std::string);
+    int outTrainResult();
+    int outTrainVariance();
     //int outPredict(std::string);
   private:
     bool loglikelyRecord;
@@ -268,6 +282,19 @@ namespace gift {
     numericMatrix * observedDrug2Protein;
     numericMatrix * vardrugSub2proteinSub;
     std::vector<double> * loglikely;
+
+    // input file names for prediction.
+    std::string predictDrugsFileName;
+    std::string predictProteinsFileName;
+    std::string predictDrugsFileName_WithSubs;
+    std::string predictProteinsFileName_WithSubs;
+
+    // output file name and format
+    std::string outputDelims;
+    std::string outRecordFileName;
+    std::string outPredictCPIsFileName;
+    std::string outDrugSub2ProteinSubFileName;
+    std::string outVarDrugSub2proteinSubFileName;
   };// end of class EM
 
 } // end of namepsace gift
