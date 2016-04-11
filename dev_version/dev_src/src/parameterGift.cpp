@@ -115,8 +115,9 @@ namespace gift{
     Matrix2Fingerpints(protein2subFileName,protein2domainList,inputDelims);
     Matrix2Fingerpints(drug2subFileName,drug2subList,inputDelims);
     InitDrugSub2ProteinSub();
-    Matrix2FingerpintsByColumn(drug2subFileName,sub2drugList,inputDelims);
-    Matrix2FingerprintsByColumn();
+    Matrix2FingerprintsByColumn(drug2subFileName,sub2drugList,inputDelims);
+    Matrix2FingerprintsByColumn(protein2subFileName,domain2proteinList);
+
 
     // load NameList.
     InitDrugName2Index();
