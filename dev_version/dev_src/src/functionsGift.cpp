@@ -237,7 +237,8 @@ namespace gift{
   } // end of function
 
   int Matrix2FingerprintsByColumn(const std::string inputFile,
-                                  IntArrayList& getFP, std::string delims){
+                                  IntArrayList& getFP, int rowNum,
+                                  std::string delims){
     std::ifstream input;
     std::string line;
     std::vector<std::string> array;
@@ -248,7 +249,13 @@ namespace gift{
       if(input.peek() == std::ifstream::traits_type::eof()){
         std::cerr<< inputFile << " is empty. "<<std::endl;
         return 1;
-      } // end of if;
+      } // end of if
+
+      // init getFP first.
+      std::vector<int> tmpArray;
+      for(int i=0;i<rowNum;++i) { getFP.push_back(tmpArray); } // end of loop
+
+      // read file.
       while (std::getline(input,line)){
         boost::algorithm::split(array,line,boost::is_any_of(delims));
         int arraylen = array.size();

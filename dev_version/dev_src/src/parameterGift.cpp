@@ -115,9 +115,13 @@ namespace gift{
     Matrix2Fingerpints(protein2subFileName,protein2domainList,inputDelims);
     Matrix2Fingerpints(drug2subFileName,drug2subList,inputDelims);
     InitDrugSub2ProteinSub();
+    InitVarDrugSub2ProteinSub();
+    // init sub2drugList and domain2proteinList.
+    IntList tmpIntArray;
+    for(int i=0;i<subNum;++i){sub2drugList.push_back(tmpIntArray);}
+    for(int i=0;i<domainNum;++i){domain2proteinList.push_back(tmpIntArray);}
     Matrix2FingerprintsByColumn(drug2subFileName,sub2drugList,inputDelims);
     Matrix2FingerprintsByColumn(protein2subFileName,domain2proteinList);
-
 
     // load NameList.
     InitDrugName2Index();
@@ -170,7 +174,6 @@ namespace gift{
                  inputDelims);
       std::cout<< "Finish: read from file."<<std::endl;
     } else {
-      //
       std::vector<double> assoTmp; // temp array based on the assocaiton method.
       int N = 0;
       int subNumTmp = 0;
@@ -195,6 +198,20 @@ namespace gift{
       } // end of loop i
       std::cout<<"Finish: initialize with associatiom method and emprical Bayes."
                <<std::endl;
+    } // end of if else
+    return 0;
+  } // end of function
+
+  int parameters::InitVarDrugSub2ProteinSub(){
+    if (task.compare("predict")) {
+      std::cout<< "Job is to predict, skip init variance matrix." << std::endl;
+    } else {
+      std::cout<<"Initialize the variance matrix for drugSub2ProteinSub."
+               <<std::endl;
+      std::vector<double> tmpArray (domainNum,0.0);
+      for(int i=0;i<subNum;++i){
+        vardrugSub2proteinSubMatrix.push_back(tmpArray);
+      } // end of loop for i.
     } // end of if else
     return 0;
   } // end of function

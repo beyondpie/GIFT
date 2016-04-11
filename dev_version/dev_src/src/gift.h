@@ -131,6 +131,7 @@ namespace gift {
     inline int setDomainNum (int number) { domainNum = number; return 0; }
 
     int InitDrugSub2ProteinSub();
+    int InitVarDrugSub2ProteinSub();
     int InitDrugName2Index();
     int InitProteinName2Index();
     int InitDrugSubNameList();

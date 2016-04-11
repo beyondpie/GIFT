@@ -132,7 +132,6 @@ namespace gift {
             tmp_sum += pow(tmp_s,2.0)*tmp_t;
           } // end of loop n
         } // end of loop m
-        // need initialize var matrix.
         (*vardrugSub2proteinSub)[i][j] = tmp_sum;
       } // end of loop j
     } // end of loop i
