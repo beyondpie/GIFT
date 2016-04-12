@@ -151,8 +151,32 @@ namespace gift {
     // - Provide only drug with Subs.
     // - Provide only protein Names.
     // - Provide only protein with Subs.
-
     std::cout<<"Now Run predictEM for task: predict..." << std::endl;
+
+    if (!predictDrugNameList_WithSubs.empty() &
+        !predictProteinNameList_WithSubs.empty()){
+      predictDrugsWithSubsProteinsWithSubs();
+    }  else if (!predictDrugNameList_WithSubs.empty() &
+        !predictProteinNameList.empty()){
+      predictDrugsWithSubsProteins();
+    } else if (!predictProteinNameList_WithSubs.empty() &
+        !predictDrugNameList.empty()){
+      predictDrugsProteinsWithSubs();
+    } else if (!predictDrugNameList.empty() &
+        !predictProteinNameList.empty()) {
+      predictDrugsProteins();
+    } else if (!predictDrugNameList.empty()){
+      predictDrugs();
+    } else if (!predictDrugNameList_WithSubs.empty()){
+      predictDrugsWithSubs();
+    } else if (!predictProteinNameList.empty()){
+      predictProteins();
+    } else if (!predictProteinNameList_WithSubs.empty()){
+      predictProteinsWithSubs();
+    } else {
+      std::cerr<<"No files for task: predict, and quit."<< std::endl;
+      return 1;
+    } // end of if else if else.
     return 0;
   } // end of function
 
