@@ -3,7 +3,10 @@
 // Libraries
 #include<cmath> // for log, exp, and pow.
 #include<ctime> // for c time style.
-#include<chrono> // for record timing
+#include<chrono> // for record time
+#include<boost/algorithm/string.hpp>
+#include<boost/algorithm/string/join.hpp>
+#include<boost/range/adaptor/transformed.hpp>
 #include "gift.h"
 
 namespace gift {
@@ -138,44 +141,100 @@ namespace gift {
     return 0;
   } // end of function
 
-  int predictEM(){
+  int EM::predictEM(){
+    // Note: we only run one situation one time:
+    // - Provide both drugs and proteins Names.
+    // - Provide both drugs and proteins with Subs.
+    // - Provide both drugs Names and proteins with Subs.
+    // - Provide both drugs with Subs and proteins Names.
+    // - Provide only drugs Names.
+    // - Provide only drug with Subs.
+    // - Provide only protein Names.
+    // - Provide only protein with Subs.
 
+    std::cout<<"Now Run predictEM for task: predict..." << std::endl;
     return 0;
   } // end of function
-  // int EM::predictEMByDrug(IntList & drugList,
-  //                         numericMatrix & drug2ProteinPredict){
-  //   // Identification of existence of drugSub2proteinsub in the main function.
-  //   //if (!drugSub2proteinSub) {
-  //   //  std::cerr<<"ERROR: The DrugSub2ProteinSub matrix is null." <<std::endl;
-  //   //}
-  //   for(auto const & drug : drugList){
-  //     for(int j=0;j<proteinNum;++j){
-  //       drug2ProteinPredict[drug][j] = iterdrugSub2ProteinSub(drug,j);
-  //     } // end of loop j
-  //   } // end of loop drug
-  //   return 0;
-  // } // end of function
 
-  // int EM::predictEMByProtein(IntList & proteinList,
-  //                            numericMatrix & drug2ProteinPredict) {
-  //   // Note: keep the matrix drug2protein.
-  //   for(auto const & protein : proteinList){
-  //     for(int j=0;j<drugNum;++j){
-  //       drug2ProteinPredict[j][protein] = iterdrugSub2ProteinSub(j,protein);
-  //     } // end of loop j
-  //   } // end of loop protein
-  //   return 0;
-  // } // end of function√
+  int EM::predictDrugs(){
+    std::cout<<"Now predict given drugs against all the proteins, "
+             <<"which are in our training data set." << std::endl;
+    IntList predictDrugIndex;
+    std::vector<double> tmpCalc;
+    nameList existNameList;
+    getIndexFromHash(drugName2Index, predictDrugNameList,
+                     predictDrugIndex, existNameList);
+    if (existNameList.size() < 1) {
+      std::cerr<<"No drug Index found, and quit." <<std::endl;
+      return 1;
+    } // end of if
+    // output the result.
+    std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+    if (!output.is_open()){
+      std::cerr<<"Error open file "<<outPredictCPIsFileName<<std::endl;
+      return 1;
+    } // end of if
+    using boost::algorithm::join;
+    using boost::adaptors::transformed;
+    // print the first row as protein names.
+    output<<"Names"<<outputDelims;
+    output<<join(proteinNameList,outputDelims)<<std::endl;
+    int num = 0;
+    for(const auto & drug : predictDrugIndex){
+      for(int j=0;j<proteinNum;++j){
+        tmpCalc.push_back(iterdrugSub2ProteinSub(drug,j));
+      } // end of loop for j
+      output<<existNameList[num];
+      // transformed without static_cast should also work?
+      output<<join(tmpCalc |
+              transformed(static_cast<std::string(*)(double)>(std::to_string) ),
+                   outputDelims)
+            << std::endl;
+      tmpCalc.clear();
+      ++num;
+    } // end of loop for drug
+    return 0;
+  } // end of functions.
 
-  // int EM::predictEMByBoth(IntList & drugList, IntList & proteinList,
-  //                         numericMatrix & drug2ProteinPredict) {
-  //   for(auto const & drug : drugList){
-  //     for(auto const & protein : proteinList){
-  //       drug2ProteinPredict[drug][protein]=iterdrugSub2ProteinSub(drug,protein);
-  //     } // end of loop protein
-  //   } // end of loop drug
-  //   return 0;
-  // } // end of function
+  int EM::predictProteins(){
+    std::cout<<"Now predict given proteins against all the drugs, "
+             <<"which are in our training data set." << std::endl;
+    IntList predictProteinsIndex;
+    std::vector<double> tmpCalc;
+    nameList existNameList;
+    getIndexFromHash(proteinName2Index, predictProteinNameList,
+                     predictProteinsIndex, existNameList);
+    if (existNameList.size() < 1) {
+      std::cerr<<"No protein Index found, and quit." <<std::endl;
+      return 1;
+    } // end of if
+    // output the result.
+    std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+    if (!output.is_open()){
+      std::cerr<<"Error open file "<<outPredictCPIsFileName<<std::endl;
+      return 1;
+    } // end of if
+    using boost::algorithm::join;
+    using boost::adaptors::transformed;
+    // print the first row as drug names.
+    output<<"Names"<<outputDelims;
+    output<<join(drugNameList,outputDelims)<<std::endl;
+    int num = 0;
+    for(const auto & protein : predictProteinsIndex){
+      for(int j=0;j<drugNum;++j){
+        tmpCalc.push_back(iterdrugSub2ProteinSub(j,protein));
+      } // end of loop for j
+      output<<existNameList[num];
+      // transformed without static_cast should also work?
+      output<<join(tmpCalc |
+              transformed(static_cast<std::string(*)(double)>(std::to_string) ),
+                   outputDelims)
+            << std::endl;
+      tmpCalc.clear();
+      ++num;
+    } // end of loop for protein
+    return 0;
+  } // end of functions.
 
   int EM::outTrainResult(){
     writeMatrix(outDrugSub2ProteinSubFileName, *drugSub2proteinSub);

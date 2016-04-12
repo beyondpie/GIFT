@@ -55,6 +55,8 @@ namespace gift {
 
   name2IndexHash drugName2Index;
   name2IndexHash proteinName2Index;
+  nameList drugNameList;
+  nameList proteinNameList;
   nameList drugSubNameList;
   nameList proteinSubNameList;
 
@@ -83,7 +85,8 @@ namespace gift {
                              std::string delims="\t,");
 
   int readName2IndexHash(const nameList, name2IndexHash&);
-  int getIndexFromHash(const name2IndexHash&, const nameList, IntList&);
+  int getIndexFromHash(const name2IndexHash&, const nameList, IntList&,
+                       nameList&);
 
   int rowColFile(const std::string, rowCol&, std::string delims="\t,");
   int helpGift();
@@ -252,12 +255,20 @@ namespace gift {
       return 0;
     } // end of function
     int trainEM();
-    // Write an integrated predictEM instead.
-    int predictEM();
+    // predictEM.
     // int predictEMByDrug(IntList &, numericMatrix &);
     // int predictEMByProtein(IntList &, numericMatrix &);
     // int predictEMByBoth(IntList & drugs, IntList & proteins, numericMatrix &);
+    int predictDrugs();
+    int predictProteins();
+    int predictDrugsWithSubs();
+    int predictProteinsWithSubs();
+    int predictDrugsWithSubsProteinsWithSubs();
+    int predictDrugsProteinsWithSubs();
+    int predictDrugsWithSubsProteins();
+    int predictDrugsProteins();
 
+    int predictEM();
     int varEM();
     int outTrainResult();
     int outTrainVariance();

@@ -217,16 +217,14 @@ namespace gift{
   } // end of function
 
   int parameters::InitDrugName2Index() {
-    nameList tmp;
-    readNameListFromFile(drugNameListFile,tmp);
-    readName2IndexHash(tmp,drugName2Index);
+    readNameListFromFile(drugNameListFile,drugNameList);
+    readName2IndexHash(drugNameList,drugName2Index);
     return 0;
   } // end of function
 
   int parameters::InitProteinName2Index() {
-    nameList tmp;
-    readNameListFromFile(proteinNameListFile, tmp);
-    readName2IndexHash(tmp,proteinName2Index);
+    readNameListFromFile(proteinNameListFile, proteinNameList);
+    readName2IndexHash(proteinNameList,proteinName2Index);
     return 0;
   } // end of function
 

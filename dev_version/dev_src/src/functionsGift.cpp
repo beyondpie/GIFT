@@ -199,13 +199,15 @@ namespace gift{
 
   int getIndexFromHash(const name2IndexHash& name2Index,
                        const nameList fromNameList,
-                       IntList & toIndexList){
+                       IntList & toIndexList,
+                       nameList & existNameList){
     for(const auto fromName : fromNameList){
       if (name2Index.find(fromName) != name2Index.end()){
+        existNameList.push_back(fromName);
         toIndexList.push_back( (name2Index.find(fromName))->second);
       } else {
-        std::cout<<"Cannot find the key " << fromName <<
-          " fromNameList. Continue..." <<std::endl;
+        std::cout<<"Cannot find the key " << fromName
+                 <<" fromNameList. Continue..." <<std::endl;
       } // end of if else
     } // end of loop fromNameList
     return 0;
