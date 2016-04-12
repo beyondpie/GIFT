@@ -184,7 +184,7 @@ namespace gift {
       for(int j=0;j<proteinNum;++j){
         tmpCalc.push_back(iterdrugSub2ProteinSub(drug,j));
       } // end of loop for j
-      output<<existNameList[num];
+      output<<existNameList[num] << outputDelims;
       // transformed without static_cast should also work?
       output<<join(tmpCalc |
               transformed(static_cast<std::string(*)(double)>(std::to_string) ),
@@ -223,7 +223,7 @@ namespace gift {
         } // end of loop for m
         tmpCalc.push_back(exp(tmp));
       } // end of loop for j
-      output<<predictDrugNameList_WithSubs[i];
+      output<<predictDrugNameList_WithSubs[i]<<outputDelims;
       // transformed without static_cast should also work?
       output<<join(tmpCalc |
               transformed(static_cast<std::string(*)(double)>(std::to_string) ),
@@ -262,7 +262,7 @@ namespace gift {
       for(int j=0;j<drugNum;++j){
         tmpCalc.push_back(iterdrugSub2ProteinSub(j,protein));
       } // end of loop for j
-      output<<existNameList[num];
+      output<<existNameList[num]<<outputDelims;
       // transformed without static_cast should also work?
       output<<join(tmpCalc |
               transformed(static_cast<std::string(*)(double)>(std::to_string) ),
@@ -302,7 +302,7 @@ namespace gift {
         } // end of loop for m
         tmpCalc.push_back(exp(tmp));
       } // end of loop for j
-      output<<predictProteinNameList_WithSubs[i];
+      output<<predictProteinNameList_WithSubs[i]<<outputDelims;
       // transformed without static_cast should also work?
       output<<join(tmpCalc |
               transformed(static_cast<std::string(*)(double)>(std::to_string) ),
@@ -348,7 +348,7 @@ namespace gift {
       for(const auto & protein : predictProteinIndex){
         tmpCalc.push_back(iterdrugSub2ProteinSub(drug,protein));
       } // end of loop for protein
-      output<<existdrugNameList[num];
+      output<<existdrugNameList[num] <<outputDelims;
       // transformed without static_cast should also work?
       output<<join(tmpCalc |
               transformed(static_cast<std::string(*)(double)>(std::to_string) ),
@@ -357,6 +357,135 @@ namespace gift {
       tmpCalc.clear();
       ++num;
     } // end of loop for drug
+    return 0;
+  } // end of functions.
+
+  int EM::predictDrugsProteinsWithSubs(){
+    std::cout<<"Now predict given drugs against given proteins with subs."
+             << std::endl;
+    IntList predictDrugIndex;
+    std::vector<double> tmpCalc;
+    nameList existdrugNameList;
+    getIndexFromHash(drugName2Index, predictDrugNameList,
+                     predictDrugIndex, existdrugNameList);
+    if (existdrugNameList.size()<1) {
+      std::cerr<<"No drug Index found, and quit." <<std::endl;
+      return 1;
+    } // end of if
+    // output the result.
+    std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+    if (!output.is_open()){
+      std::cerr<<"Error open file "<<outPredictCPIsFileName<<std::endl;
+      return 1;
+    } // end of if
+    using boost::algorithm::join;
+    using boost::adaptors::transformed;
+    // print the first row as protein names.
+    output<<"Names"<<outputDelims;
+    output<<join(predictProteinNameList_WithSubs,outputDelims)<<std::endl;
+    int num = 0;
+    double tmp;
+    for(const auto & drug : predictDrugIndex){
+      for(int j=0;j<predictProteinNameList_WithSubs.size();++j){
+        tmp = 0;
+        for(auto const & m : (*drug2sub)[drug]){
+          for(auto const & n : predictProtein2SubList[j]){
+            tmp += log(1 - (*drugSub2proteinSub)[m][n]);
+          } // end of loop n
+        } // end of loop for m
+        tmpCalc.push_back(exp(tmp));
+      } // end of loop for protein
+      output<<existdrugNameList[num]<<outputDelims;
+      // transformed without static_cast should also work?
+      output<<join(tmpCalc |
+              transformed(static_cast<std::string(*)(double)>(std::to_string) ),
+                   outputDelims)
+            << std::endl;
+      tmpCalc.clear();
+      ++num;
+    } // end of loop for drug
+    return 0;
+  } // end of functions.
+
+  int EM::predictDrugsWithSubsProteins(){
+    std::cout<<"Now predict given drugs with subs against given proteins."
+             << std::endl;
+    IntList predictProteinIndex;
+    std::vector<double> tmpCalc;
+    nameList existproteinNameList;
+    getIndexFromHash(proteinName2Index, predictProteinNameList,
+                     predictProteinIndex, existproteinNameList);
+    if (existproteinNameList.size()<1) {
+      std::cerr<<"No protein Index found, and quit." <<std::endl;
+      return 1;
+    } // end of if
+    // output the result.
+    std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+    if (!output.is_open()){
+      std::cerr<<"Error open file "<<outPredictCPIsFileName<<std::endl;
+      return 1;
+    } // end of if
+    using boost::algorithm::join;
+    using boost::adaptors::transformed;
+    // print the first row as protein names.
+    output<<"Names"<<outputDelims;
+    output<<join(existproteinNameList,outputDelims)<<std::endl;
+    double tmp;
+    for(int i=0;i<predictDrugNameList_WithSubs.size();++){
+      for(auto const protein : predictProteinIndex){
+        tmp = 0;
+        for(auto const & m : predictDrug2SubList[i]){
+          for(auto const & n : (*protein2sub)[protein]){
+            tmp += log(1 - (*drugSub2proteinSub)[m][n]);
+          } // end of loop n
+        } // end of loop for m
+        tmpCalc.push_back(exp(tmp));
+      } // end of loop for protein
+      output<<predictDrugNameList_WithSubs[i]<<outputDelims;
+      // transformed without static_cast should also work?
+      output<<join(tmpCalc |
+              transformed(static_cast<std::string(*)(double)>(std::to_string) ),
+                   outputDelims)
+            << std::endl;
+      tmpCalc.clear();
+    } // end of loop for i
+    return 0;
+  } // end of functions.
+
+  int EM::predictDrugsWithSubsProteinsWithSubs(){
+    std::cout<<"Now predict given drugs with subs against given proteins with subs."
+             << std::endl;
+    std::vector<double> tmpCalc;
+    // output the result.
+    std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+    if (!output.is_open()){
+      std::cerr<<"Error open file "<<outPredictCPIsFileName<<std::endl;
+      return 1;
+    } // end of if
+    using boost::algorithm::join;
+    using boost::adaptors::transformed;
+    // print the first row as protein names.
+    output<<"Names"<<outputDelims;
+    output<<join(predictProteinNameList_WithSubs,outputDelims)<<std::endl;
+    double tmp;
+    for(int i=0;i<predictDrugNameList_WithSubs.size();++i){
+      for(int j=0;j<predictProteinNameList_WithSubs.size();++j){
+        tmp = 0;
+        for(auto const & m : predictProtein2SubList[i]){
+          for(auto const & n : predictProtein2SubList[j]){
+            tmp += log(1 - (*drugSub2proteinSub)[m][n]);
+          } // end of loop n
+        } // end of loop for m
+        tmpCalc.push_back(exp(tmp));
+      } // end of loop for protein
+      output<<predictDrugNameList_WithSubs[i]<<outputDelims;
+      // transformed without static_cast should also work?
+      output<<join(tmpCalc |
+              transformed(static_cast<std::string(*)(double)>(std::to_string) ),
+                   outputDelims)
+            << std::endl;
+      tmpCalc.clear();
+    } // end of loop for i
     return 0;
   } // end of functions.
 
