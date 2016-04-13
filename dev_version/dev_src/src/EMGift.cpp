@@ -455,7 +455,7 @@ namespace gift {
     output<<"Names"<<outputDelims;
     output<<join(existproteinNameList,outputDelims)<<std::endl;
     double tmp;
-    for(int i=0;i<predictDrugNameList_WithSubs.size();++){
+    for(int i=0;i<predictDrugNameList_WithSubs.size();++i){
       for(auto const protein : predictProteinIndex){
         tmp = 0;
         for(auto const & m : predictDrug2SubList[i]){

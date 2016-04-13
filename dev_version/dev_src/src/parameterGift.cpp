@@ -57,12 +57,12 @@ namespace gift{
        po::value<bool>(&loglikelyRecord)->default_value(false),
        "whether or not to record the loglikely in every step")
       ("inputDelims",po::value<std::string>(&inputDelims)->default_value("\t,"),
-       "sep charater for input files")
+       "sep character for input files")
       // input file version information.
       ("chemFingerPrintRecord",
        po::value<std::string>(&chemfpRec)->default_value("ComFP: PUBCHEM"),
        "source and version of chemical fingerprints")
-      ("proteinFingerPrintRecprd",
+      ("proteinFingerPrintRecord",
        po::value<std::string>(&proteinfpRec)->default_value("Pfam: 2011-07"),
        "source and version of protein fingerprints/domains")
       ("comProteinInteractionRecord",
@@ -70,9 +70,9 @@ namespace gift{
        "source and version of compound-protien interactions")
       // input file names for prediction
       ("predictDrugsFileName",po::value<std::string>(&predictDrugsFileName),
-       "file name for drug names used to be predicted by gift")
+       "file name for drug names used for prediciton by gift")
       ("predictProteinFileName",po::value<std::string>(&predictProteinsFileName),
-       "file name for protein names used to be predicted by gift")
+       "file name for protein names used for prediction by gift")
       ("predictDrugsFileName_WithSubs",
        po::value<std::string>(&predictDrugsFileName_WithSubs),
        "file name for drugs names together with their substructures.")

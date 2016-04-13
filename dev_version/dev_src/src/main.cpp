@@ -9,8 +9,6 @@
 #include "gift.h"
 
 int main(int argc, char ** argv){
-  // current problem: prediction with substructures given.
-
   // read program options.
   // run program based on task.
   // output record.

@@ -213,7 +213,107 @@ namespace gift{
     return 0;
   } // end of function
 
-  int helpGift(){ // LACK OF DEFINITION
+  int helpGift(){
+    // Output gift information and useness to standard output.
+    // Basic information about gift.
+    std::cout<<"Gift is used to predict compound-protein interactions based on "
+             <<std::endl;
+    std::cout<<"their substructures interactions."<<std::endl;
+    std::cout<<"It is also used to infer the substructres interactions from"
+             <<std::endl;
+    std::cout<<" the known drug-protein interactions."<<std::endl;
+    std::cout<<"If you want to know more about gift, please read the paper: "
+             <<std::endl;
+    std::cout<<"Global Optimization-based Inference of Chemogenomic Features "
+             <<std::endl;
+    std::cout<<"from Drug-Target Interactions, which is published  "<<std::endl;
+    std::cout<<"on Bioinformatics, 2015. "<<std::endl;
+    std::cout<<"Author: "<<author<<std::endl;
+    std::cout<<"Email: " <<email<<std::endl;
+    std::cout<<"Current version: "<<version<<std::endl;
+    std::cout<<"Last update time: "<<updateTime<<std::endl;
+    std::cout<<"You can get the C++ source code from: "<<std::endl;
+    std::cout<<"https://github.com/songpeng/GIFT" << std::endl;
+    std::cout<<std::endl;
+
+    //Input parameters
+    std::cout<<"--help | -h to show the help information of gift."<<std::endl;
+    std::cout<<"--version | -v to show the version information of gift."
+             <<std::endl;
+    std::cout<<"Gift need one configure file for its running."<<std::endl;
+    std::cout<<"Please use --config to tell gift the configure file name."
+             <<std::endl;
+    std::cout<<"The content in the configure file are listed below: "<<std::endl;
+
+    // configure file information.
+    std::cout<<"[INPUT DATA FILE NAMES]" <<std::endl;
+    std::cout<<"drug2proteinFileName=<string> : "
+             <<"file name for drug protein interactions" <<std::endl;
+    std::cout<<"drug2subFilename=<string> : "
+             <<"file name for drug to substructure" <<std::endl;
+    std::cout<<"protein2subFileName=<string> : "
+             <<"file name for protein to substructure" << std::endl;
+    std::cout<<"drugSub2proteinSubfilename=<string> : "
+             <<"file name for drugSub to proteinSub interaction probability."
+             <<std::endl;
+    std::cout<<"drugNameListFile=<string> : "
+             <<"file name for drug names" << std::endl;
+    std::cout<<"drugSubNameListFile=<string> : "
+             <<"file name for drug substructures names." << std::endl;
+    std::cout<<"proteinNameListFile=<string> : "
+             <<"file name for protein names" << std::endl;
+    std::cout<<"proteinSubNameListFile=<string> : "
+             <<"file name for protein substructures names." << std::endl;
+
+    std::cout<<"[INPUT PARAMETERS FOR EM ALGORITHM]" <<std::endl;
+    std::cout<<"alphaEB=<double> : "
+             <<"parameter for Empricial Bayesian estimates for initEM."
+             <<std::endl;
+    std::cout<<"betaEB=<double> : "
+             <<"parameter for Empricial Bayesian estimates for initEM."
+             <<std::endl;
+    std::cout<<"fp=<double> : "<<"false positive rate"<<std::endl;
+    std::cout<<"fn=<double> : "<<"false negative rate"<<std::endl;
+    std::cout<<"threadNum=<int> : "<<"thread number for EM." <<std::endl;
+    std::cout<<"EMIterationNum=<int> : "<<"iteration numbers/steps for EM."<<std::endl;
+    std::cout<<"task=<string> : "<<"run gift for [train] or [predict]."<<std::endl;
+    std::cout<<"loglikelyRecord=<string> : "<<
+      "record [true] or not [false] the loglikely in in every step."<<std::endl;
+    std::cout<<"inputDelims=<string> : "
+             <<"sep character for input files, such as  '\t',',' "<<std::endl;
+
+    std::cout<<"[INPUT FILE VERSION INFORMATION]"<<std::endl;
+    std::cout<<"chemFingerPrintRecord=<string> : "
+             <<"source and version of chemical fingerprints."<<std::endl;
+    std::cout<<"proteinFingerPrintRecord=<string> : "
+             <<"source and version of protein fingerpints/domains."<<std::endl;
+    std::cout<<"comProteinInteractionRecord=<string> : "
+             <<"source and version of compound-protein interactions."<<std::endl;
+
+    std::cout<<"[INPUT FILE NAME FOR PREDICTION]"<<std::endl;
+    std::cout<<"predictDrugsFileName=<string> : "
+             <<"file name for drug names used for prediction by gift."<<std::endl;
+    std::cout<<"predictProteinsFileName=<string> : "
+             <<"file name for protein names used for prediction by gift."<<std::endl;
+    std::cout<<"predictDrugsFileName_WithSubs=<string> : "
+             <<"file name for drug names together with their substructures."
+             <<std::endl;
+    std::cout<<"predictProteinsFileName_WithSubs=<string> : "
+             <<"file name for protein names together with their substructures."
+             <<std::endl;
+
+    std::cout<<"[OUTPUT FILE NAME AND FORMAT]"<<std::endl;
+    std::cout<<"outputDelims=<string> : "
+             <<"sep character for output files." <<std::endl;
+    std::cout<<"outRecordFileName=<string> : "<<"file name for output records."
+             <<std::endl;
+    std::cout<<"outPredictCPIsFileName=<string> : "
+             <<"file name for output CPIs." <<std::endl;
+    std::cout<<"outDrugSub2ProteinSubFileName=<string> : "
+             <<"file name for output drugSub2proteinSub matrix."<<std::endl;
+    std::cout<<"outVarDrugSub2proteinSubFileName=<string> : "
+             <<"file name for output variance of drugSub2proteinSub." <<std::endl;
+
     return 0;
   } // end of function
 
