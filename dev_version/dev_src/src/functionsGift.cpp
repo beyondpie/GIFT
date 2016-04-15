@@ -354,8 +354,10 @@ namespace gift{
       } // end of if
 
       // init getFP first.
-      std::vector<int> tmpArray;
-      for(int i=0;i<rowNum;++i) { getFP.push_back(tmpArray); } // end of loop
+      for(int i=0;i<rowNum;++i) {
+        std::vector<int> tmpArray;
+        getFP.push_back(tmpArray);
+      } // end of loop
 
       // read file.
       while (std::getline(input,line)){
