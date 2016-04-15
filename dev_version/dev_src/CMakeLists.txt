@@ -31,12 +31,13 @@ SET (GIFT_VERSION_MINOR 0)
 # # so that can find giftConfig.h.
 # INCLUDE_DIRECTORIES("${PROJECT_BINARY_DIR}")
 
-# SET(BOOST_ROOT /usr/local/include)
+SET(BOOST_ROOT /usr/local/include)
 FIND_PACKAGE(Boost)
 IF(Boost_FOUND)
   INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
-  INCLUDE_DIRECTORIES(/usr/local/include/boost)
-  MESSAGE(STATUS "The boost library dir is " ${Boos_INCLUDE_DIRS})
+  INCLUDE_DIRECTORIES(/usr/local/include/)
+  MESSAGE(STATUS "The boost library dir is " ${Boost_INCLUDE_DIRS})
+  MESSAGE(STATUS "The boost lib file dir is " ${Boost_LIBRRIES})
   ADD_SUBDIRECTORY(src bin)
 
 

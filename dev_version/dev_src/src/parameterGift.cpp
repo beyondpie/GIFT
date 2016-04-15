@@ -4,7 +4,7 @@
 #include<boost/program_options.hpp>
 #include<boost/any.hpp>
 
-#include "gift.h"
+#include "gift.hpp"
 
 namespace gift{
   inline const char* BoolToString (bool b) {

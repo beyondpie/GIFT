@@ -7,7 +7,7 @@
 #include<boost/algorithm/string.hpp>
 #include<boost/algorithm/string/join.hpp>
 #include<boost/range/adaptor/transformed.hpp>
-#include "gift.h"
+#include "gift.hpp"
 
 namespace gift {
 

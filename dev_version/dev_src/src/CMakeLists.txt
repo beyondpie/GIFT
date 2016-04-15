@@ -1,5 +1,5 @@
 ADD_EXECUTABLE(gift
-  gift.h
+  gift.hpp
   EMGift.cpp
   parameterGift.cpp
   functionsGift.cpp

@@ -8,7 +8,7 @@
 // Load library.
 #include<iostream>
 #include<boost/program_options.hpp> // read the parameters
-#include "gift.h"
+#include "gift.hpp"
 
 namespace{
   const int SUCCESS = 0;
