@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<boost/program_options.hpp>
+#include<boost/algorithm/string/join.hpp>
 
 int main(int argc, char ** argv){
   std::cout<<"hi,songpeng, test c++11 under clang with cmake."<<std::endl;
@@ -17,5 +18,10 @@ int main(int argc, char ** argv){
   if(vm.count("help") || vm.count("h")) {
     std::cout<<desc<<std::endl;
   }
+  std::vector<std::string> list;
+  list.push_back("algorithm");
+  list.push_back("stringjoin");
+  std::string joined = boost::algorithm::join(list,";");
+  std::cout<<joined<<std::endl;
   return 0;
 }
