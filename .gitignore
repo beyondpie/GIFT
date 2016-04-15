@@ -26,3 +26,15 @@
 *.cmake
 *.make
 *.cmake
+/dev_version/dev_src/testCMAKE/testc11
+/dev_version/dev_src/testCMAKE/CMakeFiles/testc11.dir/link.txt
+/dev_version/dev_src/testCMAKE/CMakeFiles/testc11.dir/depend.internal
+/dev_version/dev_src/testCMAKE/CMakeFiles/feature_tests.c
+/dev_version/dev_src/testCMAKE/CMakeFiles/testc11.dir/CXX.includecache
+/dev_version/dev_src/CMakeCache.txt
+/dev_version/dev_src/CMakeFiles/3.4.1/CMakeDetermineCompilerABI_C.bin
+/dev_version/dev_src/CMakeFiles/3.4.1/CMakeDetermineCompilerABI_CXX.bin
+/dev_version/dev_src/CMakeFiles/3.4.1/CompilerIdC/CMakeCCompilerId.c
+/dev_version/dev_src/testCMAKE/CMakeFiles/3.4.1/CMakeDetermineCompilerABI_C.bin
+*.txt
+/dev_version/dev_src/CMakeFiles/3.4.1/CompilerIdCXX/CMakeCXXCompilerId.cpp

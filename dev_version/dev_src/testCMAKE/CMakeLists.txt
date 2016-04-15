@@ -1,7 +1,10 @@
 CMAKE_MINIMUM_REQUIRED (VERSION 2.6)
+
 SET(CMAKE_CXX_STANDARD 11)
-SET(CMAKE_STANDARD_REQUIRED)
-SET(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
-SET(CMAKE_EXE_LINKER_FLAGS "-stdlib=libc++")
-PROJECT (TESTC++11 CXX)
-ADD_EXECUTABLE(testc11 main.cpp)
+
+# The two comments are not needed any more.
+#SET(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
+#SET(CMAKE_EXE_LINKER_FLAGS "-stdlib=libc++")
+
+PROJECT (TESTC++11)
+ADD_EXECUTABLE(testc11 testc++11.cpp)
