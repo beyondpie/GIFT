@@ -43,30 +43,30 @@ namespace gift {
   typedef std::map<std::string,int> name2IndexHash;
   typedef std::vector<std::string> nameList;
 
-  IntArrayList drug2proteinList;
-  IntArrayList drug2subList;
-  IntArrayList sub2drugList;
-  IntArrayList protein2domainList;
-  IntArrayList domain2proteinList;
-  numericMatrix drugSub2proteinSubMatrix;
-  numericMatrix observedDrug2ProteinMatrix;
-  numericMatrix vardrugSub2proteinSubMatrix;
-  std::vector<double> loglikelyArray;
+  extern IntArrayList drug2proteinList;
+  extern IntArrayList drug2subList;
+  extern IntArrayList sub2drugList;
+  extern IntArrayList protein2domainList;
+  extern IntArrayList domain2proteinList;
+  extern numericMatrix drugSub2proteinSubMatrix;
+  extern numericMatrix observedDrug2ProteinMatrix;
+  extern numericMatrix vardrugSub2proteinSubMatrix;
+  extern std::vector<double> loglikelyArray;
 
-  name2IndexHash drugName2Index;
-  name2IndexHash proteinName2Index;
-  nameList drugNameList;
-  nameList proteinNameList;
-  nameList drugSubNameList;
-  nameList proteinSubNameList;
+  extern name2IndexHash drugName2Index;
+  extern name2IndexHash proteinName2Index;
+  extern nameList drugNameList;
+  extern nameList proteinNameList;
+  extern nameList drugSubNameList;
+  extern nameList proteinSubNameList;
 
-  nameList predictDrugNameList;
-  nameList predictProteinNameList;
+  extern nameList predictDrugNameList;
+  extern nameList predictProteinNameList;
 
-  nameList predictDrugNameList_WithSubs;
-  nameList predictProteinNameList_WithSubs;
-  IntArrayList predictDrug2SubList;
-  IntArrayList predictProtein2SubList;
+  extern nameList predictDrugNameList_WithSubs;
+  extern nameList predictProteinNameList_WithSubs;
+  extern IntArrayList predictDrug2SubList;
+  extern IntArrayList predictProtein2SubList;
 
   class rowCol;
   class EM;
@@ -75,7 +75,7 @@ namespace gift {
   // gift global functions.
   int Matrix2Fingerpints(const std::string, IntArrayList&,
                          std::string delims="\t,");
-  int Matrix2FingerprintsByColumn(const std::string, IntArrayList&,
+  int Matrix2FingerprintsByColumn(const std::string, IntArrayList&, int rowNum,
                                   std::string delims="\t,");
   int writeMatrix(const std::string, numericMatrix&, std::string delims="\t,");
   int readMatrix(const std::string, numericMatrix&, std::string delims="\t,");

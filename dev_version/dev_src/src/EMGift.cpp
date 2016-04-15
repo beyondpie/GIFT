@@ -10,7 +10,6 @@
 #include "gift.hpp"
 
 namespace gift {
-
   double EM::iterdrugSub2ProteinSub(int drugIndex,int proteinIndex){
     double tmp = 0;
     for(auto const & m : (*drug2sub)[drugIndex]){

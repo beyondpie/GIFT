@@ -120,8 +120,9 @@ namespace gift{
     IntList tmpIntArray;
     for(int i=0;i<subNum;++i){sub2drugList.push_back(tmpIntArray);}
     for(int i=0;i<domainNum;++i){domain2proteinList.push_back(tmpIntArray);}
-    Matrix2FingerprintsByColumn(drug2subFileName,sub2drugList,inputDelims);
-    Matrix2FingerprintsByColumn(protein2subFileName,domain2proteinList);
+    Matrix2FingerprintsByColumn(drug2subFileName,sub2drugList,subNum,inputDelims);
+    Matrix2FingerprintsByColumn(protein2subFileName,domain2proteinList,
+                                domainNum, inputDelims);
 
     // load NameList.
     InitDrugName2Index();
