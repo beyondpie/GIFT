@@ -1,4 +1,4 @@
-ADD_EXECUTABBLE(gift
+ADD_EXECUTABLE(gift
   gift.h
   EMGift.cpp
   parameterGift.cpp
