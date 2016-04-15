@@ -23,3 +23,6 @@
 /dev_version/dev_src/src/GPATH
 /dev_version/dev_src/src/GRTAGS
 /dev_version/dev_src/src/GTAGS
+*.cmake
+*.make
+*.cmake
