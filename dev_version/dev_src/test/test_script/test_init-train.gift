@@ -1,3 +1,9 @@
+# input data file name
+drug2proteinFileName = test_drug2protein
+drug2subFileName = test_drug2sub
+protein2subFileName = test_protein2domain
+drugSub2proteinSubFileName = test_drugSub2proteinSub
+drugName
 fn = 0.85
 fp = 0.0001
 threadNum = 1
