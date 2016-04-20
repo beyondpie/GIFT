@@ -21,4 +21,5 @@ ENDIF(Boost_FOUND)
 # test c++11 and boost library.
 # ADD_EXECUTABLE(testc11 testc++11.cpp)
 # test programs_options reading from file.
+ADD_EXECUTABLE(testc11 testReadFile.cpp)
 TARGET_LINK_LIBRARIES(testc11 ${Boost_LIBRARIES})

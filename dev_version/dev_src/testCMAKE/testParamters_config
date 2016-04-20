@@ -1,0 +1,7 @@
+delims = \t
+
+double_fn = 1.001
+
+int_fn = 1
+
+task = train
