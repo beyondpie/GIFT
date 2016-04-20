@@ -38,3 +38,12 @@
 /dev_version/dev_src/testCMAKE/CMakeFiles/3.4.1/CMakeDetermineCompilerABI_C.bin
 *.txt
 /dev_version/dev_src/CMakeFiles/3.4.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+/dev_version/dev_src/build/bin/gift
+/dev_version/dev_src/build/temlibboost
+/dev_version/dev_src/test/test_function/EMGift.cpp
+/dev_version/dev_src/test/test_function/functionsGift.cpp
+/dev_version/dev_src/test/test_function/gift.hpp
+/dev_version/dev_src/test/test_function/main.cpp
+/dev_version/dev_src/test/test_function/parameterGift.cpp
+/dev_version/dev_src/test/test_script/gift
+/dev_version/dev_src/testCMAKE/CMakeFiles/3.4.1/CompilerIdC/CMakeCCompilerId.c

@@ -15,7 +15,7 @@ threadNum = 1
 EMIterationNum = 50
 task = train
 loglikelyRecord = false
-inputDelims = "\t"
+inputDelims = ","
 
 # input file version information
 chemFingerPrintRecord = PUBCHEM_2011
@@ -33,4 +33,4 @@ outputDelims = "\t"
 outRecordFileName = test_outRecordFile
 outPredictCPIsFileName = test_outPredictCPIsFile
 outDrugSub2ProteinSubFileName = test_outDrugSub2ProteinSubFile
-outVarDrugSub2ProteinSubFileName = test_outVarDrugSub2ProteinSubFile
+outVarDrugSub2proteinSubFileName = test_outVarDrugSub2ProteinSubFile

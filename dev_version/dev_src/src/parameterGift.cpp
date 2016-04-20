@@ -123,12 +123,10 @@ namespace gift{
     std::ifstream input;
     input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
     try {
-      // Allowed file's content is empty.
       input.open(configFile, std::ifstream::in);
-    //   if (input.peek() == std::ifstream::traits_type::eof()) {
-    //     std::cerr<<inputFile<<" is empty." << std::endl;
-    //     return 1;
-    //   } // end of if.
+      if (input.peek() == std::ifstream::traits_type::eof()) {
+        std::cerr<<configFile<<" is empty." << std::endl;
+      } // end of if.
       po::store(po::parse_config_file(input, desc), vm);
       po::notify(vm);
     } catch (std::ifstream::failure e) {
