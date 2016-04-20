@@ -41,7 +41,6 @@ namespace gift{
     // use boost program_options to read configs from a given file.
     namespace po = boost::program_options;
     po::options_description desc("GIFT Parameter options");
-    // Does it work for class members?
     desc.add_options()
       // input data file name
       ("drug2proteinFileName",

@@ -17,7 +17,7 @@ IF(Boost_FOUND)
 ELSEIF(NOT Boost_FOUND)
   MESSAGE(FATAL_ERROR "Unable to find boost library.")
 ENDIF(Boost_FOUND)
-
+#ADD_SUBDIRECTORY(src bin)
 # test c++11 and boost library.
 # ADD_EXECUTABLE(testc11 testc++11.cpp)
 # test programs_options reading from file.

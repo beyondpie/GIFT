@@ -15,7 +15,7 @@ threadNum = 1
 EMIterationNum = 50
 task = train
 loglikelyRecord = false
-inputDelims = ","
+inputDelims = ,
 
 # input file version information
 chemFingerPrintRecord = PUBCHEM_2011
