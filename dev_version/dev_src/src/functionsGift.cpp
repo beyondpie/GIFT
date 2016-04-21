@@ -97,36 +97,50 @@ namespace gift{
 
   int rowColFile(const std::string inputFile, rowCol& matrixRec,
                  std::string delims){
-    std::ifstream input;
+    std::ifstream input (inputFile, std::ios::in);
     std::string line;
-    int count = 0;
+    int count = 1;
     std::vector<std::string> array;
 
-    input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-    try {
-      input.open(inputFile,std::ifstream::in);
-      if (input.peek() == std::ifstream::traits_type::eof()){
-        std::cerr <<inputFile<<" is empty."<<std::endl;
-        return 1;
-      }
-
-      std::getline(input,line);
+    std::getline(input,line);
+    ++count;
+    boost::algorithm::split(array, line, boost::is_any_of(delims));
+    matrixRec.colNum = array.size();
+    // string getline func over istream.
+    while(std::getline(input,line)){
+      // QUESTION: how about empty line?
       ++count;
-      boost::algorithm::split(array, line, boost::is_any_of(delims));
-      matrixRec.colNum = array.size();
-      // string getline func over istream.
-      while(std::getline(input,line)){
-        // QUESTION: how about empty line?
-        ++count;
-      } // end of while
-      input.close();
+    } // end of while
+    input.close();
 
-      matrixRec.rowNum = count;
-      matrixRec.colNum = array.size();
-    } catch (std::ifstream::failure e) {
-      std::cerr << "Exceptions open/read file "<<inputFile<<std::endl;
-      return 1;
-    } // end of catch
+    matrixRec.rowNum = count;
+    matrixRec.colNum = array.size();
+
+    // input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    // try {
+    //   input.open(inputFile,std::ifstream::in);
+    //   if (input.peek() == std::ifstream::traits_type::eof()){
+    //     std::cerr <<inputFile<<" is empty."<<std::endl;
+    //     return 1;
+    //   }
+
+    //   std::getline(input,line);
+    //   ++count;
+    //   boost::algorithm::split(array, line, boost::is_any_of(delims));
+    //   matrixRec.colNum = array.size();
+    //   // string getline func over istream.
+    //   while(std::getline(input,line)){
+    //     // QUESTION: how about empty line?
+    //     ++count;
+    //   } // end of while
+    //   input.close();
+
+    //   matrixRec.rowNum = count;
+    //   matrixRec.colNum = array.size();
+    // } catch (std::ifstream::failure e) {
+    //   std::cerr << "Exceptions open/read file "<<inputFile<<std::endl;
+    //   return 1;
+    // } // end of catch
     return 0;
   } // end of function.
 
@@ -152,22 +166,27 @@ namespace gift{
   int readNameListFromFile(const std::string inputFile, nameList& tonameList){
     // each line in the file represents one name.
     // line should end with "\n", not "[\r\t]\n"
-    std::ifstream input;
+    std::ifstream input (inputFile, std::ios::in);
     std::string line;
-    input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-    try {
-      input.open(inputFile,std::ifstream::in);
-      if (input.peek() == std::ifstream::traits_type::eof() ){
-        std::cerr << inputFile <<" is empty. "<<std::endl;
-        return 1;
-      } // end of if
-      while (std::getline(input,line)) {
-        tonameList.push_back(line);
-      } // end of while
-      input.close();
-    } catch (std::ifstream::failure e) {
-      std::cerr<<"Exceptions open/read file " << inputFile<<std::endl;
-    } // end of try catch
+    while (std::getline(input,line)) {
+      tonameList.push_back(line);
+    } // end of while
+    input.close();
+
+    // input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    // try {
+    //   input.open(inputFile,std::ifstream::in);
+    //   if (input.peek() == std::ifstream::traits_type::eof() ){
+    //     std::cerr << inputFile <<" is empty. "<<std::endl;
+    //     return 1;
+    //   } // end of if
+    //   while (std::getline(input,line)) {
+    //     tonameList.push_back(line);
+    //   } // end of while
+    //   input.close();
+    // } catch (std::ifstream::failure e) {
+    //   std::cerr<<"Exceptions open/read file " << inputFile<<std::endl;
+    // } // end of try catch
     return 0;
   } // end of function
 

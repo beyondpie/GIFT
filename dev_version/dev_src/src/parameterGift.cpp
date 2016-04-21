@@ -104,6 +104,16 @@ namespace gift{
     // } catch (std::ifstream::failure e) {
     //   std::cerr <<"Exceptions open/read file "<<configFile<<std::endl;
     // } // end of try catch
+    // default training data parameters.
+    // they will be set when read data files.
+
+    rowCol tmp;
+    rowColFile(drug2subFileName,tmp,inputDelims);
+    drugNum = tmp.rowNum;
+    subNum = tmp.colNum;
+    rowColFile(protein2subFileName,tmp,inputDelims);
+    domainNum = tmp.colNum;
+    proteinNum = tmp.rowNum;
 
 
     // load global data for gift.
@@ -130,16 +140,6 @@ namespace gift{
 
     // load predicted name list and possible subs if task is prediction.
     InitPredictParameters(); // throw std::string.
-
-    // default training data parameters.
-    // they will be set when read data files.
-    rowCol tmp;
-    rowColFile(drug2subFileName,tmp,inputDelims);
-    drugNum = tmp.rowNum;
-    subNum = tmp.colNum;
-    rowColFile(protein2subFileName,tmp,inputDelims);
-    domainNum = tmp.colNum;
-    proteinNum = tmp.rowNum;
 
     std::cout<<"Initialize the sub2drugList..."<<std::endl;
     Matrix2FingerprintsByColumn(drug2subFileName,sub2drugList,subNum,inputDelims);
