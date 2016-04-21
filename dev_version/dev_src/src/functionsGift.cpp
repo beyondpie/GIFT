@@ -132,7 +132,7 @@ namespace gift{
 
   int writeMatrix(const std::string outFileName, numericMatrix& resultMat,
                   std::string delims){
-    std::ofstream output (outFileName,std::ofstream::out);
+    std::ofstream output (outFileName,std::ios::out);
     if (output.is_open()) {
       using boost::algorithm::join;
       using boost::adaptors::transformed;
@@ -173,34 +173,46 @@ namespace gift{
 
   int readNameMatrixFromFile(const std::string inputFile, nameList& tonameList,
                              IntArrayList& getFP, std::string delims){
-    std::ifstream input;
+    std::ifstream input (inputFile, std::ios::in);
     std::string line;
     std::vector<std::string> array;
     std::vector<int> tempRec;
+    while(std::getline(input,line)) {
+      boost::algorithm::split(array,line,boost::is_any_of(delims));
+      tonameList.push_back(array[0]); // first column is name.
+      int arraylen = array.size();
+      for(int i=1;i<arraylen;++i){
+        if(array[i].compare("1") == 0) {
+          tempRec.push_back(i-1); // Use i-1, since first column is name.
+        } // end of if
+      } // end of loop for i.
+      getFP.push_back(tempRec);
+      tempRec.clear();
+    } // end of while
 
-    input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-    try {
-      input.open(inputFile, std::ifstream::in);
-      if (input.peek() == std::ifstream::traits_type::eof()) {
-        std::cerr<<inputFile<<" is empty. "<<std::endl;
-        return 1;
-      } // end of if
-      while(std::getline(input,line)) {
-        boost::algorithm::split(array,line,boost::is_any_of(delims));
-        tonameList.push_back(array[0]); // first column is name.
-        int arraylen = array.size();
-        for(int i=1;i<arraylen;++i){
-          if(array[i].compare("1") == 0) {
-            tempRec.push_back(i-1); // Use i-1, since first column is name.
-          } // end of if
-        } // end of loop for i.
-        getFP.push_back(tempRec);
-        tempRec.clear();
-      } // end of while
-    } catch (std::ifstream::failure e) {
-      std::cerr<<"Exceptions open/read file "<<inputFile<<std::endl;
-      return 1;
-    } // end of catch
+    // input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    // try {
+    //   input.open(inputFile, std::ifstream::in);
+    //   if (input.peek() == std::ifstream::traits_type::eof()) {
+    //     std::cerr<<inputFile<<" is empty. "<<std::endl;
+    //     return 1;
+    //   } // end of if
+    //   while(std::getline(input,line)) {
+    //     boost::algorithm::split(array,line,boost::is_any_of(delims));
+    //     tonameList.push_back(array[0]); // first column is name.
+    //     int arraylen = array.size();
+    //     for(int i=1;i<arraylen;++i){
+    //       if(array[i].compare("1") == 0) {
+    //         tempRec.push_back(i-1); // Use i-1, since first column is name.
+    //       } // end of if
+    //     } // end of loop for i.
+    //     getFP.push_back(tempRec);
+    //     tempRec.clear();
+    //   } // end of while
+    // } catch (std::ifstream::failure e) {
+    //   std::cerr<<"Exceptions open/read file "<<inputFile<<std::endl;
+    //   return 1;
+    // } // end of catch
     return 0;
   } // end of function
 
@@ -363,39 +375,58 @@ namespace gift{
   int Matrix2FingerprintsByColumn(const std::string inputFile,
                                   IntArrayList& getFP, int rowNum,
                                   std::string delims){
-    std::ifstream input;
+    std::ifstream input (inputFile, std::ios::in);
     std::string line;
     std::vector<std::string> array;
     int linenum = 0;
-    input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-    try {
-      input.open(inputFile,std::ifstream::in);
-      if(input.peek() == std::ifstream::traits_type::eof()){
-        std::cerr<< inputFile << " is empty. "<<std::endl;
-        return 1;
-      } // end of if
+    // init getFP first.
+    std::cout<<"Init getFP IntArrayList..."<<std::endl;
+    std::vector<int> tmpArray;
+    for(int i=0;i<rowNum;++i) {
+      getFP.push_back(tmpArray);
+    } // end of loop
+    std::cout<<"End of Init getFP IntArrayList."<<std::endl;
+    while (std::getline(input,line)){
+      boost::algorithm::split(array,line,boost::is_any_of(delims));
+      int arraylen = array.size();
+      for (int i=0;i<arraylen;++i){
+        if (array[i].compare("1") == 0){
+          getFP[i].push_back(linenum);
+        } // end of if
+      } // end of loop for i
+      linenum += 1;
+      array.clear();
+    } // end of while for file read.
 
-      // init getFP first.
-      for(int i=0;i<rowNum;++i) {
-        std::vector<int> tmpArray;
-        getFP.push_back(tmpArray);
-      } // end of loop
+    // input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    // try {
+    //   input.open(inputFile,std::ifstream::in);
+    //   if(input.peek() == std::ifstream::traits_type::eof()){
+    //     std::cerr<< inputFile << " is empty. "<<std::endl;
+    //     return 1;
+    //   } // end of if
 
-      // read file.
-      while (std::getline(input,line)){
-        boost::algorithm::split(array,line,boost::is_any_of(delims));
-        int arraylen = array.size();
-        for (int i=0;i<arraylen;++i){
-          if (array[i].compare("1") == 0){
-            getFP[i].push_back(linenum);
-          } // end of if
-        } // end of loop for i
-        linenum += 1;
-      } // end of while for file read.
-    } catch (std::ifstream::failure e) {
-      std::cerr<<"Exceptions open/read file "<<inputFile<<std::endl;
-      return 1;
-    } // end of catch
+    //   // init getFP first.
+    //   for(int i=0;i<rowNum;++i) {
+    //     std::vector<int> tmpArray;
+    //     getFP.push_back(tmpArray);
+    //   } // end of loop
+
+    //   // read file.
+    //   while (std::getline(input,line)){
+    //     boost::algorithm::split(array,line,boost::is_any_of(delims));
+    //     int arraylen = array.size();
+    //     for (int i=0;i<arraylen;++i){
+    //       if (array[i].compare("1") == 0){
+    //         getFP[i].push_back(linenum);
+    //       } // end of if
+    //     } // end of loop for i
+    //     linenum += 1;
+    //   } // end of while for file read.
+    // } catch (std::ifstream::failure e) {
+    //   std::cerr<<"Exceptions open/read file "<<inputFile<<std::endl;
+    //   return 1;
+    // } // end of catch
     return 0;
   } // end of function
 

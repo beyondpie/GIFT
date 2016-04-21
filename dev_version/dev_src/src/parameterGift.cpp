@@ -114,11 +114,22 @@ namespace gift{
     InitVarDrugSub2ProteinSub();
     // init sub2drugList and domain2proteinList.
     IntList tmpIntArray;
+    std::cout<<"Initialize the sub2drugList..."<<std::endl;
     for(int i=0;i<subNum;++i){sub2drugList.push_back(tmpIntArray);}
+    std::cout<<"Finish the init of sub2drugList."<<std::endl;
+
+    std::cout<<"Initialize the domain2proteinList..."<<std::endl;
     for(int i=0;i<domainNum;++i){domain2proteinList.push_back(tmpIntArray);}
+    std::cout<<"Finish the init of domain2proteinList."<<std::endl;
+
+    std::cout<<"Initialize the sub2drugList..."<<std::endl;
     Matrix2FingerprintsByColumn(drug2subFileName,sub2drugList,subNum,inputDelims);
+    std::cout<<"Finish the init of sub2drugList."<<std::endl;
+
+    std::cout<<"Initialize the domain2proteinList..."<<std::endl;
     Matrix2FingerprintsByColumn(protein2subFileName,domain2proteinList,
                                 domainNum, inputDelims);
+    std::cout<<"Finish the init of domain2proteinList."<<std::endl;
 
     // load NameList.
     InitDrugName2Index();
@@ -166,7 +177,7 @@ namespace gift{
   int parameters::InitDrugSub2ProteinSub(){
     // This function must be run after class parameter initionlization.
     std::cout<< "Initialize the drugSub2proteinSub Matrix." << std::endl;
-    if (task.compare("predict")) {
+    if (!task.compare("predict")) {
       readMatrix(drugSub2proteinSubFileName,drugSub2proteinSubMatrix,
                  inputDelims);
       std::cout<< "Finish: read from file."<<std::endl;
@@ -200,22 +211,25 @@ namespace gift{
   } // end of function
 
   int parameters::InitVarDrugSub2ProteinSub(){
-    if (task.compare("predict")) {
+    if (!task.compare("predict")) {
       std::cout<< "Job is to predict, skip init variance matrix." << std::endl;
     } else {
-      std::cout<<"Initialize the variance matrix for drugSub2ProteinSub."
+      std::cout<<"Initialize the variance matrix for drugSub2ProteinSub..."
                <<std::endl;
-      std::vector<double> tmpArray (domainNum,0.0);
+      std::vector<double> tmpArray (domainNum,1.01);
       for(int i=0;i<subNum;++i){
         vardrugSub2proteinSubMatrix.push_back(tmpArray);
       } // end of loop for i.
     } // end of if else
+    std::cout<<"Finish init of variance matrix for drugSub2ProteinSub." <<std::endl;
     return 0;
   } // end of function
 
   int parameters::InitDrugName2Index() {
+    std::cout<<"Initialize DrugName2Index Hash..."<<std::endl;
     readNameListFromFile(drugNameListFile,drugNameList);
     readName2IndexHash(drugNameList,drugName2Index);
+    std::cout<<"Finish DrugName2Index Hash."<<std::endl;
     return 0;
   } // end of function
 
