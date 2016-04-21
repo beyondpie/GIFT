@@ -8,7 +8,7 @@
 #include<boost/range/adaptor/transformed.hpp>
 
 #include "gift.hpp"
-
+#include "parameterGift.hpp"
 namespace gift{
 
   int Matrix2Fingerpints(const std::string inputFile, IntArrayList & getFp,

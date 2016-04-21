@@ -1,13 +1,6 @@
 // Implementation of class EM in namespace gift.
 
-// Libraries
-#include<cmath> // for log, exp, and pow.
-#include<ctime> // for c time style.
-#include<chrono> // for record time
-#include<boost/algorithm/string.hpp>
-#include<boost/algorithm/string/join.hpp>
-#include<boost/range/adaptor/transformed.hpp>
-#include "gift.hpp"
+#include "EMGift.hpp"
 
 namespace gift {
   double EM::iterdrugSub2ProteinSub(int drugIndex,int proteinIndex){
