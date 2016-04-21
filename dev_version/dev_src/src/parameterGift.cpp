@@ -122,15 +122,6 @@ namespace gift{
     for(int i=0;i<domainNum;++i){domain2proteinList.push_back(tmpIntArray);}
     std::cout<<"Finish the init of domain2proteinList."<<std::endl;
 
-    std::cout<<"Initialize the sub2drugList..."<<std::endl;
-    Matrix2FingerprintsByColumn(drug2subFileName,sub2drugList,subNum,inputDelims);
-    std::cout<<"Finish the init of sub2drugList."<<std::endl;
-
-    std::cout<<"Initialize the domain2proteinList..."<<std::endl;
-    Matrix2FingerprintsByColumn(protein2subFileName,domain2proteinList,
-                                domainNum, inputDelims);
-    std::cout<<"Finish the init of domain2proteinList."<<std::endl;
-
     // load NameList.
     InitDrugName2Index();
     InitProteinName2Index();
@@ -149,6 +140,15 @@ namespace gift{
     rowColFile(protein2subFileName,tmp,inputDelims);
     domainNum = tmp.colNum;
     proteinNum = tmp.rowNum;
+
+    std::cout<<"Initialize the sub2drugList..."<<std::endl;
+    Matrix2FingerprintsByColumn(drug2subFileName,sub2drugList,subNum,inputDelims);
+    std::cout<<"Finish the init of sub2drugList."<<std::endl;
+
+    std::cout<<"Initialize the domain2proteinList..."<<std::endl;
+    Matrix2FingerprintsByColumn(protein2subFileName,domain2proteinList,
+                                domainNum, inputDelims);
+    std::cout<<"Finish the init of domain2proteinList."<<std::endl;
 
     // print the setting results.
     std::cout<<"parameters have been set."<<std::endl;

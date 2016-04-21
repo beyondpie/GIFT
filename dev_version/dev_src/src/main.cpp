@@ -65,11 +65,11 @@ int main(int argc, char ** argv){
   try{
     gift::parameters getParameters(configureFileName);
     gift::EM EMgiftor(getParameters);
-    if (getParameters.task.compare("predict")){
+    if (getParameters.task.compare("predict") == 0 ) {
       // check is it enough?
       EMgiftor.predictEM();
       gift::outRecord(getParameters,EMgiftor);
-    } else if (getParameters.task.compare("train")){
+    } else if (getParameters.task.compare("train") == 0){
       // check is it enough?
       EMgiftor.trainEM();
       EMgiftor.varEM();

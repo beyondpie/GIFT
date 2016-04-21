@@ -386,6 +386,7 @@ namespace gift{
       getFP.push_back(tmpArray);
     } // end of loop
     std::cout<<"End of Init getFP IntArrayList."<<std::endl;
+
     while (std::getline(input,line)){
       boost::algorithm::split(array,line,boost::is_any_of(delims));
       int arraylen = array.size();
