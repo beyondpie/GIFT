@@ -7,11 +7,11 @@
 # set executable gift
 gift=/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/build/bin/gift
 # test help func
-${gift} -h
-${gift} -help
+# ${gift} -h
+# ${gift} --help
 # test gift version
-${gift} -version
-${gift} -v
+# ${gift} --version
+# ${gift} -v
 
 # test gift train
 ${gift} --configure test_init-train.gift

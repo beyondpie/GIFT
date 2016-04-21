@@ -21,7 +21,12 @@ private:
 testParameter::testParameter(std::string inputFile){
   std::cout<<"Now construct an object of testParameter..."<<std::endl;
   std::ifstream input;
-  input.open(inputFile,std::ifstream::in);
+  input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+  try {
+    input.open(inputFile, std::ifstream::in);
+  } catch(std::ifstream::failure e){
+    std::cerr<<"Oppps: " <<inputFile<<std::endl;
+  }
   namespace po = boost::program_options;
   po::options_description desc("testParameter options");
   desc.add_options()

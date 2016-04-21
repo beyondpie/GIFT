@@ -13,63 +13,85 @@ namespace gift{
 
   int Matrix2Fingerpints(const std::string inputFile, IntArrayList & getFp,
                          std::string delims){
-    std::ifstream input;
+    std::ifstream input (inputFile, std::ios::in);
     std::string line;
     std::vector<std::string> array;
     std::vector<int> tempRec;
+    while (std::getline(input,line)) {
+      boost::algorithm::split(array,line,boost::is_any_of(delims));
+      int arraylen = array.size();
+      for (int i=0;i<arraylen;++i) {
+        if (array[i].compare("1") == 0) {
+          tempRec.push_back(i);
+        }// end of if
+      } // end of for
+      getFp.push_back(tempRec);
+      tempRec.clear();
+    } // end of while
 
-    input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-    try {
-      input.open(inputFile, std::ifstream::in);
-      if (input.peek() == std::ifstream::traits_type::eof()){
-        std::cerr <<inputFile <<" is empty. " <<std::endl;
-        return 1;
-      } // end of if
-      while (std::getline(input,line)) {
-        boost::algorithm::split(array,line,boost::is_any_of(delims));
-        int arraylen = array.size();
-        for (int i=0;i<arraylen;++i) {
-          if (array[i].compare("1") == 0) {
-            tempRec.push_back(i);
-          }// end of if
-        } // end of for
-        getFp.push_back(tempRec);
-        tempRec.clear();
-      } // end of while
-    } catch (std::ifstream::failure e) {
-      std::cerr <<"Exceptions open/read file "<<inputFile<<std::endl;
-      return 1;
-    } // end of catch
+    // input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    // try {
+    //   input.open(inputFile, std::ifstream::in);
+    //   if (input.peek() == std::ifstream::traits_type::eof()){
+    //     std::cerr <<inputFile <<" is empty. " <<std::endl;
+    //     return 1;
+    //   } // end of if
+    //   while (std::getline(input,line)) {
+    //     boost::algorithm::split(array,line,boost::is_any_of(delims));
+    //     int arraylen = array.size();
+    //     for (int i=0;i<arraylen;++i) {
+    //       if (array[i].compare("1") == 0) {
+    //         tempRec.push_back(i);
+    //       }// end of if
+    //     } // end of for
+    //     getFp.push_back(tempRec);
+    //     tempRec.clear();
+    //   } // end of while
+    // } catch (std::ifstream::failure e) {
+    //   std::cerr <<"Exceptions open/read file "<<inputFile<<std::endl;
+    //   return 1;
+    // } // end of catch
+
     return 0;
   } // end of function.
 
   int readMatrix(const std::string inputFile, numericMatrix& getMat,
                  std::string delims){
-    std::ifstream input;
+    std::ifstream input (inputFile, std::ios::in);
     std::string line;
     std::vector<std::string> array;
     std::vector<double> tempRec;
+    while(std::getline(input,line)){
+      boost::algorithm::split(array,line,boost::is_any_of(delims));
+      int arraylen = array.size();
+      for(int i=0;i<arraylen;++i){
+        std::string::size_type* idx = 0;
+        tempRec.push_back(std::stod(array[i], idx));
+      } // end of for
+      getMat.push_back(tempRec);
+      tempRec.clear();
+    } // end of while
 
-    input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-    try {
-      input.open(inputFile, std::ifstream::in);
-      if (input.peek() == std::ifstream::traits_type::eof()){
-        std::cerr <<inputFile <<" is empty. " <<std::endl;
-      } // end of if
-      while(std::getline(input,line)){
-        boost::algorithm::split(array,line,boost::is_any_of(delims));
-        int arraylen = array.size();
-        for(int i=0;i<arraylen;++i){
-          std::string::size_type* idx = 0;
-          tempRec.push_back(std::stod(array[i], idx));
-        } // end of for
-        getMat.push_back(tempRec);
-        tempRec.clear();
-      } // end of while
-    } catch (std::ifstream::failure e) {
-      std::cerr <<"Exceptions open/read file "<<inputFile<<std::endl;
-      return 1;
-    } // end of catch
+    // input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    // try {
+    //   input.open(inputFile, std::ifstream::in);
+    //   if (input.peek() == std::ifstream::traits_type::eof()){
+    //     std::cerr <<inputFile <<" is empty. " <<std::endl;
+    //   } // end of if
+    //   while(std::getline(input,line)){
+    //     boost::algorithm::split(array,line,boost::is_any_of(delims));
+    //     int arraylen = array.size();
+    //     for(int i=0;i<arraylen;++i){
+    //       std::string::size_type* idx = 0;
+    //       tempRec.push_back(std::stod(array[i], idx));
+    //     } // end of for
+    //     getMat.push_back(tempRec);
+    //     tempRec.clear();
+    //   } // end of while
+    // } catch (std::ifstream::failure e) {
+    //   std::cerr <<"Exceptions open/read file "<<inputFile<<std::endl;
+    //   return 1;
+    // } // end of catch
     return 0;
   }// end of function.
 

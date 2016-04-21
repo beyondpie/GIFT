@@ -90,18 +90,21 @@ namespace gift{
        po::value<std::string>(&outVarDrugSub2proteinSubFileName),
        "file name for output variance of drugSub2proteinSub");
     po::variables_map vm;
-    std::ifstream input;
-    input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-    try {
-      input.open(configFile, std::ifstream::in);
-      if (input.peek() == std::ifstream::traits_type::eof()) {
-        std::cerr<<configFile<<" is empty." << std::endl;
-      } // end of if.
-      po::store(po::parse_config_file(input, desc), vm);
-      po::notify(vm);
-    } catch (std::ifstream::failure e) {
-      std::cerr <<"Exceptions open/read file "<<configFile<<std::endl;
-    } // end of try catch
+    std::ifstream input (configFile, std::ios::in);
+    po::store(po::parse_config_file(input, desc), vm);
+    po::notify(vm);
+    // input.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+    // try {
+    //   input.open(configFile, std::ifstream::in);
+    //   if (input.peek() == std::ifstream::traits_type::eof()) {
+    //     std::cerr<<configFile<<" is empty." << std::endl;
+    //   } // end of if.
+    //   po::store(po::parse_config_file(input, desc), vm);
+    //   po::notify(vm);
+    // } catch (std::ifstream::failure e) {
+    //   std::cerr <<"Exceptions open/read file "<<configFile<<std::endl;
+    // } // end of try catch
+
 
     // load global data for gift.
     Matrix2Fingerpints(drug2proteinFileName,drug2proteinList,inputDelims);
