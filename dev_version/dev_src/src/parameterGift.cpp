@@ -151,26 +151,28 @@ namespace gift{
 
     // load global data for gift.
     Matrix2Fingerpints(drug2proteinFileName,drug2proteinList,inputDelims);
-    printIntArrayList(drug2proteinList); // for test
+    //printIntArrayList(drug2proteinList); // for test
     Matrix2Fingerpints(protein2subFileName,protein2domainList,inputDelims);
-    printIntArrayList(protein2domainList); // for test
+    //printIntArrayList(protein2domainList); // for test
     Matrix2Fingerpints(drug2subFileName,drug2subList,inputDelims);
-    printIntArrayList(drug2subList); // for test
+    //printIntArrayList(drug2subList); // for test
 
     IntList tmpIntArray;
     std::cout<<"Initialize the sub2drugList..."<<std::endl;
-    for(int i=0;i<subNum;++i){sub2drugList.push_back(tmpIntArray);}
     Matrix2FingerprintsByColumn(drug2subFileName,sub2drugList,subNum,inputDelims);
     std::cout<<"Finish the init of sub2drugList."<<std::endl;
+    printIntArrayList(sub2drugList); // for test
 
     std::cout<<"Initialize the domain2proteinList..."<<std::endl;
-    for(int i=0;i<domainNum;++i){domain2proteinList.push_back(tmpIntArray);}
     Matrix2FingerprintsByColumn(protein2subFileName,domain2proteinList,
                                 domainNum, inputDelims);
     std::cout<<"Finish the init of domain2proteinList."<<std::endl;
+    printIntArrayList(domain2proteinList); // for test
 
     InitDrugSub2ProteinSub();
+    printMatrix(drugSub2proteinSubMatrix); // for test
     InitVarDrugSub2ProteinSub();
+    //printMatrix(vardrugSub2proteinSubMatrix); // for test
 
     InitObservedDrug2ProteinMatrix();
     // load NameList.
@@ -215,8 +217,8 @@ namespace gift{
       std::cout<< "Finish: read from file."<<std::endl;
     } else {
       std::vector<double> assoTmp; // temp array based on the assocaiton method.
-      int N = 0;
-      int subNumTmp = 0;
+      int N;
+      int subNumTmp;
       int I = 0;
       std::vector<int>::iterator it;
       for (int i=0;i<subNum;++i){
@@ -227,11 +229,12 @@ namespace gift{
             for (const auto protein : domain2proteinList[j]){
               it = std::find(drug2proteinList[drug].begin(),
                              drug2proteinList[drug].end(), protein);
-              I += it==drug2proteinList[drug].end() ? 0 : 1;
+              I += (it==drug2proteinList[drug].end() ? 0 : 1);
             } // end of loop protein
           } // end of loop drug
           // revise association method with Emiprical Bayes.
           assoTmp.push_back((I+alphaEB)/(alphaEB+betaEB+N));
+          I = 0;
         } // end of loop j
         drugSub2proteinSubMatrix.push_back(assoTmp);
         assoTmp.clear();

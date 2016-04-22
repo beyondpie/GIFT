@@ -82,8 +82,10 @@ namespace gift {
   // printIntArrayList is used for testing gift.
   int printIntArrayList(const IntArrayList&);
 
-  int readMatrix(const std::string, numericMatrix&, std::string delims="\t,");
+  // printMatrix is used for testing gift.
+  int printMatrix(const numericMatrix&);
 
+  int readMatrix(const std::string, numericMatrix&, std::string delims="\t,");
   int readNameListFromFile(const std::string, nameList&);
   int readNameMatrixFromFile(const std::string, nameList&, IntArrayList&,
                              std::string delims="\t,");

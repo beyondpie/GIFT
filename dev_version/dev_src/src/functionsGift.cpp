@@ -175,6 +175,18 @@ namespace gift{
     return 0;
   } // end of function.
 
+  int printMatrix(const numericMatrix& fromMatrix){
+    int rowNum = fromMatrix.size();
+    int colNum = fromMatrix[0].size();
+    for(int i=0;i<rowNum;++i){
+      for(int j=0;j<colNum;++j){
+        std::cout<<fromMatrix[i][j]<<",";
+      } // end of loop for j
+      std::cout<<std::endl;
+    } // end of loop for i
+    return 0;
+  } // end of function
+
   int readNameListFromFile(const std::string inputFile, nameList& tonameList){
     // each line in the file represents one name.
     // line should end with "\n", not "[\r\t]\n"
