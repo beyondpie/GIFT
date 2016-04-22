@@ -154,6 +154,7 @@ namespace gift{
            it != resultMat.end(); ++it) {
         output << join(*it | transformed(static_cast<std::string(*)(double)>
                                          (std::to_string) ), delims);
+        output<<std::endl;
       }// end of for
       output.close();
     } else {
@@ -162,6 +163,7 @@ namespace gift{
     } // end of if else
     return 0;
   }// end of function
+
   int printIntArrayList(const IntArrayList& fromIntArrayList){
     int lineNum = fromIntArrayList.size();
     for(int i=0;i<lineNum;++i){

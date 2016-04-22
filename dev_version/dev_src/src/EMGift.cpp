@@ -72,7 +72,7 @@ namespace gift {
         for(auto const &m : (*sub2drug)[i]){
           for(auto const &n : (*sub2protein)[j]){
             double observed = (*observedDrug2Protein)[m][n];
-            tmp += observed>0 ? (1-fn)/observed : fn/(1-observed);
+            tmp += (observed>0 ? (1-fn)/observed : fn/(1-observed));
           } // end of loop n
         } // end of loop m
         int tmpNum = (*sub2drug)[i].size() + (*sub2protein)[j].size();
@@ -129,6 +129,12 @@ namespace gift {
       if (loglikelyRecord || i<=recLogLeastNum || i >= iterNum-recLogLeastNum) {
         double tmplog = recLoglikely();
         std::cout<<"Current loglikelyhood is " << tmplog << std::endl;
+        // for test
+        std::cout<<"Current observedDrug2Protein Matrix is: "<<std::endl;
+        printMatrix(*observedDrug2Protein);
+        std::cout<<"Current drugSub2proteinSub Matrix is: "<<std::endl;
+        printMatrix(*drugSub2proteinSub);
+
         setLoglikely(tmplog);
       } // end of if
     } // end of loop i
@@ -548,12 +554,14 @@ namespace gift {
   } // end of functions.
 
   int EM::outTrainResult(){
-    writeMatrix(outDrugSub2ProteinSubFileName, *drugSub2proteinSub);
+    writeMatrix(outDrugSub2ProteinSubFileName, *drugSub2proteinSub,
+                outputDelims);
     return 0;
   } // end of function
 
   int EM::outTrainVariance(){
-    writeMatrix(outVarDrugSub2proteinSubFileName, *vardrugSub2proteinSub);
+    writeMatrix(outVarDrugSub2proteinSubFileName, *vardrugSub2proteinSub,
+                outputDelims);
     return 0;
   } // end of function
 
