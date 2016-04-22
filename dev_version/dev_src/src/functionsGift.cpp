@@ -8,7 +8,7 @@
 #include<boost/range/adaptor/transformed.hpp>
 
 #include "gift.hpp"
-#include "parameterGift.hpp"
+
 namespace gift{
 
   int Matrix2Fingerpints(const std::string inputFile, IntArrayList & getFp,
@@ -99,7 +99,7 @@ namespace gift{
                  std::string delims){
     std::ifstream input (inputFile, std::ios::in);
     std::string line;
-    int count = 1;
+    int count = 0;
     std::vector<std::string> array;
 
     std::getline(input,line);

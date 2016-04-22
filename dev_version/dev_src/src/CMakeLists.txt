@@ -7,10 +7,10 @@ IF(Boost_FOUND)
   MESSAGE(STATUS "gift source dir is " ${PROJECT_SOURCE_DIR})
   ADD_EXECUTABLE(gift
     gift.hpp
-    globalvar_gift.hpp
-    EMGift.hpp
+#    globalvar_gift.hpp
+#    EMGift.hpp
     EMGift.cpp
-    parameterGift.hpp
+#    parameterGift.hpp
     parameterGift.cpp
     functionsGift.cpp
     main.cpp)

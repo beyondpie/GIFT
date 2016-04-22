@@ -1,6 +1,12 @@
 // Implementation of class EM in namespace gift.
+#include<cmath> // for log, exp, and pow.
+#include<ctime> // for c time style.
+#include<chrono> // for record time.
+#include<boost/algorithm/string.hpp>
+#include<boost/algorithm/string/join.hpp>
+#include<boost/range/adaptor/transformed.hpp>
 
-#include "EMGift.hpp"
+#include "gift.hpp"
 
 namespace gift {
   double EM::iterdrugSub2ProteinSub(int drugIndex,int proteinIndex){
@@ -24,7 +30,8 @@ namespace gift {
   } // end of function
 
   int EM::EStep() {
-    return functionThread(&EM::EStepThread,thread,this);
+    // return functionThread(&EM::EStepThread,thread,this);
+    return functionThread(&EM::EStepThread, thread, this);
   } // end of function
 
   void EM::MStepThread(int threadNth){

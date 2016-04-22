@@ -9,9 +9,8 @@
 #include<iostream>
 #include<boost/program_options.hpp> // read the parameters
 #include "gift.hpp"
-#include "parameterGift.hpp"
-#include "EMGift.hpp"
-#include "globalvar_gift.hpp"
+
+
 
 namespace{
   const int SUCCESS = 0;

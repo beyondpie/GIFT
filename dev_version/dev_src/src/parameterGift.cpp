@@ -1,12 +1,41 @@
 // Implementation of class parameter in namespace gift.
 
 // Libraries
-#include "parameterGift.hpp"
+#include<boost/program_options.hpp>
+#include<boost/any.hpp>
+#include "gift.hpp"
 
 namespace gift{
+  // gift global variable.
+  IntArrayList drug2proteinList;
+  IntArrayList drug2subList;
+  IntArrayList sub2drugList;
+  IntArrayList protein2domainList;
+  IntArrayList domain2proteinList;
+  numericMatrix drugSub2proteinSubMatrix;
+  numericMatrix observedDrug2ProteinMatrix;
+  numericMatrix vardrugSub2proteinSubMatrix;
+  std::vector<double> loglikelyArray;
+
+  name2IndexHash drugName2Index;
+  name2IndexHash proteinName2Index;
+  nameList drugNameList;
+  nameList proteinNameList;
+  nameList drugSubNameList;
+  nameList proteinSubNameList;
+
+  nameList predictDrugNameList;
+  nameList predictProteinNameList;
+
+  nameList predictDrugNameList_WithSubs;
+  nameList predictProteinNameList_WithSubs;
+  IntArrayList predictDrug2SubList;
+  IntArrayList predictProtein2SubList;
+
   inline const char* BoolToString (bool b) {
     return b ? "true" : "false";
   } // end of function BoolToString
+
   parameters::parameters(const std::string configFile) throw(std::string) {
     std::cout<<"Now set parameters with configFile."<<std::endl;
     // use boost program_options to read configs from a given file.
@@ -111,26 +140,34 @@ namespace gift{
     rowColFile(drug2subFileName,tmp,inputDelims);
     drugNum = tmp.rowNum;
     subNum = tmp.colNum;
+    std::cout<<"Drug Number is "<<drugNum<<std::endl;
+    std::cout<<"DrugSub Number is "<<subNum<<std::endl;
     rowColFile(protein2subFileName,tmp,inputDelims);
     domainNum = tmp.colNum;
     proteinNum = tmp.rowNum;
+    std::cout<<"Protein Number is "<<proteinNum<<std::endl;
+    std::cout<<"ProteinSub Number is "<<domainNum<<std::endl;
 
 
     // load global data for gift.
     Matrix2Fingerpints(drug2proteinFileName,drug2proteinList,inputDelims);
     Matrix2Fingerpints(protein2subFileName,protein2domainList,inputDelims);
     Matrix2Fingerpints(drug2subFileName,drug2subList,inputDelims);
-    InitDrugSub2ProteinSub();
-    InitVarDrugSub2ProteinSub();
-    // init sub2drugList and domain2proteinList.
+
     IntList tmpIntArray;
     std::cout<<"Initialize the sub2drugList..."<<std::endl;
     for(int i=0;i<subNum;++i){sub2drugList.push_back(tmpIntArray);}
+    Matrix2FingerprintsByColumn(drug2subFileName,sub2drugList,subNum,inputDelims);
     std::cout<<"Finish the init of sub2drugList."<<std::endl;
 
     std::cout<<"Initialize the domain2proteinList..."<<std::endl;
     for(int i=0;i<domainNum;++i){domain2proteinList.push_back(tmpIntArray);}
+    Matrix2FingerprintsByColumn(protein2subFileName,domain2proteinList,
+                                domainNum, inputDelims);
     std::cout<<"Finish the init of domain2proteinList."<<std::endl;
+
+    InitDrugSub2ProteinSub();
+    InitVarDrugSub2ProteinSub();
 
     // load NameList.
     InitDrugName2Index();
@@ -140,15 +177,6 @@ namespace gift{
 
     // load predicted name list and possible subs if task is prediction.
     InitPredictParameters(); // throw std::string.
-
-    std::cout<<"Initialize the sub2drugList..."<<std::endl;
-    Matrix2FingerprintsByColumn(drug2subFileName,sub2drugList,subNum,inputDelims);
-    std::cout<<"Finish the init of sub2drugList."<<std::endl;
-
-    std::cout<<"Initialize the domain2proteinList..."<<std::endl;
-    Matrix2FingerprintsByColumn(protein2subFileName,domain2proteinList,
-                                domainNum, inputDelims);
-    std::cout<<"Finish the init of domain2proteinList."<<std::endl;
 
     // print the setting results.
     std::cout<<"parameters have been set."<<std::endl;
@@ -177,7 +205,7 @@ namespace gift{
   int parameters::InitDrugSub2ProteinSub(){
     // This function must be run after class parameter initionlization.
     std::cout<< "Initialize the drugSub2proteinSub Matrix." << std::endl;
-    if (!task.compare("predict")) {
+    if (task.compare("predict") == 0 ) {
       readMatrix(drugSub2proteinSubFileName,drugSub2proteinSubMatrix,
                  inputDelims);
       std::cout<< "Finish: read from file."<<std::endl;
@@ -202,7 +230,7 @@ namespace gift{
           assoTmp.push_back((I+alphaEB)/(alphaEB+betaEB+N));
         } // end of loop j
         drugSub2proteinSubMatrix.push_back(assoTmp);
-        assoTmp.empty();
+        assoTmp.clear();
       } // end of loop i
       std::cout<<"Finish: initialize with associatiom method and emprical Bayes."
                <<std::endl;
@@ -211,7 +239,7 @@ namespace gift{
   } // end of function
 
   int parameters::InitVarDrugSub2ProteinSub(){
-    if (!task.compare("predict")) {
+    if (task.compare("predict") == 0 ) {
       std::cout<< "Job is to predict, skip init variance matrix." << std::endl;
     } else {
       std::cout<<"Initialize the variance matrix for drugSub2ProteinSub..."
