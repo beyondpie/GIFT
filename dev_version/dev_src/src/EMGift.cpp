@@ -29,9 +29,19 @@ namespace gift {
     //return 0;
   } // end of function
 
+  int EM::EStep(int){
+    for(int i=0;i<drugNum;i+=1){
+      for(int j=0;j<proteinNum;++j){
+        double tmp = iterdrugSub2ProteinSub(i,j);
+        (*observedDrug2Protein)[i][j] = (1-fn)*(1-tmp) + fp*tmp;
+      } // end of for loop j
+    } // end of for loop i
+    return 0;
+  } // end of function
+
   int EM::EStep() {
     // return functionThread(&EM::EStepThread,thread,this);
-    return functionThread(&EM::EStepThread, thread, this);
+    return functionThread(&EM::EStepThread, thread);
   } // end of function
 
   void EM::MStepThread(int threadNth){
@@ -50,9 +60,26 @@ namespace gift {
       } // end of loop j
     } // end of for loop i
   } // end of function
+  int EM::MStep(int){
+    for(int i=0;i<subNum;i+=1){
+      for(int j=0;j<domainNum;++j){
+        double tmp = 0;
+        for(auto const &m : (*sub2drug)[i]){
+          for(auto const &n : (*sub2protein)[j]){
+            double observed = (*observedDrug2Protein)[m][n];
+            tmp += observed>0 ? (1-fn)/observed : fn/(1-observed);
+          } // end of loop n
+        } // end of loop m
+        int tmpNum = (*sub2drug)[i].size() + (*sub2protein)[j].size();
+        tmp = log((*drugSub2proteinSub)[i][j]) + log(tmp/tmpNum);
+        (*drugSub2proteinSub)[i][j] = exp(tmp);
+      } // end of loop j
+    } // end of for loop i
+    return 0;
+  } // end of function
 
   int EM::MStep() {
-    return functionThread(&EM::MStepThread,thread,this);
+    return functionThread(&EM::MStepThread,thread);
   } // end of function
 
   double EM::recLoglikely() {
@@ -77,7 +104,8 @@ namespace gift {
       std::cout<<"Current iteration number is " << i << std::endl;
       std::chrono::steady_clock::time_point tBegin =
         std::chrono::steady_clock::now();
-      EStep();
+      //EStep();
+      EStep(0); // for testEM
       std::chrono::steady_clock::time_point tEnd =
         std::chrono::steady_clock::now();
       std::cout<<"Time difference (s): "
@@ -85,7 +113,8 @@ namespace gift {
                <<std::endl;
 
       tBegin = std::chrono::steady_clock::now();
-      MStep();
+      //MStep();
+      MStep(0); // for testEM
       tEnd = std::chrono::steady_clock::now();
       std::cout<<"Time difference (s): "
        <<std::chrono::duration_cast<std::chrono::seconds>(tBegin-tEnd).count()

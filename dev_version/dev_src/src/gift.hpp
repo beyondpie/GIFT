@@ -93,17 +93,6 @@ namespace gift {
   int outRecord(parameters&, EM&);
 
   // put template or inline function in one file.
-  // int functionThread(void (EM::*function) (int), int thread, EM * point){
-  //   boost::thread *y;
-  //   boost::thread_group * x = new boost::thread_group;
-  //   for(int i=0;i<thread;++i){
-  //     y = new boost::thread(point->function,point,i);
-  //     x->add_thread(y);
-  //   } // end of loop for i
-  //   x->join_all();
-  //   delete x;
-  //   return 0;
-  // } // end of function.
   template <typename func>
   int functionThread(func useFun,int thread, EM * point) {
     boost::thread * y;
@@ -256,10 +245,25 @@ namespace gift {
     //    int initEM();
     // Core of EM.
     double iterdrugSub2ProteinSub(int drugIndex, int proteinIndex);
+
+    int functionThread(void (EM::*function) (int), int thread){
+    boost::thread *y;
+    boost::thread_group * x = new boost::thread_group;
+    for(int i=0;i<thread;++i){
+      y = new boost::thread(function,this,i);
+      x->add_thread(y);
+    } // end of loop for i
+    x->join_all();
+    delete x;
+    return 0;
+  } // end of function.
+
     void EStepThread(int threadNth);
     int EStep();
+    int EStep(int); // for test EM
     void MStepThread(int threadNth);
     int MStep();
+    int MStep(int); // for test EM.
     double recLoglikely();
     inline int setLoglikely(double logscore) {
       (*loglikely).push_back(logscore);
