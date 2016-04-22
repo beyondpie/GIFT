@@ -11,6 +11,10 @@
 namespace gift {
   double EM::iterdrugSub2ProteinSub(int drugIndex,int proteinIndex){
     double tmp = 0;
+    if ((*drug2sub)[drugIndex].empty() || (*protein2sub)[proteinIndex].empty()){
+      std::cerr<<"[ERROR]: some row of drug2sub or protein2sub is empty..."<<std::endl;
+      return 1;
+    } // end of if
     for(auto const & m : (*drug2sub)[drugIndex]){
       for(auto const & n : (*protein2sub)[proteinIndex]){
         tmp += log(1 - (*drugSub2proteinSub)[m][n]);
@@ -30,7 +34,7 @@ namespace gift {
   } // end of function
 
   int EM::EStep(int){
-    for(int i=0;i<drugNum;i+=1){
+    for(int i=0;i<drugNum;++i){
       for(int j=0;j<proteinNum;++j){
         double tmp = iterdrugSub2ProteinSub(i,j);
         (*observedDrug2Protein)[i][j] = (1-fn)*(1-tmp) + fp*tmp;
@@ -60,8 +64,9 @@ namespace gift {
       } // end of loop j
     } // end of for loop i
   } // end of function
+
   int EM::MStep(int){
-    for(int i=0;i<subNum;i+=1){
+    for(int i=0;i<subNum;++i){
       for(int j=0;j<domainNum;++j){
         double tmp = 0;
         for(auto const &m : (*sub2drug)[i]){
@@ -105,6 +110,7 @@ namespace gift {
       std::chrono::steady_clock::time_point tBegin =
         std::chrono::steady_clock::now();
       //EStep();
+      //std::cout<<"EStep Testing..."<<std::endl;
       EStep(0); // for testEM
       std::chrono::steady_clock::time_point tEnd =
         std::chrono::steady_clock::now();

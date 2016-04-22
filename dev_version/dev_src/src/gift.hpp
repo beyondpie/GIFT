@@ -78,6 +78,10 @@ namespace gift {
   int Matrix2FingerprintsByColumn(const std::string, IntArrayList&, int rowNum,
                                   std::string delims="\t,");
   int writeMatrix(const std::string, numericMatrix&, std::string delims="\t,");
+
+  // printIntArrayList is used for testing gift.
+  int printIntArrayList(const IntArrayList&);
+
   int readMatrix(const std::string, numericMatrix&, std::string delims="\t,");
 
   int readNameListFromFile(const std::string, nameList&);
@@ -140,6 +144,7 @@ namespace gift {
     int InitDrugSubNameList();
     int InitProteinSubNameList();
     int InitPredictParameters() throw(std::string);
+    int InitObservedDrug2ProteinMatrix();
 
     // DATA MEMBERS
     // input data file name

@@ -4,8 +4,17 @@
 # Songpeng Zu
 # 2016-03-04
 
+pwd
 # set executable gift
-gift=/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/build/bin/gift
+gift=/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/build/bin
+
+# Compile gift.
+gift_dir=/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src
+gift_dir_build=${gift_dir}/build
+cd ${gift_dir_build}
+cmake ..
+make
+
 # test help func
 # ${gift} -h
 # ${gift} --help
@@ -14,4 +23,6 @@ gift=/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/build/bi
 # ${gift} -v
 
 # test gift train
-${gift} --configure test_init-train.gift
+cd -
+pwd
+${gift}/gift --configure test_init-train.gift

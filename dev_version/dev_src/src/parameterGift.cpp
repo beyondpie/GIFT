@@ -151,8 +151,11 @@ namespace gift{
 
     // load global data for gift.
     Matrix2Fingerpints(drug2proteinFileName,drug2proteinList,inputDelims);
+    printIntArrayList(drug2proteinList); // for test
     Matrix2Fingerpints(protein2subFileName,protein2domainList,inputDelims);
+    printIntArrayList(protein2domainList); // for test
     Matrix2Fingerpints(drug2subFileName,drug2subList,inputDelims);
+    printIntArrayList(drug2subList); // for test
 
     IntList tmpIntArray;
     std::cout<<"Initialize the sub2drugList..."<<std::endl;
@@ -169,6 +172,7 @@ namespace gift{
     InitDrugSub2ProteinSub();
     InitVarDrugSub2ProteinSub();
 
+    InitObservedDrug2ProteinMatrix();
     // load NameList.
     InitDrugName2Index();
     InitProteinName2Index();
@@ -309,4 +313,18 @@ namespace gift{
     return 0;
   } // end of function
 
+  int parameters::InitObservedDrug2ProteinMatrix(){
+    std::cout<<"Init ObservedDrug2ProteinMatrix ..."<<std::endl;
+    if(task.compare("predict") == 0){
+      std::cout<<"Job is to predict, and ignore the inition of observedDrug2Protein."
+               <<std::endl;
+    } else{
+      std::vector<double> tmpArray(proteinNum,0.1);
+      for(int i=0;i<drugNum;++i){
+        observedDrug2ProteinMatrix.push_back(tmpArray);
+      } // end of loop for i.
+    } // end of if else
+    std::cout<<"Finish the init of observedDrug2ProteinMatrix."<<std::endl;
+    return 0;
+  } // end of function.
 } // end of namespace gift.h

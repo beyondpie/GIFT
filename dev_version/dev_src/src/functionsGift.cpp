@@ -162,6 +162,18 @@ namespace gift{
     } // end of if else
     return 0;
   }// end of function
+  int printIntArrayList(const IntArrayList& fromIntArrayList){
+    int lineNum = fromIntArrayList.size();
+    for(int i=0;i<lineNum;++i){
+      if (fromIntArrayList[i].empty()){
+        std::cerr<<"[ERROR]: Row "<<i<<" is empty for printing... "<<std::endl;
+        return 1;
+      } // end of if
+      for(const auto m : fromIntArrayList[i]){std::cout<<m<<",";}
+      std::cout<<std::endl;
+    } // end of loop for i
+    return 0;
+  } // end of function.
 
   int readNameListFromFile(const std::string inputFile, nameList& tonameList){
     // each line in the file represents one name.
