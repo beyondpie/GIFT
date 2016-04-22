@@ -72,7 +72,7 @@ namespace gift {
         for(auto const &m : (*sub2drug)[i]){
           for(auto const &n : (*sub2protein)[j]){
             double observed = (*observedDrug2Protein)[m][n];
-            tmp += (observed>0 ? (1-fn)/observed : fn/(1-observed));
+            tmp += ((*drug2protein)[m][n]>0 ? (1-fn)/observed : fn/(1-observed));
           } // end of loop n
         } // end of loop m
         int tmpNum = (*sub2drug)[i].size() + (*sub2protein)[j].size();

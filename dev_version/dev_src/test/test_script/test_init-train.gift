@@ -7,14 +7,14 @@ drugNameListFile = test_drugNameList
 drugSubNameListFile = test_drugSubNameListFile
 proteinNameListFile = test_proteinNameList
 proteinSubNameListFile = test_proteinSubNameListFile
-alphaEB = 0.05
-betaEB = 0.05
+alphaEB = 0.0015
+betaEB = 0.0015
 fn = 0.85
 fp = 0.0001
 threadNum = 1
-EMIterationNum = 50
+EMIterationNum = 10
 task = train
-loglikelyRecord = false
+loglikelyRecord = true
 inputDelims = ","
 
 # input file version information
