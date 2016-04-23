@@ -27,7 +27,7 @@ namespace gift {
     for(int i=threadNth;i<drugNum;i+=thread){
       for(int j=0;j<proteinNum;++j){
         double tmp = iterdrugSub2ProteinSub(i,j);
-        (*observedDrug2Protein)[i][j] = (1-fn)*(1-tmp) + fp*tmp;
+        (*observedDrug2Protein).at(i).at(j) = (1-fn)*(1-tmp) + fp*tmp;
       } // end of for loop j
     } // end of for loop i
     //return 0;
@@ -37,7 +37,7 @@ namespace gift {
     for(int i=0;i<drugNum;++i){
       for(int j=0;j<proteinNum;++j){
         double tmp = iterdrugSub2ProteinSub(i,j);
-        (*observedDrug2Protein)[i][j] = (1-fn)*(1-tmp) + fp*tmp;
+        (*observedDrug2Protein).at(i).at(j) = (1-fn)*(1-tmp) + fp*tmp;
       } // end of for loop j
     } // end of for loop i
     return 0;
@@ -60,7 +60,7 @@ namespace gift {
         } // end of loop m
         int tmpNum = (*sub2drug)[i].size() + (*sub2protein)[j].size();
         tmp = log((*drugSub2proteinSub)[i][j]) + log(tmp/tmpNum);
-        (*drugSub2proteinSub)[i][j] = exp(tmp);
+        (*drugSub2proteinSub).at(i).at(j) = exp(tmp);
       } // end of loop j
     } // end of for loop i
   } // end of function
@@ -77,7 +77,7 @@ namespace gift {
         } // end of loop m
         int tmpNum = (*sub2drug)[i].size() + (*sub2protein)[j].size();
         tmp = log((*drugSub2proteinSub)[i][j]) + log(tmp/tmpNum);
-        (*drugSub2proteinSub)[i][j] = exp(tmp);
+        (*drugSub2proteinSub).at(i).at(j) = exp(tmp);
       } // end of loop j
     } // end of for loop i
     return 0;

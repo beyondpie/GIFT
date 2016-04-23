@@ -4,6 +4,47 @@
 #include<boost/algorithm/string/join.hpp>
 
 int x = 10;
+std::vector<std::vector<double> > y;
+
+int init_y(){
+  std::vector<double> tmp;
+  for(int i=0;i<3;++i){
+    for(int j=0;j<3;++j){
+      tmp.push_back(rand());
+    } // end of for
+    y.push_back(tmp);
+  } // end of for
+  return 0;
+} // end of function
+
+class pointer_y{
+public:
+  int update_y();
+  pointer_y() : pointer(&y){}
+  int out_y();
+private:
+  std::vector<std::vector<double> > * pointer;
+}; // end of class
+
+int pointer_y::update_y(){
+  for(int i=0;i<3;++i){
+    for(int j=0;j<3;++j){
+      (*pointer).at(i).at(j) = i+j;
+    } // end of loop
+  } // end of loop
+  return 0;
+} // end of function
+
+int pointer_y::out_y(){
+  std::cout<<"Print intMatrix y..."<<std::endl;
+  for(int i =0;i<3;++i){
+    for(int j=0;j<3;++j){
+      std::cout<<(*pointer)[i][j]<<std::endl;
+    } // end of loop
+  } // end of loop
+  return 0;
+} // end of function
+
 
 void changeX(){
   x = 5;
@@ -34,5 +75,10 @@ int main(int argc, char ** argv){
   changeX();
   std::cout<<"Now x is "<<x<<std::endl;
 
+  init_y();
+  pointer_y a_point_y;
+  a_point_y.out_y();
+  a_point_y.update_y();
+  a_point_y.out_y();
   return 0;
 }
