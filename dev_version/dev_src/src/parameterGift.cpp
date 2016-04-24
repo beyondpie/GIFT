@@ -294,14 +294,14 @@ namespace gift{
       checkStatus = true;
       readNameListFromFile(predictProteinsFileName,predictProteinNameList);
     } // end of if for proteinfile
-    if (!predictDrugNameList_WithSubs.empty()){
+    if (!predictDrugsFileName_WithSubs.empty()){
       checkStatus  = true;
       // NEED FUNCTION.
       readNameMatrixFromFile(predictDrugsFileName_WithSubs,
                              predictDrugNameList_WithSubs,
                              predictDrug2SubList);
     } // end of if for drug_withsubs file.
-    if (!predictProteinNameList_WithSubs.empty()){
+    if (!predictProteinsFileName_WithSubs.empty()){
       checkStatus = true;
       // NEED FUNCTION.
       readNameMatrixFromFile(predictProteinsFileName_WithSubs,

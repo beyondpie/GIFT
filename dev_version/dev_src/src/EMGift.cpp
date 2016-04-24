@@ -544,7 +544,7 @@ namespace gift {
     for(int i=0;i<predictDrugNameList_WithSubs.size();++i){
       for(int j=0;j<predictProteinNameList_WithSubs.size();++j){
         tmp = 0;
-        for(auto const & m : predictProtein2SubList[i]){
+        for(auto const & m : predictDrug2SubList[i]){
           for(auto const & n : predictProtein2SubList[j]){
             tmp += log(1 - (*drugSub2proteinSub)[m][n]);
           } // end of loop n
