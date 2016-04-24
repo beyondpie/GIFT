@@ -3,7 +3,7 @@
 
 bin/CMakeFiles/gift.dir/EMGift.cpp.o
  /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/EMGift.cpp
- /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.h
+ /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.hpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/algorithm/string.hpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/algorithm/string/case_conv.hpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/algorithm/string/classification.hpp
@@ -896,7 +896,7 @@ bin/CMakeFiles/gift.dir/EMGift.cpp.o
  /usr/local/Cellar/boost/1.60.0_1/include/boost/visit_each.hpp
 bin/CMakeFiles/gift.dir/functionsGift.cpp.o
  /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/functionsGift.cpp
- /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.h
+ /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.hpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/algorithm/string.hpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/algorithm/string/case_conv.hpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/algorithm/string/classification.hpp
@@ -1788,7 +1788,7 @@ bin/CMakeFiles/gift.dir/functionsGift.cpp.o
  /usr/local/Cellar/boost/1.60.0_1/include/boost/version.hpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/visit_each.hpp
 bin/CMakeFiles/gift.dir/main.cpp.o
- /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.h
+ /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.hpp
  /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/main.cpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/any.hpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/array.hpp
@@ -2781,7 +2781,7 @@ bin/CMakeFiles/gift.dir/main.cpp.o
  /usr/local/Cellar/boost/1.60.0_1/include/boost/version.hpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/visit_each.hpp
 bin/CMakeFiles/gift.dir/parameterGift.cpp.o
- /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.h
+ /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.hpp
  /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/parameterGift.cpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/any.hpp
  /usr/local/Cellar/boost/1.60.0_1/include/boost/array.hpp

@@ -19,8 +19,8 @@ boost/algorithm/string/join.hpp
 -
 boost/range/adaptor/transformed.hpp
 -
-gift.h
-/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.h
+gift.hpp
+/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.hpp
 
 /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/functionsGift.cpp
 ctime
@@ -33,10 +33,10 @@ boost/algorithm/string/join.hpp
 -
 boost/range/adaptor/transformed.hpp
 -
-gift.h
-/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.h
+gift.hpp
+/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.hpp
 
-/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.h
+/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.hpp
 iostream
 -
 fstream
@@ -57,16 +57,16 @@ iostream
 -
 boost/program_options.hpp
 -
-gift.h
-/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.h
+gift.hpp
+/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.hpp
 
 /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/parameterGift.cpp
 boost/program_options.hpp
 -
 boost/any.hpp
 -
-gift.h
-/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.h
+gift.hpp
+/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/src/gift.hpp
 
 /usr/local/Cellar/boost/1.60.0_1/include/boost/algorithm/string.hpp
 boost/algorithm/string/std_containers_traits.hpp

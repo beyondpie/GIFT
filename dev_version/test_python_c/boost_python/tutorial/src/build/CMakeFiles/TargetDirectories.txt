@@ -1,1 +1,0 @@
-/home/zusongpeng/git-recipes/GIFT/GIFT/test_python_c/boost_python/tutorial/src/build/CMakeFiles/yay.dir
