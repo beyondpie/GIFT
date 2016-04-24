@@ -170,9 +170,7 @@ namespace gift{
     printIntArrayList(domain2proteinList); // for test
 
     InitDrugSub2ProteinSub();
-    printMatrix(drugSub2proteinSubMatrix); // for test
     InitVarDrugSub2ProteinSub();
-    printMatrix(vardrugSub2proteinSubMatrix); // for test
 
     InitObservedDrug2ProteinMatrix();
     // load NameList.

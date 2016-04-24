@@ -250,7 +250,7 @@ namespace gift {
     using boost::algorithm::join;
     using boost::adaptors::transformed;
     // print the first row as protein names.
-    output<<"Names"<<outputDelims;
+    output<<"proteins"<<outputDelims;
     output<<join(proteinNameList,outputDelims)<<std::endl;
     int num = 0;
     for(const auto & drug : predictDrugIndex){
@@ -283,7 +283,7 @@ namespace gift {
     using boost::algorithm::join;
     using boost::adaptors::transformed;
     // print the first row as protein names.
-    output<<"Names"<<outputDelims;
+    output<<"proteins"<<outputDelims;
     output<<join(proteinNameList,outputDelims)<<std::endl;
     double tmp;
     for(int i=0;i<predictDrugNameList_WithSubs.size();++i){
@@ -328,7 +328,7 @@ namespace gift {
     using boost::algorithm::join;
     using boost::adaptors::transformed;
     // print the first row as drug names.
-    output<<"Names"<<outputDelims;
+    output<<"drugs"<<outputDelims;
     output<<join(drugNameList,outputDelims)<<std::endl;
     int num = 0;
     for(const auto & protein : predictProteinsIndex){
@@ -362,7 +362,7 @@ namespace gift {
     using boost::algorithm::join;
     using boost::adaptors::transformed;
     // print the first row as drug names.
-    output<<"Names"<<outputDelims;
+    output<<"drugs"<<outputDelims;
     output<<join(drugNameList,outputDelims)<<std::endl;
     double tmp;
     for(int i=0;i<predictProteinNameList_WithSubs.size();++i){
