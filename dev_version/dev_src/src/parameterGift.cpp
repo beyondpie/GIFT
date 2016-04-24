@@ -290,9 +290,9 @@ namespace gift{
       checkStatus = true;
       readNameListFromFile(predictDrugsFileName,predictDrugNameList);
     } // end of if for drugfile
-    if (!predictProteinNameList.empty()){
+    if (!predictProteinsFileName.empty()){
       checkStatus = true;
-      readNameListFromFile(predictDrugsFileName,predictProteinNameList);
+      readNameListFromFile(predictProteinsFileName,predictProteinNameList);
     } // end of if for proteinfile
     if (!predictDrugNameList_WithSubs.empty()){
       checkStatus  = true;
