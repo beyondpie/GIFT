@@ -413,11 +413,13 @@ namespace gift{
     std::time_t timePosT = std::chrono::system_clock::to_time_t(timePos);
     output<<"The job destination is "<<EMparameters.task;
     output<<", which is finished at "<<std::ctime(&timePosT) <<std::endl;
-    if(EMparameters.loglikelyRecord){
-      output<<"The loglikelyhood values are followed: "<<std::endl;
-      for(const auto m : loglikelyArray){
-        output<<m<<std::endl;
-      } // end of loop for m.
+    if(EMparameters.task.compare("train") == 0){
+      if(EMparameters.loglikelyRecord){
+        output<<"The loglikelyhood values are followed: "<<std::endl;
+        for(const auto m : loglikelyArray){
+          output<<m<<std::endl;
+        } // end of loop for m.
+      } // end of if
     } // end of if
     output.close();
     return 0;

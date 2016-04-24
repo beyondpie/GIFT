@@ -6,6 +6,8 @@
 // Date: 2016-04-05
 
 // Load library.
+#include<ctime> // for record time.
+#include<chrono> // for record time.
 #include<iostream>
 #include<boost/program_options.hpp> // read the parameters
 #include "gift.hpp"
@@ -62,6 +64,12 @@ int main(int argc, char ** argv){
 
   // run program based on task.
   try{
+    std::cout<<"Now start running gift..."<<std::endl;
+    std::chrono::system_clock::time_point timeS =
+      std::chrono::system_clock::now();
+    std::time_t PtimeS = std::chrono::system_clock::to_time_t(timeS);
+    std::cout<<"Job start at "<<std::ctime(&PtimeS)<<std::endl;
+
     gift::parameters getParameters(configureFileName);
     gift::EM EMgiftor(getParameters);
     if (getParameters.task.compare("predict") == 0 ) {
