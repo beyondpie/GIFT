@@ -23,7 +23,7 @@ proteinFingerPrintRecord = Pfam_2011_07
 comProteinInteractionRecord = DrugBank_2011_07
 
 # input file names for prediction
-#predictDrugsFileName = test_predictDrugNameListFile
+predictDrugsFileName = test_predictDrugNameListFile
 predictProteinFileName = test_predictProteinNameListFile
 predictDrugsFileName_WithSubs = test_predictDrugsFileName_WithSubs
 predictProteinsFileName_WithSubs = test_predictProteinsFileName_WithSubs

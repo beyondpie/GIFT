@@ -255,7 +255,7 @@ namespace gift {
     int num = 0;
     for(const auto & drug : predictDrugIndex){
       for(int j=0;j<proteinNum;++j){
-        tmpCalc.push_back(iterdrugSub2ProteinSub(drug,j));
+        tmpCalc.push_back(1 - iterdrugSub2ProteinSub(drug,j));
       } // end of loop for j
       output<<existNameList[num] << outputDelims;
       // transformed without static_cast should also work?
@@ -294,7 +294,7 @@ namespace gift {
             tmp += log(1 - (*drugSub2proteinSub)[m][n]);
           } // end of loop for n
         } // end of loop for m
-        tmpCalc.push_back(exp(tmp));
+        tmpCalc.push_back(1 - exp(tmp));
       } // end of loop for j
       output<<predictDrugNameList_WithSubs[i]<<outputDelims;
       // transformed without static_cast should also work?
@@ -333,7 +333,7 @@ namespace gift {
     int num = 0;
     for(const auto & protein : predictProteinsIndex){
       for(int j=0;j<drugNum;++j){
-        tmpCalc.push_back(iterdrugSub2ProteinSub(j,protein));
+        tmpCalc.push_back(1 - iterdrugSub2ProteinSub(j,protein));
       } // end of loop for j
       output<<existNameList[num]<<outputDelims;
       // transformed without static_cast should also work?
@@ -373,7 +373,7 @@ namespace gift {
             tmp += log(1 - (*drugSub2proteinSub)[m][n]);
           } // end of loop for n
         } // end of loop for m
-        tmpCalc.push_back(exp(tmp));
+        tmpCalc.push_back(1 - exp(tmp));
       } // end of loop for j
       output<<predictProteinNameList_WithSubs[i]<<outputDelims;
       // transformed without static_cast should also work?
@@ -419,7 +419,7 @@ namespace gift {
     int num = 0;
     for(const auto & drug : predictDrugIndex){
       for(const auto & protein : predictProteinIndex){
-        tmpCalc.push_back(iterdrugSub2ProteinSub(drug,protein));
+        tmpCalc.push_back(1 - iterdrugSub2ProteinSub(drug,protein));
       } // end of loop for protein
       output<<existdrugNameList[num] <<outputDelims;
       // transformed without static_cast should also work?
@@ -466,7 +466,7 @@ namespace gift {
             tmp += log(1 - (*drugSub2proteinSub)[m][n]);
           } // end of loop n
         } // end of loop for m
-        tmpCalc.push_back(exp(tmp));
+        tmpCalc.push_back(1 - exp(tmp));
       } // end of loop for protein
       output<<existdrugNameList[num]<<outputDelims;
       // transformed without static_cast should also work?
@@ -512,7 +512,7 @@ namespace gift {
             tmp += log(1 - (*drugSub2proteinSub)[m][n]);
           } // end of loop n
         } // end of loop for m
-        tmpCalc.push_back(exp(tmp));
+        tmpCalc.push_back(1 - exp(tmp));
       } // end of loop for protein
       output<<predictDrugNameList_WithSubs[i]<<outputDelims;
       // transformed without static_cast should also work?
@@ -549,7 +549,7 @@ namespace gift {
             tmp += log(1 - (*drugSub2proteinSub)[m][n]);
           } // end of loop n
         } // end of loop for m
-        tmpCalc.push_back(exp(tmp));
+        tmpCalc.push_back(1 - exp(tmp));
       } // end of loop for protein
       output<<predictDrugNameList_WithSubs[i]<<outputDelims;
       // transformed without static_cast should also work?
