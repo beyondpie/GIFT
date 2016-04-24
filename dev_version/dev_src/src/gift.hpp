@@ -205,6 +205,8 @@ namespace gift {
       , thread(param.thread)
       , iterNum(param.iterNum)
       , drugNum(param.drugNum)
+      , subNum(param.subNum)
+      , domainNum(param.domainNum)
       , proteinNum(param.proteinNum)
       , task(param.task)
       , drug2sub(&drug2subList)

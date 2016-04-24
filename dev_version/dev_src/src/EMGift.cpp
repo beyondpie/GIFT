@@ -37,7 +37,8 @@ namespace gift {
     for(int i=0;i<drugNum;++i){
       for(int j=0;j<proteinNum;++j){
         double tmp = iterdrugSub2ProteinSub(i,j);
-        (*observedDrug2Protein).at(i).at(j) = (1-fn)*(1-tmp) + fp*tmp;
+        observedDrug2ProteinMatrix[i][j] = (1-fn)*(1-tmp) + fp*tmp;
+        //(*observedDrug2Protein).at(i).at(j) = (1-fn)*(1-tmp) + fp*tmp;
       } // end of for loop j
     } // end of for loop i
     return 0;
@@ -60,7 +61,7 @@ namespace gift {
         } // end of loop m
         int tmpNum = (*sub2drug)[i].size() + (*sub2protein)[j].size();
         tmp = log((*drugSub2proteinSub)[i][j]) + log(tmp/tmpNum);
-        (*drugSub2proteinSub).at(i).at(j) = exp(tmp);
+        drugSub2proteinSubMatrix[i][j] = exp(tmp);
       } // end of loop j
     } // end of for loop i
   } // end of function
@@ -69,15 +70,17 @@ namespace gift {
     for(int i=0;i<subNum;++i){
       for(int j=0;j<domainNum;++j){
         double tmp = 0;
-        for(auto const &m : (*sub2drug)[i]){
-          for(auto const &n : (*sub2protein)[j]){
+        for(auto  &m : (*sub2drug)[i]){
+          for(auto  &n : (*sub2protein)[j]){
             double observed = (*observedDrug2Protein)[m][n];
-            tmp += ((*drug2protein)[m][n]>0 ? (1-fn)/observed : fn/(1-observed));
+            tmp = (std::find((*drug2protein)[m].begin(),(*drug2protein)[m].end(),n)
+              != (*drug2protein)[m].end() ) ? (1-fn)/observed : fn/(1-observed);
           } // end of loop n
         } // end of loop m
         int tmpNum = (*sub2drug)[i].size() + (*sub2protein)[j].size();
         tmp = log((*drugSub2proteinSub)[i][j]) + log(tmp/tmpNum);
-        (*drugSub2proteinSub).at(i).at(j) = exp(tmp);
+        drugSub2proteinSubMatrix[i][j] = exp(tmp);
+        //        (*drugSub2proteinSub).at(i).at(j) = exp(tmp);
       } // end of loop j
     } // end of for loop i
     return 0;
@@ -111,18 +114,18 @@ namespace gift {
         std::chrono::steady_clock::now();
       //EStep();
       //std::cout<<"EStep Testing..."<<std::endl;
-      EStep(0); // for testEM
+      EStep(1); // for testEM
       std::chrono::steady_clock::time_point tEnd =
         std::chrono::steady_clock::now();
-      std::cout<<"Time difference (s): "
+      std::cout<<"EStep Time difference (s): "
        <<std::chrono::duration_cast<std::chrono::seconds>(tBegin-tEnd).count()
                <<std::endl;
 
       tBegin = std::chrono::steady_clock::now();
       //MStep();
-      MStep(0); // for testEM
+      MStep(1); // for testEM
       tEnd = std::chrono::steady_clock::now();
-      std::cout<<"Time difference (s): "
+      std::cout<<"MStep Time difference (s): "
        <<std::chrono::duration_cast<std::chrono::seconds>(tBegin-tEnd).count()
                <<std::endl;
 
