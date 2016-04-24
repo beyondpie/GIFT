@@ -11,7 +11,7 @@ alphaEB = 0.005
 betaEB = 0.0055
 fn = 0.85
 fp = 0.01
-threadNum = 1
+threadNum = 10
 EMIterationNum = 10
 task = train
 loglikelyRecord = true
@@ -29,7 +29,7 @@ predictDrugsFileName_WithSubs = test_predictDrugsFileName_WithSubs
 predictProteinsFileName_WithSubs = test_predictProteinsFileName_WithSubs
 
 # output file name and format
-outputDelims = \t
+outputDelims = "\t"
 outRecordFileName = test_outRecordFile
 outPredictCPIsFileName = test_outPredictCPIsFile
 outDrugSub2ProteinSubFileName = test_outDrugSub2ProteinSubFile

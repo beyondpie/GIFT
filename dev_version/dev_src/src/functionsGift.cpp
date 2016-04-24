@@ -396,7 +396,7 @@ namespace gift{
     return 0;
   } // end of function
 
-  int outRecord(parameters & EMparameters, EM& EMgift){
+  int outRecord(parameters & EMparameters){
     std::ofstream output (EMparameters.outRecordFileName,std::ofstream::out);
     if (!output.is_open()){
       std::cerr<<"Error open file "<<EMparameters.outRecordFileName<<std::endl;
@@ -413,6 +413,12 @@ namespace gift{
     std::time_t timePosT = std::chrono::system_clock::to_time_t(timePos);
     output<<"The job destination is "<<EMparameters.task;
     output<<", which is finished at "<<std::ctime(&timePosT) <<std::endl;
+    if(EMparameters.loglikelyRecord){
+      output<<"The loglikelyhood values are followed: "<<std::endl;
+      for(const auto m : loglikelyArray){
+        output<<m<<std::endl;
+      } // end of loop for m.
+    } // end of if
     output.close();
     return 0;
   } // end of function

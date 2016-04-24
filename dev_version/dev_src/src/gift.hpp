@@ -96,7 +96,7 @@ namespace gift {
 
   int rowColFile(const std::string, rowCol&, std::string delims="\t,");
   int helpGift();
-  int outRecord(parameters&, EM&);
+  int outRecord(parameters&);
 
   // put template or inline function in one file.
   template <typename func>
@@ -256,16 +256,16 @@ namespace gift {
     double iterdrugSub2ProteinSub(int drugIndex, int proteinIndex);
 
     int functionThread(void (EM::*function) (int), int thread){
-    boost::thread *y;
-    boost::thread_group * x = new boost::thread_group;
-    for(int i=0;i<thread;++i){
-      y = new boost::thread(function,this,i);
-      x->add_thread(y);
-    } // end of loop for i
-    x->join_all();
-    delete x;
-    return 0;
-  } // end of function.
+      boost::thread *y;
+      boost::thread_group * x = new boost::thread_group;
+      for(int i=0;i<thread;++i){
+        y = new boost::thread(function,this,i);
+        x->add_thread(y);
+      } // end of loop for i
+      x->join_all();
+      delete x;
+      return 0;
+    } // end of function.
 
     void EStepThread(int threadNth);
     int EStep();

@@ -67,13 +67,13 @@ int main(int argc, char ** argv){
     if (getParameters.task.compare("predict") == 0 ) {
       // check is it enough?
       EMgiftor.predictEM();
-      gift::outRecord(getParameters,EMgiftor);
+      gift::outRecord(getParameters);
     } else if (getParameters.task.compare("train") == 0){
       // check is it enough?
       EMgiftor.trainEM();
       EMgiftor.varEM();
       // out train result.
-      gift::outRecord(getParameters, EMgiftor);
+      gift::outRecord(getParameters);
       EMgiftor.outTrainResult();
       EMgiftor.outTrainVariance();
     } else {

@@ -24,6 +24,7 @@ namespace gift {
   } // end of function.
 
   void EM::EStepThread(int threadNth){
+    //std::cout<<"This is thread "<<threadNth<<" for EStep..."<<std::endl;
     for(int i=threadNth;i<drugNum;i+=thread){
       for(int j=0;j<proteinNum;++j){
         double tmp = iterdrugSub2ProteinSub(i,j);
@@ -45,23 +46,26 @@ namespace gift {
   } // end of function
 
   int EM::EStep() {
-    // return functionThread(&EM::EStepThread,thread,this);
-    return functionThread(&EM::EStepThread, thread);
+    // both of them works.
+    return gift::functionThread(&EM::EStepThread,thread,this);
+    //return functionThread(&EM::EStepThread, thread);
   } // end of function
 
   void EM::MStepThread(int threadNth){
+    //std::cout<<"This is thread "<<threadNth<<" for MStep..."<<std::endl;
     for(int i=threadNth;i<subNum;i+=thread){
       for(int j=0;j<domainNum;++j){
         double tmp = 0;
         for(auto const &m : (*sub2drug)[i]){
           for(auto const &n : (*sub2protein)[j]){
             double observed = (*observedDrug2Protein)[m][n];
-            tmp += observed>0 ? (1-fn)/observed : fn/(1-observed);
+            tmp = (std::find((*drug2protein)[m].begin(),(*drug2protein)[m].end(),n)
+              != (*drug2protein)[m].end() ) ? (1-fn)/observed : fn/(1-observed);
           } // end of loop n
         } // end of loop m
         int tmpNum = (*sub2drug)[i].size() + (*sub2protein)[j].size();
         tmp = log((*drugSub2proteinSub)[i][j]) + log(tmp/tmpNum);
-        drugSub2proteinSubMatrix[i][j] = exp(tmp);
+        (*drugSub2proteinSub)[i][j] = exp(tmp);
       } // end of loop j
     } // end of for loop i
   } // end of function
@@ -87,7 +91,9 @@ namespace gift {
   } // end of function
 
   int EM::MStep() {
-    return functionThread(&EM::MStepThread,thread);
+    // both of them works.
+    return gift::functionThread(&EM::MStepThread,thread,this);
+    //return functionThread(&EM::MStepThread,thread);
   } // end of function
 
   double EM::recLoglikely() {
@@ -112,9 +118,9 @@ namespace gift {
       std::cout<<"Current iteration number is " << i << std::endl;
       std::chrono::steady_clock::time_point tBegin =
         std::chrono::steady_clock::now();
-      //EStep();
+      EStep();
       //std::cout<<"EStep Testing..."<<std::endl;
-      EStep(1); // for testEM
+      //EStep(1); // for testEM
       std::chrono::steady_clock::time_point tEnd =
         std::chrono::steady_clock::now();
       std::cout<<"EStep Time difference (s): "
@@ -122,8 +128,8 @@ namespace gift {
                <<std::endl;
 
       tBegin = std::chrono::steady_clock::now();
-      //MStep();
-      MStep(1); // for testEM
+      MStep();
+      //MStep(1); // for testEM
       tEnd = std::chrono::steady_clock::now();
       std::cout<<"MStep Time difference (s): "
        <<std::chrono::duration_cast<std::chrono::seconds>(tBegin-tEnd).count()
@@ -132,11 +138,11 @@ namespace gift {
       if (loglikelyRecord || i<=recLogLeastNum || i >= iterNum-recLogLeastNum) {
         double tmplog = recLoglikely();
         std::cout<<"Current loglikelyhood is " << tmplog << std::endl;
-        // for test
-        std::cout<<"Current observedDrug2Protein Matrix is: "<<std::endl;
-        printMatrix(*observedDrug2Protein);
-        std::cout<<"Current drugSub2proteinSub Matrix is: "<<std::endl;
-        printMatrix(*drugSub2proteinSub);
+        // // for test
+        // std::cout<<"Current observedDrug2Protein Matrix is: "<<std::endl;
+        // printMatrix(*observedDrug2Protein);
+        // std::cout<<"Current drugSub2proteinSub Matrix is: "<<std::endl;
+        // printMatrix(*drugSub2proteinSub);
 
         setLoglikely(tmplog);
       } // end of if
