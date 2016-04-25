@@ -1,0 +1,1138 @@
+\hypertarget{classgift_1_1_e_m}{}\section{gift\+:\+:EM Class Reference}
+\label{classgift_1_1_e_m}\index{gift\+::\+EM@{gift\+::\+EM}}
+
+
+{\ttfamily \#include $<$gift.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classgift_1_1_e_m_a87148bb5a032a4c1d2cb40c3550cbfac}{EM} (\hyperlink{classgift_1_1parameters}{parameters} \&param)
+\item 
+\hyperlink{classgift_1_1_e_m_a89644e8f0be278e40a5c38931f6e30fe}{$\sim$\+EM} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_a6801d3f3265e96e70b03b770575e5b73}{set\+Pointer\+Drug2\+Sub} (\hyperlink{namespacegift_a98b589c33d80e413fceaf8afd8e25815}{Int\+Array\+List} \&d2s)
+\item 
+int \hyperlink{classgift_1_1_e_m_ad6c15f101b9ddd7a0f45327479193d31}{set\+Pointer\+Protein2\+Sub} (\hyperlink{namespacegift_a98b589c33d80e413fceaf8afd8e25815}{Int\+Array\+List} \&p2s)
+\item 
+int \hyperlink{classgift_1_1_e_m_aa236e4028db6e992c455b8c7fb62e959}{set\+Pointer\+Drug2\+Protein} (\hyperlink{namespacegift_a98b589c33d80e413fceaf8afd8e25815}{Int\+Array\+List} \&d2p)
+\item 
+int \hyperlink{classgift_1_1_e_m_a1ded5e60b96c91af0494e7bab1f0eac7}{set\+Pointer\+Drug\+Sub2\+Protein\+Sub} (\hyperlink{namespacegift_a4e11987023733fe14bdabd0b52e78583}{numeric\+Matrix} \&ds2ps)
+\item 
+double \hyperlink{classgift_1_1_e_m_a863e912e64db27bae204f088649dee39}{iterdrug\+Sub2\+Protein\+Sub} (int drug\+Index, int protein\+Index)
+\item 
+int \hyperlink{classgift_1_1_e_m_a7904c67669cc200e87a0eda189b98e9e}{function\+Thread} (void(E\+M\+::$\ast$function)(int), int thread)
+\item 
+void \hyperlink{classgift_1_1_e_m_aed35010a7a836773e632d2ca8e73d69b}{E\+Step\+Thread} (int thread\+Nth)
+\item 
+int \hyperlink{classgift_1_1_e_m_ae362692fa8da7596544e0e484b44e6fb}{E\+Step} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_ac426be80fda5cc8ca36c58c6521b2325}{E\+Step} (int)
+\item 
+void \hyperlink{classgift_1_1_e_m_ab013e0f40fb11407d8c528ae6e34301c}{M\+Step\+Thread} (int thread\+Nth)
+\item 
+int \hyperlink{classgift_1_1_e_m_ab79cafeefe4ac1574990b83dfa02b762}{M\+Step} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_aa380381fea7970d7470e40671a526a34}{M\+Step} (int)
+\item 
+double \hyperlink{classgift_1_1_e_m_a94cb6b1e0ee9c60c04356cd4061a6465}{rec\+Loglikely} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_a5672958e550c66f7417ded6b846714b4}{set\+Loglikely} (double logscore)
+\item 
+int \hyperlink{classgift_1_1_e_m_a5a8d0678b14cb1429d37bb3ae7ca30e2}{train\+EM} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_aed05c6829e19e981628d8a514a766cab}{predict\+Drugs} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_aea459564b58b8f1322fb0d444ed49e7b}{predict\+Proteins} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_a7f8463f4f7ff0acaf7e1195f5b4d58ab}{predict\+Drugs\+With\+Subs} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_af58dd10f19c4acc73d05bc02ea45b2e0}{predict\+Proteins\+With\+Subs} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_abb44eb68c4695bf9badf26c72f6c1ebd}{predict\+Drugs\+With\+Subs\+Proteins\+With\+Subs} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_a22ea8f4791a6d58d8b1ffa85f49c6757}{predict\+Drugs\+Proteins\+With\+Subs} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_a1d026fdafa17cd3237dd720dd5ce0a28}{predict\+Drugs\+With\+Subs\+Proteins} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_a3071ab56b24724f241f98ce983d52b6e}{predict\+Drugs\+Proteins} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_aa19dfda49bb6c06ceb4ce1efb82dcf38}{predict\+EM} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_a8245f446986ca1a945dd6911dfad4123}{var\+EM} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_ac6ef33c41b7c7922c5066907ce6d9820}{out\+Train\+Result} ()
+\item 
+int \hyperlink{classgift_1_1_e_m_ad0ef8217aff43543f4dff291120e1a06}{out\+Train\+Variance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{gift\+::\+EM@{gift\+::\+EM}!EM@{EM}}
+\index{EM@{EM}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{E\+M(parameters \&param)}{EM(parameters \&param)}}]{\setlength{\rightskip}{0pt plus 5cm}gift\+::\+E\+M\+::\+EM (
+\begin{DoxyParamCaption}
+\item[{{\bf parameters} \&}]{param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classgift_1_1_e_m_a87148bb5a032a4c1d2cb40c3550cbfac}{}\label{classgift_1_1_e_m_a87148bb5a032a4c1d2cb40c3550cbfac}
+
+\begin{DoxyCode}
+202       : loglikelyRecord(param.loglikelyRecord)
+203       , fn(param.fn)
+204       , fp(param.fp)
+205       , thread(param.thread)
+206       , iterNum(param.iterNum)
+207       , drugNum(param.drugNum)
+208       , subNum(param.subNum)
+209       , domainNum(param.domainNum)
+210       , proteinNum(param.proteinNum)
+211       , task(param.task)
+212       , drug2sub(&\hyperlink{namespacegift_a73506f6b6bc3e6f6fedfacf8bf0d38f1}{drug2subList})
+213       , sub2drug(&\hyperlink{namespacegift_afcc3e6429fa4fef47fb34e30d2f0c6c4}{sub2drugList})
+214       , protein2sub(&\hyperlink{namespacegift_aa113a7a90b1c3c70d1ab252eb34816fe}{protein2domainList})
+215       , sub2protein(&\hyperlink{namespacegift_ac99bcb1b736637f97e82be7503c725b5}{domain2proteinList})
+216       , drug2protein(&\hyperlink{namespacegift_a2c0005015565d7432dd64fd6bafd3395}{drug2proteinList})
+217       , drugSub2proteinSub(&\hyperlink{namespacegift_ae49d782c144d39543cd6504f5e7d9c7a}{drugSub2proteinSubMatrix})
+218       , observedDrug2Protein(&\hyperlink{namespacegift_ad84dd6f05c58f2f2061db7ab70bd5471}{observedDrug2ProteinMatrix})
+219       , vardrugSub2proteinSub(&\hyperlink{namespacegift_a7191203810c7c52faceb69ac903e7899}{vardrugSub2proteinSubMatrix})
+220       , loglikely(&\hyperlink{namespacegift_ac31667d9b67b35a70ac9d46dfe6a7967}{loglikelyArray})
+221       , predictDrugsFileName(param.predictDrugsFileName)
+222       , predictProteinsFileName(param.predictProteinsFileName)
+223       , predictDrugsFileName\_WithSubs(param.predictDrugsFileName\_WithSubs)
+224       , predictProteinsFileName\_WithSubs(param.predictProteinsFileName\_WithSubs)
+225       , outputDelims(param.outputDelims)
+226       , outRecordFileName(param.outRecordFileName)
+227       , outPredictCPIsFileName(param.outPredictCPIsFileName)
+228       , outDrugSub2ProteinSubFileName(param.outDrugSub2ProteinSubFileName)
+229       , outVarDrugSub2proteinSubFileName(param.outVarDrugSub2proteinSubFileName)
+230     \{ \} \textcolor{comment}{// end of constuctor.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!````~EM@{$\sim$\+EM}}
+\index{````~EM@{$\sim$\+EM}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{$\sim$\+E\+M()}{~EM()}}]{\setlength{\rightskip}{0pt plus 5cm}gift\+::\+E\+M\+::$\sim$\+EM (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classgift_1_1_e_m_a89644e8f0be278e40a5c38931f6e30fe}{}\label{classgift_1_1_e_m_a89644e8f0be278e40a5c38931f6e30fe}
+
+\begin{DoxyCode}
+232 \{ \} \textcolor{comment}{// end of default destruction.}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{gift\+::\+EM@{gift\+::\+EM}!E\+Step@{E\+Step}}
+\index{E\+Step@{E\+Step}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{E\+Step()}{EStep()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::\+E\+Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_ae362692fa8da7596544e0e484b44e6fb}{}\label{classgift_1_1_e_m_ae362692fa8da7596544e0e484b44e6fb}
+
+
+References E\+Step\+Thread(), and gift\+::function\+Thread().
+
+
+
+Referenced by train\+E\+M().
+
+
+\begin{DoxyCode}
+48                 \{
+49     \textcolor{comment}{// both of them works.}
+50     \textcolor{keywordflow}{return} \hyperlink{namespacegift_a0ba808abf8dcd67f2ca7cdff2a9fb91c}{gift::functionThread}(&\hyperlink{classgift_1_1_e_m_aed35010a7a836773e632d2ca8e73d69b}{EM::EStepThread},thread,\textcolor{keyword}{this});
+51     \textcolor{comment}{//return functionThread(&EM::EStepThread, thread);}
+52   \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!E\+Step@{E\+Step}}
+\index{E\+Step@{E\+Step}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{E\+Step(int)}{EStep(int)}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::\+E\+Step (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_ac426be80fda5cc8ca36c58c6521b2325}{}\label{classgift_1_1_e_m_ac426be80fda5cc8ca36c58c6521b2325}
+
+
+References iterdrug\+Sub2\+Protein\+Sub(), and gift\+::observed\+Drug2\+Protein\+Matrix.
+
+
+\begin{DoxyCode}
+37                   \{
+38     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<drugNum;++i)\{
+39       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<proteinNum;++j)\{
+40         \textcolor{keywordtype}{double} tmp = \hyperlink{classgift_1_1_e_m_a863e912e64db27bae204f088649dee39}{iterdrugSub2ProteinSub}(i,j);
+41         \hyperlink{namespacegift_ad84dd6f05c58f2f2061db7ab70bd5471}{observedDrug2ProteinMatrix}[i][j] = (1-fn)*(1-tmp) + fp*tmp;
+42         \textcolor{comment}{//(*observedDrug2Protein).at(i).at(j) = (1-fn)*(1-tmp) + fp*tmp;}
+43       \} \textcolor{comment}{// end of for loop j}
+44     \} \textcolor{comment}{// end of for loop i}
+45     \textcolor{keywordflow}{return} 0;
+46   \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!E\+Step\+Thread@{E\+Step\+Thread}}
+\index{E\+Step\+Thread@{E\+Step\+Thread}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{E\+Step\+Thread(int thread\+Nth)}{EStepThread(int threadNth)}}]{\setlength{\rightskip}{0pt plus 5cm}void gift\+::\+E\+M\+::\+E\+Step\+Thread (
+\begin{DoxyParamCaption}
+\item[{int}]{thread\+Nth}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_aed35010a7a836773e632d2ca8e73d69b}{}\label{classgift_1_1_e_m_aed35010a7a836773e632d2ca8e73d69b}
+
+
+References iterdrug\+Sub2\+Protein\+Sub().
+
+
+
+Referenced by E\+Step().
+
+
+\begin{DoxyCode}
+26                                    \{
+27     \textcolor{comment}{//std::cout<<"This is thread "<<threadNth<<" for EStep..."<<std::endl;}
+28     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=threadNth;i<drugNum;i+=thread)\{
+29       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<proteinNum;++j)\{
+30         \textcolor{keywordtype}{double} tmp = \hyperlink{classgift_1_1_e_m_a863e912e64db27bae204f088649dee39}{iterdrugSub2ProteinSub}(i,j);
+31         (*observedDrug2Protein).at(i).at(j) = (1-fn)*(1-tmp) + fp*tmp;
+32       \} \textcolor{comment}{// end of for loop j}
+33     \} \textcolor{comment}{// end of for loop i}
+34     \textcolor{comment}{//return 0;}
+35   \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!function\+Thread@{function\+Thread}}
+\index{function\+Thread@{function\+Thread}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{function\+Thread(void(\+E\+M\+::$\ast$function)(int), int thread)}{functionThread(void(EM::*function)(int), int thread)}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::function\+Thread (
+\begin{DoxyParamCaption}
+\item[{void(E\+M\+::$\ast$)(int)}]{function, }
+\item[{int}]{thread}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classgift_1_1_e_m_a7904c67669cc200e87a0eda189b98e9e}{}\label{classgift_1_1_e_m_a7904c67669cc200e87a0eda189b98e9e}
+
+\begin{DoxyCode}
+258                                                             \{
+259       boost::thread *y;
+260       boost::thread\_group * x = \textcolor{keyword}{new} boost::thread\_group;
+261       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<thread;++i)\{
+262         y = \textcolor{keyword}{new} boost::thread(\textcolor{keyword}{function},\textcolor{keyword}{this},i);
+263         x->add\_thread(y);
+264       \} \textcolor{comment}{// end of loop for i}
+265       x->join\_all();
+266       \textcolor{keyword}{delete} x;
+267       \textcolor{keywordflow}{return} 0;
+268     \} \textcolor{comment}{// end of function.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!iterdrug\+Sub2\+Protein\+Sub@{iterdrug\+Sub2\+Protein\+Sub}}
+\index{iterdrug\+Sub2\+Protein\+Sub@{iterdrug\+Sub2\+Protein\+Sub}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{iterdrug\+Sub2\+Protein\+Sub(int drug\+Index, int protein\+Index)}{iterdrugSub2ProteinSub(int drugIndex, int proteinIndex)}}]{\setlength{\rightskip}{0pt plus 5cm}double gift\+::\+E\+M\+::iterdrug\+Sub2\+Protein\+Sub (
+\begin{DoxyParamCaption}
+\item[{int}]{drug\+Index, }
+\item[{int}]{protein\+Index}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_a863e912e64db27bae204f088649dee39}{}\label{classgift_1_1_e_m_a863e912e64db27bae204f088649dee39}
+
+
+Referenced by E\+Step(), E\+Step\+Thread(), predict\+Drugs(), predict\+Drugs\+Proteins(), predict\+Proteins(), rec\+Loglikely(), and var\+E\+M().
+
+
+\begin{DoxyCode}
+12                                                                  \{
+13     \textcolor{keywordtype}{double} tmp = 0;
+14     \textcolor{keywordflow}{if} ((*drug2sub)[drugIndex].empty() || (*protein2sub)[proteinIndex].empty())\{
+15       std::cerr<<\textcolor{stringliteral}{"[ERROR]: some row of drug2sub or protein2sub is empty..."}<<std::endl;
+16       \textcolor{keywordflow}{return} 1;
+17     \} \textcolor{comment}{// end of if}
+18     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & m : (*drug2sub)[drugIndex])\{
+19       \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & n : (*protein2sub)[proteinIndex])\{
+20         tmp += log(1 - (*drugSub2proteinSub)[m][n]);
+21       \} \textcolor{comment}{// end of loop n}
+22     \} \textcolor{comment}{// end of loop m}
+23     \textcolor{keywordflow}{return} exp(tmp);
+24   \} \textcolor{comment}{// end of function.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!M\+Step@{M\+Step}}
+\index{M\+Step@{M\+Step}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{M\+Step()}{MStep()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::\+M\+Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_ab79cafeefe4ac1574990b83dfa02b762}{}\label{classgift_1_1_e_m_ab79cafeefe4ac1574990b83dfa02b762}
+
+
+References gift\+::function\+Thread(), and M\+Step\+Thread().
+
+
+
+Referenced by train\+E\+M().
+
+
+\begin{DoxyCode}
+93                 \{
+94     \textcolor{comment}{// both of them works.}
+95     \textcolor{keywordflow}{return} \hyperlink{namespacegift_a0ba808abf8dcd67f2ca7cdff2a9fb91c}{gift::functionThread}(&\hyperlink{classgift_1_1_e_m_ab013e0f40fb11407d8c528ae6e34301c}{EM::MStepThread},thread,\textcolor{keyword}{this});
+96     \textcolor{comment}{//return functionThread(&EM::MStepThread,thread);}
+97   \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!M\+Step@{M\+Step}}
+\index{M\+Step@{M\+Step}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{M\+Step(int)}{MStep(int)}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::\+M\+Step (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_aa380381fea7970d7470e40671a526a34}{}\label{classgift_1_1_e_m_aa380381fea7970d7470e40671a526a34}
+
+
+References gift\+::drug\+Sub2protein\+Sub\+Matrix.
+
+
+\begin{DoxyCode}
+73                   \{
+74     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<subNum;++i)\{
+75       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<domainNum;++j)\{
+76         \textcolor{keywordtype}{double} tmp = 0;
+77         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}  &m : (*sub2drug)[i])\{
+78           \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}  &n : (*sub2protein)[j])\{
+79             \textcolor{keywordtype}{double} observed = (*observedDrug2Protein)[m][n];
+80             tmp = (std::find((*drug2protein)[m].begin(),(*drug2protein)[m].end(),n)
+81               != (*drug2protein)[m].end() ) ? (1-fn)/observed : fn/(1-observed);
+82           \} \textcolor{comment}{// end of loop n}
+83         \} \textcolor{comment}{// end of loop m}
+84         \textcolor{keywordtype}{int} tmpNum = (*sub2drug)[i].size() + (*sub2protein)[j].size();
+85         tmp = log((*drugSub2proteinSub)[i][j]) + log(tmp/tmpNum);
+86         \hyperlink{namespacegift_ae49d782c144d39543cd6504f5e7d9c7a}{drugSub2proteinSubMatrix}[i][j] = exp(tmp);
+87         \textcolor{comment}{//        (*drugSub2proteinSub).at(i).at(j) = exp(tmp);}
+88       \} \textcolor{comment}{// end of loop j}
+89     \} \textcolor{comment}{// end of for loop i}
+90     \textcolor{keywordflow}{return} 0;
+91   \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!M\+Step\+Thread@{M\+Step\+Thread}}
+\index{M\+Step\+Thread@{M\+Step\+Thread}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{M\+Step\+Thread(int thread\+Nth)}{MStepThread(int threadNth)}}]{\setlength{\rightskip}{0pt plus 5cm}void gift\+::\+E\+M\+::\+M\+Step\+Thread (
+\begin{DoxyParamCaption}
+\item[{int}]{thread\+Nth}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_ab013e0f40fb11407d8c528ae6e34301c}{}\label{classgift_1_1_e_m_ab013e0f40fb11407d8c528ae6e34301c}
+
+
+Referenced by M\+Step().
+
+
+\begin{DoxyCode}
+54                                    \{
+55     \textcolor{comment}{//std::cout<<"This is thread "<<threadNth<<" for MStep..."<<std::endl;}
+56     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=threadNth;i<subNum;i+=thread)\{
+57       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<domainNum;++j)\{
+58         \textcolor{keywordtype}{double} tmp = 0;
+59         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} &m : (*sub2drug)[i])\{
+60           \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} &n : (*sub2protein)[j])\{
+61             \textcolor{keywordtype}{double} observed = (*observedDrug2Protein)[m][n];
+62             tmp = (std::find((*drug2protein)[m].begin(),(*drug2protein)[m].end(),n)
+63               != (*drug2protein)[m].end() ) ? (1-fn)/observed : fn/(1-observed);
+64           \} \textcolor{comment}{// end of loop n}
+65         \} \textcolor{comment}{// end of loop m}
+66         \textcolor{keywordtype}{int} tmpNum = (*sub2drug)[i].size() + (*sub2protein)[j].size();
+67         tmp = log((*drugSub2proteinSub)[i][j]) + log(tmp/tmpNum);
+68         (*drugSub2proteinSub)[i][j] = exp(tmp);
+69       \} \textcolor{comment}{// end of loop j}
+70     \} \textcolor{comment}{// end of for loop i}
+71   \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!out\+Train\+Result@{out\+Train\+Result}}
+\index{out\+Train\+Result@{out\+Train\+Result}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{out\+Train\+Result()}{outTrainResult()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::out\+Train\+Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_ac6ef33c41b7c7922c5066907ce6d9820}{}\label{classgift_1_1_e_m_ac6ef33c41b7c7922c5066907ce6d9820}
+
+
+References gift\+::write\+Matrix().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+565                         \{
+566     \hyperlink{namespacegift_ad3b6bc92b42b55cda39a5b521a16183a}{writeMatrix}(outDrugSub2ProteinSubFileName, *drugSub2proteinSub,
+567                 outputDelims);
+568     \textcolor{keywordflow}{return} 0;
+569   \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!out\+Train\+Variance@{out\+Train\+Variance}}
+\index{out\+Train\+Variance@{out\+Train\+Variance}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{out\+Train\+Variance()}{outTrainVariance()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::out\+Train\+Variance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_ad0ef8217aff43543f4dff291120e1a06}{}\label{classgift_1_1_e_m_ad0ef8217aff43543f4dff291120e1a06}
+
+
+References gift\+::write\+Matrix().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+571                           \{
+572     \hyperlink{namespacegift_ad3b6bc92b42b55cda39a5b521a16183a}{writeMatrix}(outVarDrugSub2proteinSubFileName, *vardrugSub2proteinSub,
+573                 outputDelims);
+574     \textcolor{keywordflow}{return} 0;
+575   \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!predict\+Drugs@{predict\+Drugs}}
+\index{predict\+Drugs@{predict\+Drugs}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{predict\+Drugs()}{predictDrugs()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::predict\+Drugs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_aed05c6829e19e981628d8a514a766cab}{}\label{classgift_1_1_e_m_aed05c6829e19e981628d8a514a766cab}
+
+
+References gift\+::drug\+Name2\+Index, gift\+::get\+Index\+From\+Hash(), iterdrug\+Sub2\+Protein\+Sub(), gift\+::predict\+Drug\+Name\+List, and gift\+::protein\+Name\+List.
+
+
+
+Referenced by predict\+E\+M().
+
+
+\begin{DoxyCode}
+232                       \{
+233     std::cout<<\textcolor{stringliteral}{"Now predict given drugs against all the proteins, "}
+234              <<\textcolor{stringliteral}{"which are in our training data set."} << std::endl;
+235     \hyperlink{namespacegift_a786390fe70b2e3b6d61dba1014651f03}{IntList} predictDrugIndex;
+236     std::vector<double> tmpCalc;
+237     \hyperlink{namespacegift_a62f85efaab3bff48335863ae0670c7a7}{nameList} existNameList;
+238     \hyperlink{namespacegift_a835110af070bdfb37d092c6a7f79d65c}{getIndexFromHash}(\hyperlink{namespacegift_a3385bc2f0aa26289e7f7d69635207e5d}{drugName2Index}, 
+      \hyperlink{namespacegift_a9cc6da68eeea28ac6c6a65cd9f248e5b}{predictDrugNameList},
+239                      predictDrugIndex, existNameList);
+240     \textcolor{keywordflow}{if} (existNameList.size() < 1) \{
+241       std::cerr<<\textcolor{stringliteral}{"No drug Index found, and quit."} <<std::endl;
+242       \textcolor{keywordflow}{return} 1;
+243     \} \textcolor{comment}{// end of if}
+244     \textcolor{comment}{// output the result.}
+245     std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+246     \textcolor{keywordflow}{if} (!output.is\_open())\{
+247       std::cerr<<\textcolor{stringliteral}{"Error open file "}<<outPredictCPIsFileName<<std::endl;
+248       \textcolor{keywordflow}{return} 1;
+249     \} \textcolor{comment}{// end of if}
+250     \textcolor{keyword}{using} boost::algorithm::join;
+251     \textcolor{keyword}{using} boost::adaptors::transformed;
+252     \textcolor{comment}{// print the first row as protein names.}
+253     output<<\textcolor{stringliteral}{"proteins"}<<outputDelims;
+254     output<<join(\hyperlink{namespacegift_ac03221463832a0531081c053ed10bafd}{proteinNameList},outputDelims)<<std::endl;
+255     \textcolor{keywordtype}{int} num = 0;
+256     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} & drug : predictDrugIndex)\{
+257       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<proteinNum;++j)\{
+258         tmpCalc.push\_back(1 - \hyperlink{classgift_1_1_e_m_a863e912e64db27bae204f088649dee39}{iterdrugSub2ProteinSub}(drug,j));
+259       \} \textcolor{comment}{// end of loop for j}
+260       output<<existNameList[num] << outputDelims;
+261       \textcolor{comment}{// transformed without static\_cast should also work?}
+262       output<<join(tmpCalc |
+263               transformed(\textcolor{keyword}{static\_cast<}std::string(*)(\textcolor{keywordtype}{double})\textcolor{keyword}{>}(std::to\_string) ),
+264                    outputDelims)
+265             << std::endl;
+266       tmpCalc.clear();
+267       ++num;
+268     \} \textcolor{comment}{// end of loop for drug}
+269     \textcolor{keywordflow}{return} 0;
+270   \} \textcolor{comment}{// end of functions.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!predict\+Drugs\+Proteins@{predict\+Drugs\+Proteins}}
+\index{predict\+Drugs\+Proteins@{predict\+Drugs\+Proteins}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{predict\+Drugs\+Proteins()}{predictDrugsProteins()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::predict\+Drugs\+Proteins (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_a3071ab56b24724f241f98ce983d52b6e}{}\label{classgift_1_1_e_m_a3071ab56b24724f241f98ce983d52b6e}
+
+
+References gift\+::drug\+Name2\+Index, gift\+::get\+Index\+From\+Hash(), iterdrug\+Sub2\+Protein\+Sub(), gift\+::predict\+Drug\+Name\+List, gift\+::predict\+Protein\+Name\+List, and gift\+::protein\+Name2\+Index.
+
+
+
+Referenced by predict\+E\+M().
+
+
+\begin{DoxyCode}
+389                               \{
+390     std::cout<<\textcolor{stringliteral}{"Now predict given drugs against given proteins."} << std::endl;
+391     \hyperlink{namespacegift_a786390fe70b2e3b6d61dba1014651f03}{IntList} predictDrugIndex;
+392     \hyperlink{namespacegift_a786390fe70b2e3b6d61dba1014651f03}{IntList} predictProteinIndex;
+393     std::vector<double> tmpCalc;
+394     \hyperlink{namespacegift_a62f85efaab3bff48335863ae0670c7a7}{nameList} existdrugNameList;
+395     \hyperlink{namespacegift_a62f85efaab3bff48335863ae0670c7a7}{nameList} existproteinNameList;
+396     \hyperlink{namespacegift_a835110af070bdfb37d092c6a7f79d65c}{getIndexFromHash}(\hyperlink{namespacegift_a3385bc2f0aa26289e7f7d69635207e5d}{drugName2Index}, 
+      \hyperlink{namespacegift_a9cc6da68eeea28ac6c6a65cd9f248e5b}{predictDrugNameList},
+397                      predictDrugIndex, existdrugNameList);
+398     \hyperlink{namespacegift_a835110af070bdfb37d092c6a7f79d65c}{getIndexFromHash}(\hyperlink{namespacegift_ad49c613c81da3c4189ea4f16915c60c5}{proteinName2Index}, 
+      \hyperlink{namespacegift_a03bb78fc438e2b1af29ff3b46b70a085}{predictProteinNameList},
+399                      predictProteinIndex, existproteinNameList);
+400     \textcolor{keywordflow}{if} (existdrugNameList.size()<1) \{
+401       std::cerr<<\textcolor{stringliteral}{"No drug Index found, and quit."} <<std::endl;
+402       \textcolor{keywordflow}{return} 1;
+403     \} \textcolor{comment}{// end of if}
+404     \textcolor{keywordflow}{if} (existproteinNameList.size()<1) \{
+405       std::cerr<<\textcolor{stringliteral}{"No protein Index found, and quit."} << std::endl;
+406       \textcolor{keywordflow}{return} 1;
+407     \} \textcolor{comment}{// end of if}
+408     \textcolor{comment}{// output the result.}
+409     std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+410     \textcolor{keywordflow}{if} (!output.is\_open())\{
+411       std::cerr<<\textcolor{stringliteral}{"Error open file "}<<outPredictCPIsFileName<<std::endl;
+412       \textcolor{keywordflow}{return} 1;
+413     \} \textcolor{comment}{// end of if}
+414     \textcolor{keyword}{using} boost::algorithm::join;
+415     \textcolor{keyword}{using} boost::adaptors::transformed;
+416     \textcolor{comment}{// print the first row as protein names.}
+417     output<<\textcolor{stringliteral}{"Names"}<<outputDelims;
+418     output<<join(existproteinNameList,outputDelims)<<std::endl;
+419     \textcolor{keywordtype}{int} num = 0;
+420     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} & drug : predictDrugIndex)\{
+421       \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} & protein : predictProteinIndex)\{
+422         tmpCalc.push\_back(1 - \hyperlink{classgift_1_1_e_m_a863e912e64db27bae204f088649dee39}{iterdrugSub2ProteinSub}(drug,protein));
+423       \} \textcolor{comment}{// end of loop for protein}
+424       output<<existdrugNameList[num] <<outputDelims;
+425       \textcolor{comment}{// transformed without static\_cast should also work?}
+426       output<<join(tmpCalc |
+427               transformed(\textcolor{keyword}{static\_cast<}std::string(*)(\textcolor{keywordtype}{double})\textcolor{keyword}{>}(std::to\_string) ),
+428                    outputDelims)
+429             << std::endl;
+430       tmpCalc.clear();
+431       ++num;
+432     \} \textcolor{comment}{// end of loop for drug}
+433     \textcolor{keywordflow}{return} 0;
+434   \} \textcolor{comment}{// end of functions.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!predict\+Drugs\+Proteins\+With\+Subs@{predict\+Drugs\+Proteins\+With\+Subs}}
+\index{predict\+Drugs\+Proteins\+With\+Subs@{predict\+Drugs\+Proteins\+With\+Subs}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{predict\+Drugs\+Proteins\+With\+Subs()}{predictDrugsProteinsWithSubs()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::predict\+Drugs\+Proteins\+With\+Subs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_a22ea8f4791a6d58d8b1ffa85f49c6757}{}\label{classgift_1_1_e_m_a22ea8f4791a6d58d8b1ffa85f49c6757}
+
+
+References gift\+::drug\+Name2\+Index, gift\+::get\+Index\+From\+Hash(), gift\+::predict\+Drug\+Name\+List, gift\+::predict\+Protein2\+Sub\+List, and gift\+::predict\+Protein\+Name\+List\+\_\+\+With\+Subs.
+
+
+
+Referenced by predict\+E\+M().
+
+
+\begin{DoxyCode}
+436                                       \{
+437     std::cout<<\textcolor{stringliteral}{"Now predict given drugs against given proteins with subs."}
+438              << std::endl;
+439     \hyperlink{namespacegift_a786390fe70b2e3b6d61dba1014651f03}{IntList} predictDrugIndex;
+440     std::vector<double> tmpCalc;
+441     \hyperlink{namespacegift_a62f85efaab3bff48335863ae0670c7a7}{nameList} existdrugNameList;
+442     \hyperlink{namespacegift_a835110af070bdfb37d092c6a7f79d65c}{getIndexFromHash}(\hyperlink{namespacegift_a3385bc2f0aa26289e7f7d69635207e5d}{drugName2Index}, 
+      \hyperlink{namespacegift_a9cc6da68eeea28ac6c6a65cd9f248e5b}{predictDrugNameList},
+443                      predictDrugIndex, existdrugNameList);
+444     \textcolor{keywordflow}{if} (existdrugNameList.size()<1) \{
+445       std::cerr<<\textcolor{stringliteral}{"No drug Index found, and quit."} <<std::endl;
+446       \textcolor{keywordflow}{return} 1;
+447     \} \textcolor{comment}{// end of if}
+448     \textcolor{comment}{// output the result.}
+449     std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+450     \textcolor{keywordflow}{if} (!output.is\_open())\{
+451       std::cerr<<\textcolor{stringliteral}{"Error open file "}<<outPredictCPIsFileName<<std::endl;
+452       \textcolor{keywordflow}{return} 1;
+453     \} \textcolor{comment}{// end of if}
+454     \textcolor{keyword}{using} boost::algorithm::join;
+455     \textcolor{keyword}{using} boost::adaptors::transformed;
+456     \textcolor{comment}{// print the first row as protein names.}
+457     output<<\textcolor{stringliteral}{"Names"}<<outputDelims;
+458     output<<join(\hyperlink{namespacegift_a03aaa96d826b6a887accc3951939ccde}{predictProteinNameList\_WithSubs},outputDelims)<<std::endl;
+459     \textcolor{keywordtype}{int} num = 0;
+460     \textcolor{keywordtype}{double} tmp;
+461     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} & drug : predictDrugIndex)\{
+462       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<\hyperlink{namespacegift_a03aaa96d826b6a887accc3951939ccde}{predictProteinNameList\_WithSubs}.size();++j)\{
+463         tmp = 0;
+464         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & m : (*drug2sub)[drug])\{
+465           \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & n : \hyperlink{namespacegift_a4899f631bc8342759f4096e7b653eed8}{predictProtein2SubList}[j])\{
+466             tmp += log(1 - (*drugSub2proteinSub)[m][n]);
+467           \} \textcolor{comment}{// end of loop n}
+468         \} \textcolor{comment}{// end of loop for m}
+469         tmpCalc.push\_back(1 - exp(tmp));
+470       \} \textcolor{comment}{// end of loop for protein}
+471       output<<existdrugNameList[num]<<outputDelims;
+472       \textcolor{comment}{// transformed without static\_cast should also work?}
+473       output<<join(tmpCalc |
+474               transformed(\textcolor{keyword}{static\_cast<}std::string(*)(\textcolor{keywordtype}{double})\textcolor{keyword}{>}(std::to\_string) ),
+475                    outputDelims)
+476             << std::endl;
+477       tmpCalc.clear();
+478       ++num;
+479     \} \textcolor{comment}{// end of loop for drug}
+480     \textcolor{keywordflow}{return} 0;
+481   \} \textcolor{comment}{// end of functions.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!predict\+Drugs\+With\+Subs@{predict\+Drugs\+With\+Subs}}
+\index{predict\+Drugs\+With\+Subs@{predict\+Drugs\+With\+Subs}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{predict\+Drugs\+With\+Subs()}{predictDrugsWithSubs()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::predict\+Drugs\+With\+Subs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_a7f8463f4f7ff0acaf7e1195f5b4d58ab}{}\label{classgift_1_1_e_m_a7f8463f4f7ff0acaf7e1195f5b4d58ab}
+
+
+References gift\+::predict\+Drug2\+Sub\+List, gift\+::predict\+Drug\+Name\+List\+\_\+\+With\+Subs, and gift\+::protein\+Name\+List.
+
+
+
+Referenced by predict\+E\+M().
+
+
+\begin{DoxyCode}
+272                               \{
+273     std::cout<<\textcolor{stringliteral}{"Now predict given drugs with subs against all the proteins, "}
+274              <<\textcolor{stringliteral}{"which are in our training data set."} << std::endl;
+275     std::vector<double> tmpCalc;
+276     \hyperlink{namespacegift_a62f85efaab3bff48335863ae0670c7a7}{nameList} existNameList;
+277     \textcolor{comment}{// output the result.}
+278     std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+279     \textcolor{keywordflow}{if} (!output.is\_open())\{
+280       std::cerr<<\textcolor{stringliteral}{"Error open file "}<<outPredictCPIsFileName<<std::endl;
+281       \textcolor{keywordflow}{return} 1;
+282     \} \textcolor{comment}{// end of if}
+283     \textcolor{keyword}{using} boost::algorithm::join;
+284     \textcolor{keyword}{using} boost::adaptors::transformed;
+285     \textcolor{comment}{// print the first row as protein names.}
+286     output<<\textcolor{stringliteral}{"proteins"}<<outputDelims;
+287     output<<join(\hyperlink{namespacegift_ac03221463832a0531081c053ed10bafd}{proteinNameList},outputDelims)<<std::endl;
+288     \textcolor{keywordtype}{double} tmp;
+289     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<\hyperlink{namespacegift_a85bd1982c5b60a7cf09a0f80398bb051}{predictDrugNameList\_WithSubs}.size();++i)\{
+290       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<proteinNum;++j)\{
+291         tmp = 0;
+292         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & m : \hyperlink{namespacegift_a00bda5cc17262f36063eed0fbf03459c}{predictDrug2SubList}[i])\{
+293           \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & n : (*protein2sub)[j])\{
+294             tmp += log(1 - (*drugSub2proteinSub)[m][n]);
+295           \} \textcolor{comment}{// end of loop for n}
+296         \} \textcolor{comment}{// end of loop for m}
+297         tmpCalc.push\_back(1 - exp(tmp));
+298       \} \textcolor{comment}{// end of loop for j}
+299       output<<\hyperlink{namespacegift_a85bd1982c5b60a7cf09a0f80398bb051}{predictDrugNameList\_WithSubs}[i]<<outputDelims;
+300       \textcolor{comment}{// transformed without static\_cast should also work?}
+301       output<<join(tmpCalc |
+302               transformed(\textcolor{keyword}{static\_cast<}std::string(*)(\textcolor{keywordtype}{double})\textcolor{keyword}{>}(std::to\_string) ),
+303                    outputDelims)
+304             << std::endl;
+305       tmpCalc.clear();
+306     \} \textcolor{comment}{// end of loop for drug}
+307     \textcolor{keywordflow}{return} 0;
+308   \} \textcolor{comment}{// end of functions.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!predict\+Drugs\+With\+Subs\+Proteins@{predict\+Drugs\+With\+Subs\+Proteins}}
+\index{predict\+Drugs\+With\+Subs\+Proteins@{predict\+Drugs\+With\+Subs\+Proteins}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{predict\+Drugs\+With\+Subs\+Proteins()}{predictDrugsWithSubsProteins()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::predict\+Drugs\+With\+Subs\+Proteins (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_a1d026fdafa17cd3237dd720dd5ce0a28}{}\label{classgift_1_1_e_m_a1d026fdafa17cd3237dd720dd5ce0a28}
+
+
+References gift\+::get\+Index\+From\+Hash(), gift\+::predict\+Drug2\+Sub\+List, gift\+::predict\+Drug\+Name\+List\+\_\+\+With\+Subs, gift\+::predict\+Protein\+Name\+List, and gift\+::protein\+Name2\+Index.
+
+
+
+Referenced by predict\+E\+M().
+
+
+\begin{DoxyCode}
+483                                       \{
+484     std::cout<<\textcolor{stringliteral}{"Now predict given drugs with subs against given proteins."}
+485              << std::endl;
+486     \hyperlink{namespacegift_a786390fe70b2e3b6d61dba1014651f03}{IntList} predictProteinIndex;
+487     std::vector<double> tmpCalc;
+488     \hyperlink{namespacegift_a62f85efaab3bff48335863ae0670c7a7}{nameList} existproteinNameList;
+489     \hyperlink{namespacegift_a835110af070bdfb37d092c6a7f79d65c}{getIndexFromHash}(\hyperlink{namespacegift_ad49c613c81da3c4189ea4f16915c60c5}{proteinName2Index}, 
+      \hyperlink{namespacegift_a03bb78fc438e2b1af29ff3b46b70a085}{predictProteinNameList},
+490                      predictProteinIndex, existproteinNameList);
+491     \textcolor{keywordflow}{if} (existproteinNameList.size()<1) \{
+492       std::cerr<<\textcolor{stringliteral}{"No protein Index found, and quit."} <<std::endl;
+493       \textcolor{keywordflow}{return} 1;
+494     \} \textcolor{comment}{// end of if}
+495     \textcolor{comment}{// output the result.}
+496     std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+497     \textcolor{keywordflow}{if} (!output.is\_open())\{
+498       std::cerr<<\textcolor{stringliteral}{"Error open file "}<<outPredictCPIsFileName<<std::endl;
+499       \textcolor{keywordflow}{return} 1;
+500     \} \textcolor{comment}{// end of if}
+501     \textcolor{keyword}{using} boost::algorithm::join;
+502     \textcolor{keyword}{using} boost::adaptors::transformed;
+503     \textcolor{comment}{// print the first row as protein names.}
+504     output<<\textcolor{stringliteral}{"Names"}<<outputDelims;
+505     output<<join(existproteinNameList,outputDelims)<<std::endl;
+506     \textcolor{keywordtype}{double} tmp;
+507     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<\hyperlink{namespacegift_a85bd1982c5b60a7cf09a0f80398bb051}{predictDrugNameList\_WithSubs}.size();++i)\{
+508       \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} protein : predictProteinIndex)\{
+509         tmp = 0;
+510         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & m : \hyperlink{namespacegift_a00bda5cc17262f36063eed0fbf03459c}{predictDrug2SubList}[i])\{
+511           \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & n : (*protein2sub)[protein])\{
+512             tmp += log(1 - (*drugSub2proteinSub)[m][n]);
+513           \} \textcolor{comment}{// end of loop n}
+514         \} \textcolor{comment}{// end of loop for m}
+515         tmpCalc.push\_back(1 - exp(tmp));
+516       \} \textcolor{comment}{// end of loop for protein}
+517       output<<\hyperlink{namespacegift_a85bd1982c5b60a7cf09a0f80398bb051}{predictDrugNameList\_WithSubs}[i]<<outputDelims;
+518       \textcolor{comment}{// transformed without static\_cast should also work?}
+519       output<<join(tmpCalc |
+520               transformed(\textcolor{keyword}{static\_cast<}std::string(*)(\textcolor{keywordtype}{double})\textcolor{keyword}{>}(std::to\_string) ),
+521                    outputDelims)
+522             << std::endl;
+523       tmpCalc.clear();
+524     \} \textcolor{comment}{// end of loop for i}
+525     \textcolor{keywordflow}{return} 0;
+526   \} \textcolor{comment}{// end of functions.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!predict\+Drugs\+With\+Subs\+Proteins\+With\+Subs@{predict\+Drugs\+With\+Subs\+Proteins\+With\+Subs}}
+\index{predict\+Drugs\+With\+Subs\+Proteins\+With\+Subs@{predict\+Drugs\+With\+Subs\+Proteins\+With\+Subs}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{predict\+Drugs\+With\+Subs\+Proteins\+With\+Subs()}{predictDrugsWithSubsProteinsWithSubs()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::predict\+Drugs\+With\+Subs\+Proteins\+With\+Subs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_abb44eb68c4695bf9badf26c72f6c1ebd}{}\label{classgift_1_1_e_m_abb44eb68c4695bf9badf26c72f6c1ebd}
+
+
+References gift\+::predict\+Drug2\+Sub\+List, gift\+::predict\+Drug\+Name\+List\+\_\+\+With\+Subs, gift\+::predict\+Protein2\+Sub\+List, and gift\+::predict\+Protein\+Name\+List\+\_\+\+With\+Subs.
+
+
+
+Referenced by predict\+E\+M().
+
+
+\begin{DoxyCode}
+528                                               \{
+529     std::cout<<\textcolor{stringliteral}{"Now predict given drugs with subs against given proteins with subs."}
+530              << std::endl;
+531     std::vector<double> tmpCalc;
+532     \textcolor{comment}{// output the result.}
+533     std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+534     \textcolor{keywordflow}{if} (!output.is\_open())\{
+535       std::cerr<<\textcolor{stringliteral}{"Error open file "}<<outPredictCPIsFileName<<std::endl;
+536       \textcolor{keywordflow}{return} 1;
+537     \} \textcolor{comment}{// end of if}
+538     \textcolor{keyword}{using} boost::algorithm::join;
+539     \textcolor{keyword}{using} boost::adaptors::transformed;
+540     \textcolor{comment}{// print the first row as protein names.}
+541     output<<\textcolor{stringliteral}{"Names"}<<outputDelims;
+542     output<<join(\hyperlink{namespacegift_a03aaa96d826b6a887accc3951939ccde}{predictProteinNameList\_WithSubs},outputDelims)<<std::endl;
+543     \textcolor{keywordtype}{double} tmp;
+544     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<\hyperlink{namespacegift_a85bd1982c5b60a7cf09a0f80398bb051}{predictDrugNameList\_WithSubs}.size();++i)\{
+545       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<\hyperlink{namespacegift_a03aaa96d826b6a887accc3951939ccde}{predictProteinNameList\_WithSubs}.size();++j)\{
+546         tmp = 0;
+547         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & m : \hyperlink{namespacegift_a00bda5cc17262f36063eed0fbf03459c}{predictDrug2SubList}[i])\{
+548           \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & n : \hyperlink{namespacegift_a4899f631bc8342759f4096e7b653eed8}{predictProtein2SubList}[j])\{
+549             tmp += log(1 - (*drugSub2proteinSub)[m][n]);
+550           \} \textcolor{comment}{// end of loop n}
+551         \} \textcolor{comment}{// end of loop for m}
+552         tmpCalc.push\_back(1 - exp(tmp));
+553       \} \textcolor{comment}{// end of loop for protein}
+554       output<<\hyperlink{namespacegift_a85bd1982c5b60a7cf09a0f80398bb051}{predictDrugNameList\_WithSubs}[i]<<outputDelims;
+555       \textcolor{comment}{// transformed without static\_cast should also work?}
+556       output<<join(tmpCalc |
+557               transformed(\textcolor{keyword}{static\_cast<}std::string(*)(\textcolor{keywordtype}{double})\textcolor{keyword}{>}(std::to\_string) ),
+558                    outputDelims)
+559             << std::endl;
+560       tmpCalc.clear();
+561     \} \textcolor{comment}{// end of loop for i}
+562     \textcolor{keywordflow}{return} 0;
+563   \} \textcolor{comment}{// end of functions.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!predict\+EM@{predict\+EM}}
+\index{predict\+EM@{predict\+EM}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{predict\+E\+M()}{predictEM()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::predict\+EM (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_aa19dfda49bb6c06ceb4ce1efb82dcf38}{}\label{classgift_1_1_e_m_aa19dfda49bb6c06ceb4ce1efb82dcf38}
+
+
+References gift\+::predict\+Drug\+Name\+List, gift\+::predict\+Drug\+Name\+List\+\_\+\+With\+Subs, predict\+Drugs(), predict\+Drugs\+Proteins(), predict\+Drugs\+Proteins\+With\+Subs(), predict\+Drugs\+With\+Subs(), predict\+Drugs\+With\+Subs\+Proteins(), predict\+Drugs\+With\+Subs\+Proteins\+With\+Subs(), gift\+::predict\+Protein\+Name\+List, gift\+::predict\+Protein\+Name\+List\+\_\+\+With\+Subs, predict\+Proteins(), and predict\+Proteins\+With\+Subs().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+193                    \{
+194     \textcolor{comment}{// Note: we only run one situation one time:}
+195     \textcolor{comment}{// - Provide both drugs and proteins Names.}
+196     \textcolor{comment}{// - Provide both drugs and proteins with Subs.}
+197     \textcolor{comment}{// - Provide both drugs Names and proteins with Subs.}
+198     \textcolor{comment}{// - Provide both drugs with Subs and proteins Names.}
+199     \textcolor{comment}{// - Provide only drugs Names.}
+200     \textcolor{comment}{// - Provide only drug with Subs.}
+201     \textcolor{comment}{// - Provide only protein Names.}
+202     \textcolor{comment}{// - Provide only protein with Subs.}
+203     std::cout<<\textcolor{stringliteral}{"Now Run predictEM for task: predict..."} << std::endl;
+204 
+205     \textcolor{keywordflow}{if} (!\hyperlink{namespacegift_a85bd1982c5b60a7cf09a0f80398bb051}{predictDrugNameList\_WithSubs}.empty() &
+206         !\hyperlink{namespacegift_a03aaa96d826b6a887accc3951939ccde}{predictProteinNameList\_WithSubs}.empty())\{
+207       \hyperlink{classgift_1_1_e_m_abb44eb68c4695bf9badf26c72f6c1ebd}{predictDrugsWithSubsProteinsWithSubs}();
+208     \}  \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{namespacegift_a85bd1982c5b60a7cf09a0f80398bb051}{predictDrugNameList\_WithSubs}.empty() &
+209         !\hyperlink{namespacegift_a03bb78fc438e2b1af29ff3b46b70a085}{predictProteinNameList}.empty())\{
+210       \hyperlink{classgift_1_1_e_m_a1d026fdafa17cd3237dd720dd5ce0a28}{predictDrugsWithSubsProteins}();
+211     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{namespacegift_a03aaa96d826b6a887accc3951939ccde}{predictProteinNameList\_WithSubs}.empty() &
+212         !\hyperlink{namespacegift_a9cc6da68eeea28ac6c6a65cd9f248e5b}{predictDrugNameList}.empty())\{
+213       \hyperlink{classgift_1_1_e_m_a22ea8f4791a6d58d8b1ffa85f49c6757}{predictDrugsProteinsWithSubs}();
+214     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{namespacegift_a9cc6da68eeea28ac6c6a65cd9f248e5b}{predictDrugNameList}.empty() &
+215         !\hyperlink{namespacegift_a03bb78fc438e2b1af29ff3b46b70a085}{predictProteinNameList}.empty()) \{
+216       \hyperlink{classgift_1_1_e_m_a3071ab56b24724f241f98ce983d52b6e}{predictDrugsProteins}();
+217     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{namespacegift_a9cc6da68eeea28ac6c6a65cd9f248e5b}{predictDrugNameList}.empty())\{
+218       \hyperlink{classgift_1_1_e_m_aed05c6829e19e981628d8a514a766cab}{predictDrugs}();
+219     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{namespacegift_a85bd1982c5b60a7cf09a0f80398bb051}{predictDrugNameList\_WithSubs}.empty())\{
+220       \hyperlink{classgift_1_1_e_m_a7f8463f4f7ff0acaf7e1195f5b4d58ab}{predictDrugsWithSubs}();
+221     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{namespacegift_a03bb78fc438e2b1af29ff3b46b70a085}{predictProteinNameList}.empty())\{
+222       \hyperlink{classgift_1_1_e_m_aea459564b58b8f1322fb0d444ed49e7b}{predictProteins}();
+223     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{namespacegift_a03aaa96d826b6a887accc3951939ccde}{predictProteinNameList\_WithSubs}.empty())\{
+224       \hyperlink{classgift_1_1_e_m_af58dd10f19c4acc73d05bc02ea45b2e0}{predictProteinsWithSubs}();
+225     \} \textcolor{keywordflow}{else} \{
+226       std::cerr<<\textcolor{stringliteral}{"No files for task: predict, and quit."}<< std::endl;
+227       \textcolor{keywordflow}{return} 1;
+228     \} \textcolor{comment}{// end of if else if else.}
+229     \textcolor{keywordflow}{return} 0;
+230   \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!predict\+Proteins@{predict\+Proteins}}
+\index{predict\+Proteins@{predict\+Proteins}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{predict\+Proteins()}{predictProteins()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::predict\+Proteins (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_aea459564b58b8f1322fb0d444ed49e7b}{}\label{classgift_1_1_e_m_aea459564b58b8f1322fb0d444ed49e7b}
+
+
+References gift\+::drug\+Name\+List, gift\+::get\+Index\+From\+Hash(), iterdrug\+Sub2\+Protein\+Sub(), gift\+::predict\+Protein\+Name\+List, and gift\+::protein\+Name2\+Index.
+
+
+
+Referenced by predict\+E\+M().
+
+
+\begin{DoxyCode}
+310                          \{
+311     std::cout<<\textcolor{stringliteral}{"Now predict given proteins against all the drugs, "}
+312              <<\textcolor{stringliteral}{"which are in our training data set."} << std::endl;
+313     \hyperlink{namespacegift_a786390fe70b2e3b6d61dba1014651f03}{IntList} predictProteinsIndex;
+314     std::vector<double> tmpCalc;
+315     \hyperlink{namespacegift_a62f85efaab3bff48335863ae0670c7a7}{nameList} existNameList;
+316     \hyperlink{namespacegift_a835110af070bdfb37d092c6a7f79d65c}{getIndexFromHash}(\hyperlink{namespacegift_ad49c613c81da3c4189ea4f16915c60c5}{proteinName2Index}, 
+      \hyperlink{namespacegift_a03bb78fc438e2b1af29ff3b46b70a085}{predictProteinNameList},
+317                      predictProteinsIndex, existNameList);
+318     \textcolor{keywordflow}{if} (existNameList.size() < 1) \{
+319       std::cerr<<\textcolor{stringliteral}{"No protein Index found, and quit."} <<std::endl;
+320       \textcolor{keywordflow}{return} 1;
+321     \} \textcolor{comment}{// end of if}
+322     \textcolor{comment}{// output the result.}
+323     std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+324     \textcolor{keywordflow}{if} (!output.is\_open())\{
+325       std::cerr<<\textcolor{stringliteral}{"Error open file "}<<outPredictCPIsFileName<<std::endl;
+326       \textcolor{keywordflow}{return} 1;
+327     \} \textcolor{comment}{// end of if}
+328     \textcolor{keyword}{using} boost::algorithm::join;
+329     \textcolor{keyword}{using} boost::adaptors::transformed;
+330     \textcolor{comment}{// print the first row as drug names.}
+331     output<<\textcolor{stringliteral}{"drugs"}<<outputDelims;
+332     output<<join(\hyperlink{namespacegift_a8ace6c6707676ba4866203d5ddc0a02e}{drugNameList},outputDelims)<<std::endl;
+333     \textcolor{keywordtype}{int} num = 0;
+334     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto} & protein : predictProteinsIndex)\{
+335       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<drugNum;++j)\{
+336         tmpCalc.push\_back(1 - \hyperlink{classgift_1_1_e_m_a863e912e64db27bae204f088649dee39}{iterdrugSub2ProteinSub}(j,protein));
+337       \} \textcolor{comment}{// end of loop for j}
+338       output<<existNameList[num]<<outputDelims;
+339       \textcolor{comment}{// transformed without static\_cast should also work?}
+340       output<<join(tmpCalc |
+341               transformed(\textcolor{keyword}{static\_cast<}std::string(*)(\textcolor{keywordtype}{double})\textcolor{keyword}{>}(std::to\_string) ),
+342                    outputDelims)
+343             << std::endl;
+344       tmpCalc.clear();
+345       ++num;
+346     \} \textcolor{comment}{// end of loop for protein}
+347     \textcolor{keywordflow}{return} 0;
+348   \} \textcolor{comment}{// end of functions.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!predict\+Proteins\+With\+Subs@{predict\+Proteins\+With\+Subs}}
+\index{predict\+Proteins\+With\+Subs@{predict\+Proteins\+With\+Subs}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{predict\+Proteins\+With\+Subs()}{predictProteinsWithSubs()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::predict\+Proteins\+With\+Subs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_af58dd10f19c4acc73d05bc02ea45b2e0}{}\label{classgift_1_1_e_m_af58dd10f19c4acc73d05bc02ea45b2e0}
+
+
+References gift\+::drug\+Name\+List, gift\+::predict\+Protein2\+Sub\+List, and gift\+::predict\+Protein\+Name\+List\+\_\+\+With\+Subs.
+
+
+
+Referenced by predict\+E\+M().
+
+
+\begin{DoxyCode}
+350                                  \{
+351     std::cout<<\textcolor{stringliteral}{"Now predict given proteins with subs against all the drugs, "}
+352              <<\textcolor{stringliteral}{"which are in our training data set."} << std::endl;
+353     \hyperlink{namespacegift_a786390fe70b2e3b6d61dba1014651f03}{IntList} predictProteinsIndex;
+354     std::vector<double> tmpCalc;
+355     \hyperlink{namespacegift_a62f85efaab3bff48335863ae0670c7a7}{nameList} existNameList;
+356     \textcolor{comment}{// output the result.}
+357     std::ofstream output (outPredictCPIsFileName,std::ofstream::out);
+358     \textcolor{keywordflow}{if} (!output.is\_open())\{
+359       std::cerr<<\textcolor{stringliteral}{"Error open file "}<<outPredictCPIsFileName<<std::endl;
+360       \textcolor{keywordflow}{return} 1;
+361     \} \textcolor{comment}{// end of if}
+362     \textcolor{keyword}{using} boost::algorithm::join;
+363     \textcolor{keyword}{using} boost::adaptors::transformed;
+364     \textcolor{comment}{// print the first row as drug names.}
+365     output<<\textcolor{stringliteral}{"drugs"}<<outputDelims;
+366     output<<join(\hyperlink{namespacegift_a8ace6c6707676ba4866203d5ddc0a02e}{drugNameList},outputDelims)<<std::endl;
+367     \textcolor{keywordtype}{double} tmp;
+368     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<\hyperlink{namespacegift_a03aaa96d826b6a887accc3951939ccde}{predictProteinNameList\_WithSubs}.size();++i)\{
+369       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<drugNum;++j)\{
+370         tmp = 0;
+371         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & m : (*drug2sub)[j])\{
+372           \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & n : \hyperlink{namespacegift_a4899f631bc8342759f4096e7b653eed8}{predictProtein2SubList}[i])\{
+373             tmp += log(1 - (*drugSub2proteinSub)[m][n]);
+374           \} \textcolor{comment}{// end of loop for n}
+375         \} \textcolor{comment}{// end of loop for m}
+376         tmpCalc.push\_back(1 - exp(tmp));
+377       \} \textcolor{comment}{// end of loop for j}
+378       output<<\hyperlink{namespacegift_a03aaa96d826b6a887accc3951939ccde}{predictProteinNameList\_WithSubs}[i]<<outputDelims;
+379       \textcolor{comment}{// transformed without static\_cast should also work?}
+380       output<<join(tmpCalc |
+381               transformed(\textcolor{keyword}{static\_cast<}std::string(*)(\textcolor{keywordtype}{double})\textcolor{keyword}{>}(std::to\_string) ),
+382                    outputDelims)
+383             << std::endl;
+384       tmpCalc.clear();
+385     \} \textcolor{comment}{// end of loop for protein}
+386     \textcolor{keywordflow}{return} 0;
+387   \} \textcolor{comment}{// end of functions.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!rec\+Loglikely@{rec\+Loglikely}}
+\index{rec\+Loglikely@{rec\+Loglikely}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{rec\+Loglikely()}{recLoglikely()}}]{\setlength{\rightskip}{0pt plus 5cm}double gift\+::\+E\+M\+::rec\+Loglikely (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_a94cb6b1e0ee9c60c04356cd4061a6465}{}\label{classgift_1_1_e_m_a94cb6b1e0ee9c60c04356cd4061a6465}
+
+
+References iterdrug\+Sub2\+Protein\+Sub().
+
+
+
+Referenced by train\+E\+M().
+
+
+\begin{DoxyCode}
+99                           \{
+100     \textcolor{keywordtype}{double} loglikely = 0;
+101     \textcolor{keywordtype}{double} tmp;
+102     std::vector<int>::iterator it;
+103     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<drugNum;++i) \{
+104       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<proteinNum;++j) \{
+105         tmp = \hyperlink{classgift_1_1_e_m_a863e912e64db27bae204f088649dee39}{iterdrugSub2ProteinSub}(i,j);
+106         it = std::find((*drug2protein)[i].begin(),
+107                        (*drug2protein)[i].end(),j);
+108         loglikely += it==(*drug2protein)[i].end() ?
+109           log(1-(1-fn)*(1-tmp)-fp*tmp) : log((1-fn)*(1-tmp) + fp*tmp);
+110       \} \textcolor{comment}{// end of loop j}
+111     \} \textcolor{comment}{// end of loop i}
+112     \textcolor{keywordflow}{return} loglikely;
+113   \} \textcolor{comment}{// end of function.}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!set\+Loglikely@{set\+Loglikely}}
+\index{set\+Loglikely@{set\+Loglikely}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{set\+Loglikely(double logscore)}{setLoglikely(double logscore)}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::set\+Loglikely (
+\begin{DoxyParamCaption}
+\item[{double}]{logscore}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classgift_1_1_e_m_a5672958e550c66f7417ded6b846714b4}{}\label{classgift_1_1_e_m_a5672958e550c66f7417ded6b846714b4}
+
+
+Referenced by train\+E\+M().
+
+
+\begin{DoxyCode}
+277                                              \{
+278       (*loglikely).push\_back(logscore);
+279       \textcolor{keywordflow}{return} 0;
+280     \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!set\+Pointer\+Drug2\+Protein@{set\+Pointer\+Drug2\+Protein}}
+\index{set\+Pointer\+Drug2\+Protein@{set\+Pointer\+Drug2\+Protein}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{set\+Pointer\+Drug2\+Protein(\+Int\+Array\+List \&d2p)}{setPointerDrug2Protein(IntArrayList \&d2p)}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::set\+Pointer\+Drug2\+Protein (
+\begin{DoxyParamCaption}
+\item[{{\bf Int\+Array\+List} \&}]{d2p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classgift_1_1_e_m_aa236e4028db6e992c455b8c7fb62e959}{}\label{classgift_1_1_e_m_aa236e4028db6e992c455b8c7fb62e959}
+
+\begin{DoxyCode}
+242                                                           \{
+243       drug2protein = &d2p;
+244       \textcolor{keywordflow}{return} 0;
+245     \} \textcolor{comment}{// end of func}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!set\+Pointer\+Drug2\+Sub@{set\+Pointer\+Drug2\+Sub}}
+\index{set\+Pointer\+Drug2\+Sub@{set\+Pointer\+Drug2\+Sub}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{set\+Pointer\+Drug2\+Sub(\+Int\+Array\+List \&d2s)}{setPointerDrug2Sub(IntArrayList \&d2s)}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::set\+Pointer\+Drug2\+Sub (
+\begin{DoxyParamCaption}
+\item[{{\bf Int\+Array\+List} \&}]{d2s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classgift_1_1_e_m_a6801d3f3265e96e70b03b770575e5b73}{}\label{classgift_1_1_e_m_a6801d3f3265e96e70b03b770575e5b73}
+
+\begin{DoxyCode}
+234                                                       \{
+235       drug2sub = &d2s;
+236       \textcolor{keywordflow}{return} 0;
+237     \} \textcolor{comment}{// end of func}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!set\+Pointer\+Drug\+Sub2\+Protein\+Sub@{set\+Pointer\+Drug\+Sub2\+Protein\+Sub}}
+\index{set\+Pointer\+Drug\+Sub2\+Protein\+Sub@{set\+Pointer\+Drug\+Sub2\+Protein\+Sub}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{set\+Pointer\+Drug\+Sub2\+Protein\+Sub(numeric\+Matrix \&ds2ps)}{setPointerDrugSub2ProteinSub(numericMatrix \&ds2ps)}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::set\+Pointer\+Drug\+Sub2\+Protein\+Sub (
+\begin{DoxyParamCaption}
+\item[{{\bf numeric\+Matrix} \&}]{ds2ps}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classgift_1_1_e_m_a1ded5e60b96c91af0494e7bab1f0eac7}{}\label{classgift_1_1_e_m_a1ded5e60b96c91af0494e7bab1f0eac7}
+
+\begin{DoxyCode}
+246                                                                    \{
+247       drugSub2proteinSub = &ds2ps;
+248       \textcolor{keywordflow}{return} 0;
+249     \} \textcolor{comment}{// end of func}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!set\+Pointer\+Protein2\+Sub@{set\+Pointer\+Protein2\+Sub}}
+\index{set\+Pointer\+Protein2\+Sub@{set\+Pointer\+Protein2\+Sub}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{set\+Pointer\+Protein2\+Sub(\+Int\+Array\+List \&p2s)}{setPointerProtein2Sub(IntArrayList \&p2s)}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::set\+Pointer\+Protein2\+Sub (
+\begin{DoxyParamCaption}
+\item[{{\bf Int\+Array\+List} \&}]{p2s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classgift_1_1_e_m_ad6c15f101b9ddd7a0f45327479193d31}{}\label{classgift_1_1_e_m_ad6c15f101b9ddd7a0f45327479193d31}
+
+\begin{DoxyCode}
+238                                                          \{
+239       protein2sub = &p2s;
+240       \textcolor{keywordflow}{return} 0;
+241     \} \textcolor{comment}{// end of func}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!train\+EM@{train\+EM}}
+\index{train\+EM@{train\+EM}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{train\+E\+M()}{trainEM()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::train\+EM (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_a5a8d0678b14cb1429d37bb3ae7ca30e2}{}\label{classgift_1_1_e_m_a5a8d0678b14cb1429d37bb3ae7ca30e2}
+
+
+References E\+Step(), M\+Step(), gift\+::rec\+Log\+Least\+Num, rec\+Loglikely(), and set\+Loglikely().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+115                  \{
+116     \textcolor{comment}{// lack of loglikely record}
+117     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<iterNum;++i)\{
+118       std::cout<<\textcolor{stringliteral}{"Current iteration number is "} << i << std::endl;
+119       std::chrono::steady\_clock::time\_point tBegin =
+120         std::chrono::steady\_clock::now();
+121       \hyperlink{classgift_1_1_e_m_ae362692fa8da7596544e0e484b44e6fb}{EStep}();
+122       \textcolor{comment}{//std::cout<<"EStep Testing..."<<std::endl;}
+123       \textcolor{comment}{//EStep(1); // for testEM}
+124       std::chrono::steady\_clock::time\_point tEnd =
+125         std::chrono::steady\_clock::now();
+126       std::cout<<\textcolor{stringliteral}{"EStep Time difference (s): "}
+127        <<std::chrono::duration\_cast<std::chrono::seconds>(tBegin-tEnd).count()
+128                <<std::endl;
+129 
+130       tBegin = std::chrono::steady\_clock::now();
+131       \hyperlink{classgift_1_1_e_m_ab79cafeefe4ac1574990b83dfa02b762}{MStep}();
+132       \textcolor{comment}{//MStep(1); // for testEM}
+133       tEnd = std::chrono::steady\_clock::now();
+134       std::cout<<\textcolor{stringliteral}{"MStep Time difference (s): "}
+135        <<std::chrono::duration\_cast<std::chrono::seconds>(tBegin-tEnd).count()
+136                <<std::endl;
+137 
+138       \textcolor{keywordflow}{if} (loglikelyRecord || i<=recLogLeastNum || i >= iterNum-\hyperlink{namespacegift_ab632fcb7ab144fdde38c5a4154e2b5b7}{recLogLeastNum}) \{
+139         \textcolor{keywordtype}{double} tmplog = \hyperlink{classgift_1_1_e_m_a94cb6b1e0ee9c60c04356cd4061a6465}{recLoglikely}();
+140         std::cout<<\textcolor{stringliteral}{"Current loglikelyhood is "} << tmplog << std::endl;
+141         \textcolor{comment}{// // for test}
+142         \textcolor{comment}{// std::cout<<"Current observedDrug2Protein Matrix is: "<<std::endl;}
+143         \textcolor{comment}{// printMatrix(*observedDrug2Protein);}
+144         \textcolor{comment}{// std::cout<<"Current drugSub2proteinSub Matrix is: "<<std::endl;}
+145         \textcolor{comment}{// printMatrix(*drugSub2proteinSub);}
+146 
+147         \hyperlink{classgift_1_1_e_m_a5672958e550c66f7417ded6b846714b4}{setLoglikely}(tmplog);
+148       \} \textcolor{comment}{// end of if}
+149     \} \textcolor{comment}{// end of loop i}
+150     std::chrono::system\_clock::time\_point endTime =
+151       std::chrono::system\_clock::now();
+152     std::time\_t endTimeT = std::chrono::system\_clock::to\_time\_t(endTime);
+153     std::cout<<\textcolor{stringliteral}{"Finished computation at "} << std::ctime(&endTimeT) << std::endl;
+154     \textcolor{keywordflow}{return} 0;
+155   \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+\index{gift\+::\+EM@{gift\+::\+EM}!var\+EM@{var\+EM}}
+\index{var\+EM@{var\+EM}!gift\+::\+EM@{gift\+::\+EM}}
+\subsubsection[{\texorpdfstring{var\+E\+M()}{varEM()}}]{\setlength{\rightskip}{0pt plus 5cm}int gift\+::\+E\+M\+::var\+EM (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classgift_1_1_e_m_a8245f446986ca1a945dd6911dfad4123}{}\label{classgift_1_1_e_m_a8245f446986ca1a945dd6911dfad4123}
+
+
+References iterdrug\+Sub2\+Protein\+Sub().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+157                \{
+158     \hyperlink{namespacegift_a4e11987023733fe14bdabd0b52e78583}{numericMatrix} quesiDev;
+159     std::vector<double> tmpDev;
+160     \textcolor{comment}{// Note: not check drugSub2proteinsub values larger than 0.95.}
+161     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0;i<drugNum;++i) \{
+162       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0;j<proteinNum;++j)\{
+163         tmpDev.push\_back(\hyperlink{classgift_1_1_e_m_a863e912e64db27bae204f088649dee39}{iterdrugSub2ProteinSub}(i,j));
+164       \} \textcolor{comment}{// end of loop j}
+165       quesiDev.push\_back(tmpDev);
+166       tmpDev.clear();
+167     \} \textcolor{comment}{// end of loop i}
+168 
+169     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<subNum;++i)\{
+170       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<domainNum;++j)\{
+171         \textcolor{keywordtype}{double} tmp\_t = 0;
+172         \textcolor{comment}{//std::vector<double> tmp\_t\_array;}
+173         \textcolor{keywordtype}{double} tmp\_s = 0;
+174         \textcolor{comment}{//std::vector<double> tmp\_s\_array;}
+175         \textcolor{keywordtype}{double} tmpLikely = (*observedDrug2Protein)[i][j];
+176         \textcolor{keywordtype}{double} tmp\_sum = 0;
+177         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & m : (*sub2drug)[i])\{
+178           \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const} & n : (*sub2protein)[j])\{
+179             tmp\_t = std::find((*drug2protein)[m].begin(),(*drug2protein)[m].end(),n)
+180               == (*drug2protein)[m].end() ? 1/pow(1-tmpLikely,2.0) : 1/pow(tmpLikely,2.0);
+181             \textcolor{comment}{// tmp\_t\_array.push\_back(tmp\_t);}
+182             tmp\_s = (1-fn-fp) * quesiDev[m][n] / (1 - (*drugSub2proteinSub)[i][j]);
+183             \textcolor{comment}{//tmp\_s\_array.push\_back(tmp\_s);}
+184             tmp\_sum += pow(tmp\_s,2.0)*tmp\_t;
+185           \} \textcolor{comment}{// end of loop n}
+186         \} \textcolor{comment}{// end of loop m}
+187         (*vardrugSub2proteinSub)[i][j] = tmp\_sum;
+188       \} \textcolor{comment}{// end of loop j}
+189     \} \textcolor{comment}{// end of loop i}
+190     \textcolor{keywordflow}{return} 0;
+191   \} \textcolor{comment}{// end of function}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gift_8hpp}{gift.\+hpp}\item 
+\hyperlink{_e_m_gift_8cpp}{E\+M\+Gift.\+cpp}\end{DoxyCompactItemize}

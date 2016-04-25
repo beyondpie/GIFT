@@ -1,0 +1,448 @@
+\begin{theindex}
+
+  \item {$\sim$\+EM}
+    \subitem {gift\+::\+EM}, \hyperpage{20}
+
+  \indexspace
+
+  \item {alpha\+EB}
+    \subitem {gift\+::parameters}, \hyperpage{37}
+  \item {author}
+    \subitem {gift}, \hyperpage{8}
+
+  \indexspace
+
+  \item {beta\+EB}
+    \subitem {gift\+::parameters}, \hyperpage{37}
+  \item {Bool\+To\+String}
+    \subitem {gift}, \hyperpage{8}
+
+  \indexspace
+
+  \item {C\+P\+Is\+Rec}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {chemfp\+Rec}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {col\+Num}
+    \subitem {gift\+::row\+Col}, \hyperpage{41}
+
+  \indexspace
+
+  \item {domain2protein\+List}
+    \subitem {gift}, \hyperpage{16}
+  \item {domain\+Num}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {drug2protein\+File\+Name}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {drug2protein\+List}
+    \subitem {gift}, \hyperpage{16}
+  \item {drug2sub\+File\+Name}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {drug2sub\+List}
+    \subitem {gift}, \hyperpage{16}
+  \item {drug\+Name2\+Index}
+    \subitem {gift}, \hyperpage{16}
+  \item {drug\+Name\+List}
+    \subitem {gift}, \hyperpage{16}
+  \item {drug\+Name\+List\+File}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {drug\+Num}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {drug\+Sub2protein\+Sub\+File\+Name}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {drug\+Sub2protein\+Sub\+Matrix}
+    \subitem {gift}, \hyperpage{16}
+  \item {drug\+Sub\+Name\+List}
+    \subitem {gift}, \hyperpage{17}
+  \item {drug\+Sub\+Name\+List\+File}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+
+  \indexspace
+
+  \item {E\+M\+Gift.\+cpp}, \hyperpage{43}
+  \item {E\+Step}
+    \subitem {gift\+::\+EM}, \hyperpage{20}
+  \item {E\+Step\+Thread}
+    \subitem {gift\+::\+EM}, \hyperpage{20}
+  \item {EM}
+    \subitem {gift\+::\+EM}, \hyperpage{20}
+  \item {email}
+    \subitem {gift}, \hyperpage{8}
+
+  \indexspace
+
+  \item {fn}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {fp}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {function\+Thread}
+    \subitem {gift}, \hyperpage{9}
+    \subitem {gift\+::\+EM}, \hyperpage{21}
+  \item {functions\+Gift.\+cpp}, \hyperpage{43}
+
+  \indexspace
+
+  \item {get\+Index\+From\+Hash}
+    \subitem {gift}, \hyperpage{9}
+  \item {gift}, \hyperpage{7}
+    \subitem {author}, \hyperpage{8}
+    \subitem {Bool\+To\+String}, \hyperpage{8}
+    \subitem {domain2protein\+List}, \hyperpage{16}
+    \subitem {drug2protein\+List}, \hyperpage{16}
+    \subitem {drug2sub\+List}, \hyperpage{16}
+    \subitem {drug\+Name2\+Index}, \hyperpage{16}
+    \subitem {drug\+Name\+List}, \hyperpage{16}
+    \subitem {drug\+Sub2protein\+Sub\+Matrix}, \hyperpage{16}
+    \subitem {drug\+Sub\+Name\+List}, \hyperpage{17}
+    \subitem {email}, \hyperpage{8}
+    \subitem {function\+Thread}, \hyperpage{9}
+    \subitem {get\+Index\+From\+Hash}, \hyperpage{9}
+    \subitem {help\+Gift}, \hyperpage{9}
+    \subitem {Int\+Array\+List}, \hyperpage{8}
+    \subitem {Int\+List}, \hyperpage{8}
+    \subitem {loglikely\+Array}, \hyperpage{17}
+    \subitem {Matrix2\+Fingerpints}, \hyperpage{10}
+    \subitem {Matrix2\+Fingerprints\+By\+Column}, \hyperpage{11}
+    \subitem {name2\+Index\+Hash}, \hyperpage{8}
+    \subitem {name\+List}, \hyperpage{8}
+    \subitem {numeric\+Matrix}, \hyperpage{8}
+    \subitem {observed\+Drug2\+Protein\+Matrix}, \hyperpage{17}
+    \subitem {out\+Record}, \hyperpage{12}
+    \subitem {predict\+Drug2\+Sub\+List}, \hyperpage{17}
+    \subitem {predict\+Drug\+Name\+List}, \hyperpage{17}
+    \subitem {predict\+Drug\+Name\+List\+\_\+\+With\+Subs}, 
+		\hyperpage{17}
+    \subitem {predict\+Protein2\+Sub\+List}, \hyperpage{17}
+    \subitem {predict\+Protein\+Name\+List}, \hyperpage{17}
+    \subitem {predict\+Protein\+Name\+List\+\_\+\+With\+Subs}, 
+		\hyperpage{17}
+    \subitem {print\+Int\+Array\+List}, \hyperpage{12}
+    \subitem {print\+Matrix}, \hyperpage{13}
+    \subitem {protein2domain\+List}, \hyperpage{17}
+    \subitem {protein\+Name2\+Index}, \hyperpage{18}
+    \subitem {protein\+Name\+List}, \hyperpage{18}
+    \subitem {protein\+Sub\+Name\+List}, \hyperpage{18}
+    \subitem {read\+Matrix}, \hyperpage{13}
+    \subitem {read\+Name2\+Index\+Hash}, \hyperpage{13}
+    \subitem {read\+Name\+List\+From\+File}, \hyperpage{14}
+    \subitem {read\+Name\+Matrix\+From\+File}, \hyperpage{14}
+    \subitem {rec\+Log\+Least\+Num}, \hyperpage{18}
+    \subitem {row\+Col\+File}, \hyperpage{15}
+    \subitem {sub2drug\+List}, \hyperpage{18}
+    \subitem {update\+Time}, \hyperpage{16}
+    \subitem {vardrug\+Sub2protein\+Sub\+Matrix}, \hyperpage{18}
+    \subitem {version}, \hyperpage{16}
+    \subitem {write\+Matrix}, \hyperpage{16}
+  \item {gift.\+hpp}, \hyperpage{44}
+  \item {gift\+::\+EM}, \hyperpage{19}
+    \subitem {$\sim$\+EM}, \hyperpage{20}
+    \subitem {E\+Step}, \hyperpage{20}
+    \subitem {E\+Step\+Thread}, \hyperpage{20}
+    \subitem {EM}, \hyperpage{20}
+    \subitem {function\+Thread}, \hyperpage{21}
+    \subitem {iterdrug\+Sub2\+Protein\+Sub}, \hyperpage{21}
+    \subitem {M\+Step}, \hyperpage{21}
+    \subitem {M\+Step\+Thread}, \hyperpage{22}
+    \subitem {out\+Train\+Result}, \hyperpage{22}
+    \subitem {out\+Train\+Variance}, \hyperpage{22}
+    \subitem {predict\+Drugs}, \hyperpage{23}
+    \subitem {predict\+Drugs\+Proteins}, \hyperpage{23}
+    \subitem {predict\+Drugs\+Proteins\+With\+Subs}, \hyperpage{24}
+    \subitem {predict\+Drugs\+With\+Subs}, \hyperpage{25}
+    \subitem {predict\+Drugs\+With\+Subs\+Proteins}, \hyperpage{25}
+    \subitem {predict\+Drugs\+With\+Subs\+Proteins\+With\+Subs}, 
+		\hyperpage{26}
+    \subitem {predict\+EM}, \hyperpage{27}
+    \subitem {predict\+Proteins}, \hyperpage{27}
+    \subitem {predict\+Proteins\+With\+Subs}, \hyperpage{28}
+    \subitem {rec\+Loglikely}, \hyperpage{29}
+    \subitem {set\+Loglikely}, \hyperpage{29}
+    \subitem {set\+Pointer\+Drug2\+Protein}, \hyperpage{29}
+    \subitem {set\+Pointer\+Drug2\+Sub}, \hyperpage{29}
+    \subitem {set\+Pointer\+Drug\+Sub2\+Protein\+Sub}, \hyperpage{29}
+    \subitem {set\+Pointer\+Protein2\+Sub}, \hyperpage{30}
+    \subitem {train\+EM}, \hyperpage{30}
+    \subitem {var\+EM}, \hyperpage{30}
+  \item {gift\+::parameters}, \hyperpage{31}
+    \subitem {alpha\+EB}, \hyperpage{37}
+    \subitem {beta\+EB}, \hyperpage{37}
+    \subitem {C\+P\+Is\+Rec}, \hyperpage{38}
+    \subitem {chemfp\+Rec}, \hyperpage{38}
+    \subitem {domain\+Num}, \hyperpage{38}
+    \subitem {drug2protein\+File\+Name}, \hyperpage{38}
+    \subitem {drug2sub\+File\+Name}, \hyperpage{38}
+    \subitem {drug\+Name\+List\+File}, \hyperpage{38}
+    \subitem {drug\+Num}, \hyperpage{38}
+    \subitem {drug\+Sub2protein\+Sub\+File\+Name}, \hyperpage{38}
+    \subitem {drug\+Sub\+Name\+List\+File}, \hyperpage{38}
+    \subitem {fn}, \hyperpage{38}
+    \subitem {fp}, \hyperpage{38}
+    \subitem {Init\+Drug\+Name2\+Index}, \hyperpage{34}
+    \subitem {Init\+Drug\+Sub2\+Protein\+Sub}, \hyperpage{35}
+    \subitem {Init\+Drug\+Sub\+Name\+List}, \hyperpage{35}
+    \subitem {Init\+Observed\+Drug2\+Protein\+Matrix}, \hyperpage{35}
+    \subitem {Init\+Predict\+Parameters}, \hyperpage{36}
+    \subitem {Init\+Protein\+Name2\+Index}, \hyperpage{36}
+    \subitem {Init\+Protein\+Sub\+Name\+List}, \hyperpage{36}
+    \subitem {Init\+Var\+Drug\+Sub2\+Protein\+Sub}, \hyperpage{37}
+    \subitem {input\+Delims}, \hyperpage{38}
+    \subitem {iter\+Num}, \hyperpage{38}
+    \subitem {loglikely\+Record}, \hyperpage{39}
+    \subitem {out\+Drug\+Sub2\+Protein\+Sub\+File\+Name}, 
+		\hyperpage{39}
+    \subitem {out\+Predict\+C\+P\+Is\+File\+Name}, \hyperpage{39}
+    \subitem {out\+Record\+File\+Name}, \hyperpage{39}
+    \subitem {out\+Var\+Drug\+Sub2protein\+Sub\+File\+Name}, 
+		\hyperpage{39}
+    \subitem {output\+Delims}, \hyperpage{39}
+    \subitem {parameters}, \hyperpage{32}
+    \subitem {predict\+Drugs\+File\+Name}, \hyperpage{39}
+    \subitem {predict\+Drugs\+File\+Name\+\_\+\+With\+Subs}, 
+		\hyperpage{39}
+    \subitem {predict\+Proteins\+File\+Name}, \hyperpage{39}
+    \subitem {predict\+Proteins\+File\+Name\+\_\+\+With\+Subs}, 
+		\hyperpage{39}
+    \subitem {protein2sub\+File\+Name}, \hyperpage{39}
+    \subitem {protein\+Name\+List\+File}, \hyperpage{39}
+    \subitem {protein\+Num}, \hyperpage{39}
+    \subitem {protein\+Sub\+Name\+List\+File}, \hyperpage{40}
+    \subitem {proteinfp\+Rec}, \hyperpage{39}
+    \subitem {set\+Domain\+Num}, \hyperpage{37}
+    \subitem {set\+Drug\+Num}, \hyperpage{37}
+    \subitem {set\+Protein\+Num}, \hyperpage{37}
+    \subitem {set\+Sub\+Num}, \hyperpage{37}
+    \subitem {sub\+Num}, \hyperpage{40}
+    \subitem {task}, \hyperpage{40}
+    \subitem {thread}, \hyperpage{40}
+  \item {gift\+::row\+Col}, \hyperpage{40}
+    \subitem {col\+Num}, \hyperpage{41}
+    \subitem {row\+Col}, \hyperpage{40}
+    \subitem {row\+Num}, \hyperpage{41}
+
+  \indexspace
+
+  \item {help\+Gift}
+    \subitem {gift}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Init\+Drug\+Name2\+Index}
+    \subitem {gift\+::parameters}, \hyperpage{34}
+  \item {Init\+Drug\+Sub2\+Protein\+Sub}
+    \subitem {gift\+::parameters}, \hyperpage{35}
+  \item {Init\+Drug\+Sub\+Name\+List}
+    \subitem {gift\+::parameters}, \hyperpage{35}
+  \item {Init\+Observed\+Drug2\+Protein\+Matrix}
+    \subitem {gift\+::parameters}, \hyperpage{35}
+  \item {Init\+Predict\+Parameters}
+    \subitem {gift\+::parameters}, \hyperpage{36}
+  \item {Init\+Protein\+Name2\+Index}
+    \subitem {gift\+::parameters}, \hyperpage{36}
+  \item {Init\+Protein\+Sub\+Name\+List}
+    \subitem {gift\+::parameters}, \hyperpage{36}
+  \item {Init\+Var\+Drug\+Sub2\+Protein\+Sub}
+    \subitem {gift\+::parameters}, \hyperpage{37}
+  \item {input\+Delims}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {Int\+Array\+List}
+    \subitem {gift}, \hyperpage{8}
+  \item {Int\+List}
+    \subitem {gift}, \hyperpage{8}
+  \item {iter\+Num}
+    \subitem {gift\+::parameters}, \hyperpage{38}
+  \item {iterdrug\+Sub2\+Protein\+Sub}
+    \subitem {gift\+::\+EM}, \hyperpage{21}
+
+  \indexspace
+
+  \item {loglikely\+Array}
+    \subitem {gift}, \hyperpage{17}
+  \item {loglikely\+Record}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+
+  \indexspace
+
+  \item {M\+Step}
+    \subitem {gift\+::\+EM}, \hyperpage{21}
+  \item {M\+Step\+Thread}
+    \subitem {gift\+::\+EM}, \hyperpage{22}
+  \item {main}
+    \subitem {main.\+cpp}, \hyperpage{46}
+  \item {main.\+cpp}, \hyperpage{46}
+    \subitem {main}, \hyperpage{46}
+  \item {Matrix2\+Fingerpints}
+    \subitem {gift}, \hyperpage{10}
+  \item {Matrix2\+Fingerprints\+By\+Column}
+    \subitem {gift}, \hyperpage{11}
+
+  \indexspace
+
+  \item {name2\+Index\+Hash}
+    \subitem {gift}, \hyperpage{8}
+  \item {name\+List}
+    \subitem {gift}, \hyperpage{8}
+  \item {numeric\+Matrix}
+    \subitem {gift}, \hyperpage{8}
+
+  \indexspace
+
+  \item {observed\+Drug2\+Protein\+Matrix}
+    \subitem {gift}, \hyperpage{17}
+  \item {out\+Drug\+Sub2\+Protein\+Sub\+File\+Name}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+  \item {out\+Predict\+C\+P\+Is\+File\+Name}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+  \item {out\+Record}
+    \subitem {gift}, \hyperpage{12}
+  \item {out\+Record\+File\+Name}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+  \item {out\+Train\+Result}
+    \subitem {gift\+::\+EM}, \hyperpage{22}
+  \item {out\+Train\+Variance}
+    \subitem {gift\+::\+EM}, \hyperpage{22}
+  \item {out\+Var\+Drug\+Sub2protein\+Sub\+File\+Name}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+  \item {output\+Delims}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+
+  \indexspace
+
+  \item {parameter\+Gift.\+cpp}, \hyperpage{47}
+  \item {parameters}
+    \subitem {gift\+::parameters}, \hyperpage{32}
+  \item {predict\+Drug2\+Sub\+List}
+    \subitem {gift}, \hyperpage{17}
+  \item {predict\+Drug\+Name\+List}
+    \subitem {gift}, \hyperpage{17}
+  \item {predict\+Drug\+Name\+List\+\_\+\+With\+Subs}
+    \subitem {gift}, \hyperpage{17}
+  \item {predict\+Drugs}
+    \subitem {gift\+::\+EM}, \hyperpage{23}
+  \item {predict\+Drugs\+File\+Name}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+  \item {predict\+Drugs\+File\+Name\+\_\+\+With\+Subs}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+  \item {predict\+Drugs\+Proteins}
+    \subitem {gift\+::\+EM}, \hyperpage{23}
+  \item {predict\+Drugs\+Proteins\+With\+Subs}
+    \subitem {gift\+::\+EM}, \hyperpage{24}
+  \item {predict\+Drugs\+With\+Subs}
+    \subitem {gift\+::\+EM}, \hyperpage{25}
+  \item {predict\+Drugs\+With\+Subs\+Proteins}
+    \subitem {gift\+::\+EM}, \hyperpage{25}
+  \item {predict\+Drugs\+With\+Subs\+Proteins\+With\+Subs}
+    \subitem {gift\+::\+EM}, \hyperpage{26}
+  \item {predict\+EM}
+    \subitem {gift\+::\+EM}, \hyperpage{27}
+  \item {predict\+Protein2\+Sub\+List}
+    \subitem {gift}, \hyperpage{17}
+  \item {predict\+Protein\+Name\+List}
+    \subitem {gift}, \hyperpage{17}
+  \item {predict\+Protein\+Name\+List\+\_\+\+With\+Subs}
+    \subitem {gift}, \hyperpage{17}
+  \item {predict\+Proteins}
+    \subitem {gift\+::\+EM}, \hyperpage{27}
+  \item {predict\+Proteins\+File\+Name}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+  \item {predict\+Proteins\+File\+Name\+\_\+\+With\+Subs}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+  \item {predict\+Proteins\+With\+Subs}
+    \subitem {gift\+::\+EM}, \hyperpage{28}
+  \item {print\+Int\+Array\+List}
+    \subitem {gift}, \hyperpage{12}
+  \item {print\+Matrix}
+    \subitem {gift}, \hyperpage{13}
+  \item {protein2domain\+List}
+    \subitem {gift}, \hyperpage{17}
+  \item {protein2sub\+File\+Name}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+  \item {protein\+Name2\+Index}
+    \subitem {gift}, \hyperpage{18}
+  \item {protein\+Name\+List}
+    \subitem {gift}, \hyperpage{18}
+  \item {protein\+Name\+List\+File}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+  \item {protein\+Num}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+  \item {protein\+Sub\+Name\+List}
+    \subitem {gift}, \hyperpage{18}
+  \item {protein\+Sub\+Name\+List\+File}
+    \subitem {gift\+::parameters}, \hyperpage{40}
+  \item {proteinfp\+Rec}
+    \subitem {gift\+::parameters}, \hyperpage{39}
+
+  \indexspace
+
+  \item {read\+Matrix}
+    \subitem {gift}, \hyperpage{13}
+  \item {read\+Name2\+Index\+Hash}
+    \subitem {gift}, \hyperpage{13}
+  \item {read\+Name\+List\+From\+File}
+    \subitem {gift}, \hyperpage{14}
+  \item {read\+Name\+Matrix\+From\+File}
+    \subitem {gift}, \hyperpage{14}
+  \item {rec\+Log\+Least\+Num}
+    \subitem {gift}, \hyperpage{18}
+  \item {rec\+Loglikely}
+    \subitem {gift\+::\+EM}, \hyperpage{29}
+  \item {row\+Col}
+    \subitem {gift\+::row\+Col}, \hyperpage{40}
+  \item {row\+Col\+File}
+    \subitem {gift}, \hyperpage{15}
+  \item {row\+Num}
+    \subitem {gift\+::row\+Col}, \hyperpage{41}
+
+  \indexspace
+
+  \item {set\+Domain\+Num}
+    \subitem {gift\+::parameters}, \hyperpage{37}
+  \item {set\+Drug\+Num}
+    \subitem {gift\+::parameters}, \hyperpage{37}
+  \item {set\+Loglikely}
+    \subitem {gift\+::\+EM}, \hyperpage{29}
+  \item {set\+Pointer\+Drug2\+Protein}
+    \subitem {gift\+::\+EM}, \hyperpage{29}
+  \item {set\+Pointer\+Drug2\+Sub}
+    \subitem {gift\+::\+EM}, \hyperpage{29}
+  \item {set\+Pointer\+Drug\+Sub2\+Protein\+Sub}
+    \subitem {gift\+::\+EM}, \hyperpage{29}
+  \item {set\+Pointer\+Protein2\+Sub}
+    \subitem {gift\+::\+EM}, \hyperpage{30}
+  \item {set\+Protein\+Num}
+    \subitem {gift\+::parameters}, \hyperpage{37}
+  \item {set\+Sub\+Num}
+    \subitem {gift\+::parameters}, \hyperpage{37}
+  \item {sub2drug\+List}
+    \subitem {gift}, \hyperpage{18}
+  \item {sub\+Num}
+    \subitem {gift\+::parameters}, \hyperpage{40}
+
+  \indexspace
+
+  \item {task}
+    \subitem {gift\+::parameters}, \hyperpage{40}
+  \item {thread}
+    \subitem {gift\+::parameters}, \hyperpage{40}
+  \item {train\+EM}
+    \subitem {gift\+::\+EM}, \hyperpage{30}
+
+  \indexspace
+
+  \item {update\+Time}
+    \subitem {gift}, \hyperpage{16}
+
+  \indexspace
+
+  \item {var\+EM}
+    \subitem {gift\+::\+EM}, \hyperpage{30}
+  \item {vardrug\+Sub2protein\+Sub\+Matrix}
+    \subitem {gift}, \hyperpage{18}
+  \item {version}
+    \subitem {gift}, \hyperpage{16}
+
+  \indexspace
+
+  \item {write\+Matrix}
+    \subitem {gift}, \hyperpage{16}
+
+\end{theindex}
