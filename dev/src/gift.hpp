@@ -1,19 +1,17 @@
-// The head file for the method of gift.
-
-// GIFT is used to predicte the interactions between compounds
-// substructures and protein domains from the known drug-protein
-// interactions. See the details:
-// http://bioinformatics.oxfordjournals.org/content/31/15/2523.abstract
+/*! \brief  This is gift head file.
+ *
+ * GIFT is used to predicte the interactions between compounds
+ * substructures and protein domains from the known drug-protein
+ * interactions. [See the link]
+ * (http://bioinformatics.oxfordjournals.org/content/31/15/2523.abstract) \n
+ * This package is written with *C++11*, and depend on *boost* library.
+*/
 
 // Note: in this version, we don't support
 //   1. the association method.
 //   2. the cross-validation method and draw the AUC curve.
 //   3. check for drugs/protein without fingerprints.
 //   4. check for fingerpints involved in few drugs/proteins.
-
-// Author: Songpeng Zu
-// Email: zusongpeng@gmail.com
-// Date: 2016-03-06
 
 #ifndef __GIFT_H__
 #define __GIFT_H__
@@ -34,18 +32,31 @@ namespace gift {
   const std::string author("Songpeng Zu");
   const std::string email("zusongpeng@gmail.com");
   const std::string version("gift-2.0");
-  const std::string updateTime("2016-03-06");
-  const int recLogLeastNum = 5;
+  const std::string updateTime("2016-04-25");
+  const int recLogLeastNum = 5; //!< default record loglikely number.
 
   typedef std::vector<int> IntList;
+  /*! A list, whose members are int array with different lengths.*/
   typedef std::vector<std::vector<int> > IntArrayList;
   typedef std::vector<std::vector<double> > numericMatrix;
+  /*! A hash
+   *
+   *  key's type is string, value's type is int.\n
+   * It's used to record matrix/list's row name and its index.
+   */
   typedef std::map<std::string,int> name2IndexHash;
   typedef std::vector<std::string> nameList;
 
-  extern IntArrayList drug2proteinList;
-  extern IntArrayList drug2subList;
-  extern IntArrayList sub2drugList;
+  /*!
+   * Since the matrix is sparse, for a given drug, we only record its targets'
+   * index. In this way, it's a IntArrayList.
+   */
+  extern IntArrayList drug2proteinList; //!< drug-protein interactions data
+  extern IntArrayList drug2subList; //!< drug to its substructures.
+  /*!
+   * For a given substructure, we record the drugs containing it.
+   */
+  extern IntArrayList sub2drugList; //!< substructures to its drugs.
   extern IntArrayList protein2domainList;
   extern IntArrayList domain2proteinList;
   extern numericMatrix drugSub2proteinSubMatrix;

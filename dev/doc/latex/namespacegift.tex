@@ -1,5 +1,10 @@
 \hypertarget{namespacegift}{}\section{gift Namespace Reference}
 \label{namespacegift}\index{gift@{gift}}
+
+
+This is gift head file.  
+
+
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,7 +62,7 @@ const std\+::string \hyperlink{namespacegift_aa24ca2be91b60d3c50d6848e87233a4c}{
 \item 
 const std\+::string \hyperlink{namespacegift_a5a720324a7e112ad94437108be453df3}{version} (\char`\"{}gift-\/2.\+0\char`\"{})
 \item 
-const std\+::string \hyperlink{namespacegift_a5de68828ba8a73f6e0de9f39d06aaa66}{update\+Time} (\char`\"{}2016-\/03-\/06\char`\"{})
+const std\+::string \hyperlink{namespacegift_a55b20ab87c86ecd24ad1432649c32df9}{update\+Time} (\char`\"{}2016-\/04-\/25\char`\"{})
 \item 
 {\footnotesize template$<$typename func $>$ }\\int \hyperlink{namespacegift_a0ba808abf8dcd67f2ca7cdff2a9fb91c}{function\+Thread} (func use\+Fun, int thread, \hyperlink{classgift_1_1_e_m}{EM} $\ast$point)
 \item 
@@ -67,13 +72,13 @@ const char $\ast$ \hyperlink{namespacegift_a2dcec74ec4b5ef21616982a060e13f5e}{Bo
 \begin{DoxyCompactItemize}
 \item 
 const int \hyperlink{namespacegift_ab632fcb7ab144fdde38c5a4154e2b5b7}{rec\+Log\+Least\+Num} = 5
-\item 
+\begin{DoxyCompactList}\small\item\em default record loglikely number. \end{DoxyCompactList}\item 
 \hyperlink{namespacegift_a98b589c33d80e413fceaf8afd8e25815}{Int\+Array\+List} \hyperlink{namespacegift_a2c0005015565d7432dd64fd6bafd3395}{drug2protein\+List}
-\item 
+\begin{DoxyCompactList}\small\item\em drug-\/protein interactions data \end{DoxyCompactList}\item 
 \hyperlink{namespacegift_a98b589c33d80e413fceaf8afd8e25815}{Int\+Array\+List} \hyperlink{namespacegift_a73506f6b6bc3e6f6fedfacf8bf0d38f1}{drug2sub\+List}
-\item 
+\begin{DoxyCompactList}\small\item\em drug to its substructures. \end{DoxyCompactList}\item 
 \hyperlink{namespacegift_a98b589c33d80e413fceaf8afd8e25815}{Int\+Array\+List} \hyperlink{namespacegift_afcc3e6429fa4fef47fb34e30d2f0c6c4}{sub2drug\+List}
-\item 
+\begin{DoxyCompactList}\small\item\em substructures to its drugs. \end{DoxyCompactList}\item 
 \hyperlink{namespacegift_a98b589c33d80e413fceaf8afd8e25815}{Int\+Array\+List} \hyperlink{namespacegift_aa113a7a90b1c3c70d1ab252eb34816fe}{protein2domain\+List}
 \item 
 \hyperlink{namespacegift_a98b589c33d80e413fceaf8afd8e25815}{Int\+Array\+List} \hyperlink{namespacegift_ac99bcb1b736637f97e82be7503c725b5}{domain2protein\+List}
@@ -112,17 +117,26 @@ std\+::vector$<$ double $>$ \hyperlink{namespacegift_ac31667d9b67b35a70ac9d46dfe
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+This is gift head file. 
+
+G\+I\+FT is used to predicte the interactions between compounds substructures and protein domains from the known drug-\/protein interactions. \href{http://bioinformatics.oxfordjournals.org/content/31/15/2523.abstract}{\tt See the link} ~\newline
+This package is written with {\itshape C++11}, and depend on {\itshape boost} library. 
+
 \subsection{Typedef Documentation}
 \index{gift@{gift}!Int\+Array\+List@{Int\+Array\+List}}
 \index{Int\+Array\+List@{Int\+Array\+List}!gift@{gift}}
 \subsubsection[{\texorpdfstring{Int\+Array\+List}{IntArrayList}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<$std\+::vector$<$int$>$ $>$ {\bf gift\+::\+Int\+Array\+List}}\hypertarget{namespacegift_a98b589c33d80e413fceaf8afd8e25815}{}\label{namespacegift_a98b589c33d80e413fceaf8afd8e25815}
-\index{gift@{gift}!Int\+List@{Int\+List}}
+A list, whose members are int array with different lengths. \index{gift@{gift}!Int\+List@{Int\+List}}
 \index{Int\+List@{Int\+List}!gift@{gift}}
 \subsubsection[{\texorpdfstring{Int\+List}{IntList}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<$int$>$ {\bf gift\+::\+Int\+List}}\hypertarget{namespacegift_a786390fe70b2e3b6d61dba1014651f03}{}\label{namespacegift_a786390fe70b2e3b6d61dba1014651f03}
 \index{gift@{gift}!name2\+Index\+Hash@{name2\+Index\+Hash}}
 \index{name2\+Index\+Hash@{name2\+Index\+Hash}!gift@{gift}}
 \subsubsection[{\texorpdfstring{name2\+Index\+Hash}{name2IndexHash}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$std\+::string,int$>$ {\bf gift\+::name2\+Index\+Hash}}\hypertarget{namespacegift_a88a96011620ed18b8321bc36a816773c}{}\label{namespacegift_a88a96011620ed18b8321bc36a816773c}
-\index{gift@{gift}!name\+List@{name\+List}}
+A hash
+
+key\textquotesingle{}s type is string, value\textquotesingle{}s type is int.~\newline
+It\textquotesingle{}s used to record matrix/list\textquotesingle{}s row name and its index. \index{gift@{gift}!name\+List@{name\+List}}
 \index{name\+List@{name\+List}!gift@{gift}}
 \subsubsection[{\texorpdfstring{name\+List}{nameList}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<$std\+::string$>$ {\bf gift\+::name\+List}}\hypertarget{namespacegift_a62f85efaab3bff48335863ae0670c7a7}{}\label{namespacegift_a62f85efaab3bff48335863ae0670c7a7}
 \index{gift@{gift}!numeric\+Matrix@{numeric\+Matrix}}
@@ -185,17 +199,17 @@ Referenced by gift\+::\+E\+M\+::\+E\+Step(), and gift\+::\+E\+M\+::\+M\+Step().
 
 
 \begin{DoxyCode}
-103                                                          \{
-104     boost::thread * y;
-105     boost::thread\_group * x = \textcolor{keyword}{new} boost::thread\_group;
-106     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<thread;++i)\{
-107       y = \textcolor{keyword}{new} boost::thread(useFun,point,i);
-108       x->add\_thread(y);
-109     \} \textcolor{comment}{// end of loop i}
-110     x->join\_all();
-111     \textcolor{keyword}{delete} x;
-112     \textcolor{keywordflow}{return} 0;
-113   \} \textcolor{comment}{// end of function.}
+114                                                          \{
+115     boost::thread * y;
+116     boost::thread\_group * x = \textcolor{keyword}{new} boost::thread\_group;
+117     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<thread;++i)\{
+118       y = \textcolor{keyword}{new} boost::thread(useFun,point,i);
+119       x->add\_thread(y);
+120     \} \textcolor{comment}{// end of loop i}
+121     x->join\_all();
+122     \textcolor{keyword}{delete} x;
+123     \textcolor{keywordflow}{return} 0;
+124   \} \textcolor{comment}{// end of function.}
 \end{DoxyCode}
 \index{gift@{gift}!get\+Index\+From\+Hash@{get\+Index\+From\+Hash}}
 \index{get\+Index\+From\+Hash@{get\+Index\+From\+Hash}!gift@{gift}}
@@ -261,7 +275,7 @@ Referenced by main().
 310     std::cout<<\textcolor{stringliteral}{"Author: "}<<\hyperlink{namespacegift_a808b6e0e19d275854aa787f2eac4df98}{author}<<std::endl;
 311     std::cout<<\textcolor{stringliteral}{"Email: "} <<\hyperlink{namespacegift_aa24ca2be91b60d3c50d6848e87233a4c}{email}<<std::endl;
 312     std::cout<<\textcolor{stringliteral}{"Current version: "}<<\hyperlink{namespacegift_a5a720324a7e112ad94437108be453df3}{version}<<std::endl;
-313     std::cout<<\textcolor{stringliteral}{"Last update time: "}<<\hyperlink{namespacegift_a5de68828ba8a73f6e0de9f39d06aaa66}{updateTime}<<std::endl;
+313     std::cout<<\textcolor{stringliteral}{"Last update time: "}<<\hyperlink{namespacegift_a55b20ab87c86ecd24ad1432649c32df9}{updateTime}<<std::endl;
 314     std::cout<<\textcolor{stringliteral}{"You can get the C++ source code from: "}<<std::endl;
 315     std::cout<<\textcolor{stringliteral}{"https://github.com/songpeng/GIFT"} << std::endl;
 316     std::cout<<std::endl;
@@ -505,7 +519,7 @@ Referenced by main().
 406     output<<\textcolor{stringliteral}{"The author of gift is  "} << \hyperlink{namespacegift_a808b6e0e19d275854aa787f2eac4df98}{author} <<std::endl;
 407     output<<\textcolor{stringliteral}{"Contact information: "} << \hyperlink{namespacegift_aa24ca2be91b60d3c50d6848e87233a4c}{email} <<std::endl;
 408     output<<\textcolor{stringliteral}{"Current gift's version is "}<< \hyperlink{namespacegift_a5a720324a7e112ad94437108be453df3}{version} <<std::endl;
-409     output<<\textcolor{stringliteral}{"Update time is "} << \hyperlink{namespacegift_a5de68828ba8a73f6e0de9f39d06aaa66}{updateTime} <<std::endl;
+409     output<<\textcolor{stringliteral}{"Update time is "} << \hyperlink{namespacegift_a55b20ab87c86ecd24ad1432649c32df9}{updateTime} <<std::endl;
 410     \textcolor{comment}{// Running information.}
 411     std::chrono::system\_clock::time\_point timePos =
 412       std::chrono::system\_clock::now();
@@ -823,11 +837,11 @@ Referenced by gift\+::parameters\+::parameters().
 \end{DoxyCode}
 \index{gift@{gift}!update\+Time@{update\+Time}}
 \index{update\+Time@{update\+Time}!gift@{gift}}
-\subsubsection[{\texorpdfstring{update\+Time(""2016-\/03-\/06"")}{updateTime("2016-03-06")}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string gift\+::update\+Time (
+\subsubsection[{\texorpdfstring{update\+Time(""2016-\/04-\/25"")}{updateTime("2016-04-25")}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string gift\+::update\+Time (
 \begin{DoxyParamCaption}
-\item[{\char`\"{}2016-\/03-\/06\char`\"{}}]{}
+\item[{\char`\"{}2016-\/04-\/25\char`\"{}}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{namespacegift_a5de68828ba8a73f6e0de9f39d06aaa66}{}\label{namespacegift_a5de68828ba8a73f6e0de9f39d06aaa66}
+)}\hypertarget{namespacegift_a55b20ab87c86ecd24ad1432649c32df9}{}\label{namespacegift_a55b20ab87c86ecd24ad1432649c32df9}
 
 
 Referenced by help\+Gift(), main(), and out\+Record().
@@ -886,9 +900,17 @@ Referenced by gift\+::\+E\+M\+::out\+Train\+Result(), and gift\+::\+E\+M\+::out\
 \index{gift@{gift}!drug2protein\+List@{drug2protein\+List}}
 \index{drug2protein\+List@{drug2protein\+List}!gift@{gift}}
 \subsubsection[{\texorpdfstring{drug2protein\+List}{drug2proteinList}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Int\+Array\+List} gift\+::drug2protein\+List}\hypertarget{namespacegift_a2c0005015565d7432dd64fd6bafd3395}{}\label{namespacegift_a2c0005015565d7432dd64fd6bafd3395}
-\index{gift@{gift}!drug2sub\+List@{drug2sub\+List}}
+
+
+drug-\/protein interactions data 
+
+Since the matrix is sparse, for a given drug, we only record its targets\textquotesingle{} index. In this way, it\textquotesingle{}s a Int\+Array\+List. \index{gift@{gift}!drug2sub\+List@{drug2sub\+List}}
 \index{drug2sub\+List@{drug2sub\+List}!gift@{gift}}
 \subsubsection[{\texorpdfstring{drug2sub\+List}{drug2subList}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Int\+Array\+List} gift\+::drug2sub\+List}\hypertarget{namespacegift_a73506f6b6bc3e6f6fedfacf8bf0d38f1}{}\label{namespacegift_a73506f6b6bc3e6f6fedfacf8bf0d38f1}
+
+
+drug to its substructures. 
+
 \index{gift@{gift}!drug\+Name2\+Index@{drug\+Name2\+Index}}
 \index{drug\+Name2\+Index@{drug\+Name2\+Index}!gift@{gift}}
 \subsubsection[{\texorpdfstring{drug\+Name2\+Index}{drugName2Index}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf name2\+Index\+Hash} gift\+::drug\+Name2\+Index}\hypertarget{namespacegift_a3385bc2f0aa26289e7f7d69635207e5d}{}\label{namespacegift_a3385bc2f0aa26289e7f7d69635207e5d}
@@ -994,11 +1016,19 @@ Referenced by gift\+::\+E\+M\+::predict\+Drugs(), and gift\+::\+E\+M\+::predict\
 \subsubsection[{\texorpdfstring{rec\+Log\+Least\+Num}{recLogLeastNum}}]{\setlength{\rightskip}{0pt plus 5cm}const int gift\+::rec\+Log\+Least\+Num = 5}\hypertarget{namespacegift_ab632fcb7ab144fdde38c5a4154e2b5b7}{}\label{namespacegift_ab632fcb7ab144fdde38c5a4154e2b5b7}
 
 
+default record loglikely number. 
+
+
+
 Referenced by gift\+::\+E\+M\+::train\+E\+M().
 
 \index{gift@{gift}!sub2drug\+List@{sub2drug\+List}}
 \index{sub2drug\+List@{sub2drug\+List}!gift@{gift}}
 \subsubsection[{\texorpdfstring{sub2drug\+List}{sub2drugList}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Int\+Array\+List} gift\+::sub2drug\+List}\hypertarget{namespacegift_afcc3e6429fa4fef47fb34e30d2f0c6c4}{}\label{namespacegift_afcc3e6429fa4fef47fb34e30d2f0c6c4}
-\index{gift@{gift}!vardrug\+Sub2protein\+Sub\+Matrix@{vardrug\+Sub2protein\+Sub\+Matrix}}
+
+
+substructures to its drugs. 
+
+For a given substructure, we record the drugs containing it. \index{gift@{gift}!vardrug\+Sub2protein\+Sub\+Matrix@{vardrug\+Sub2protein\+Sub\+Matrix}}
 \index{vardrug\+Sub2protein\+Sub\+Matrix@{vardrug\+Sub2protein\+Sub\+Matrix}!gift@{gift}}
 \subsubsection[{\texorpdfstring{vardrug\+Sub2protein\+Sub\+Matrix}{vardrugSub2proteinSubMatrix}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf numeric\+Matrix} gift\+::vardrug\+Sub2protein\+Sub\+Matrix}\hypertarget{namespacegift_a7191203810c7c52faceb69ac903e7899}{}\label{namespacegift_a7191203810c7c52faceb69ac903e7899}
