@@ -6,10 +6,10 @@
 
 pwd
 # set executable gift
-gift=/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/build/bin
+gift=/Users/wangchao/home/songpeng/git-recipes/GIFT/dev/build/bin
 
 # Compile gift.
-gift_dir=/Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src
+gift_dir=/Users/wangchao/home/songpeng/git-recipes/GIFT/dev/
 gift_dir_build=${gift_dir}/build
 cd ${gift_dir_build}
 cmake ..

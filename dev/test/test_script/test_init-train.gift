@@ -2,7 +2,7 @@
 drug2proteinFileName = test_drug2protein
 drug2subFileName = test_drug2sub
 protein2subFileName = test_protein2domain
-drugSub2proteinSubFileName = test_outdrugSub2proteinSubFile
+drugSub2proteinSubFileName = test_outDrugSub2ProteinSubFile
 drugNameListFile = test_drugNameList
 drugSubNameListFile = test_drugSubNameListFile
 proteinNameListFile = test_proteinNameList
