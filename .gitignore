@@ -48,3 +48,9 @@
 /dev_version/dev_src/test/test_script/gift
 /dev_version/dev_src/testCMAKE/CMakeFiles/3.4.1/CompilerIdC/CMakeCCompilerId.c
 /dev/doc/.DS_Store
+*.internal
+/.DS_Store
+/materials/.DS_Store
+/materials/posts/.DS_Store
+/dev/testCMAKE/build/testRead
+/dev/testCMAKE/testRead
