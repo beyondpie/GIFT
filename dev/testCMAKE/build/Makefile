@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.4.1/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/testCMAKE
+CMAKE_SOURCE_DIR = /Users/wangchao/home/songpeng/git-recipes/GIFT/dev/testCMAKE
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/testCMAKE/build
+CMAKE_BINARY_DIR = /Users/wangchao/home/songpeng/git-recipes/GIFT/dev/testCMAKE/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/testCMAKE/build/CMakeFiles /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/testCMAKE/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangchao/home/songpeng/git-recipes/GIFT/dev/testCMAKE/build/CMakeFiles /Users/wangchao/home/songpeng/git-recipes/GIFT/dev/testCMAKE/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangchao/home/songpeng/git-recipes/GIFT/dev_version/dev_src/testCMAKE/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangchao/home/songpeng/git-recipes/GIFT/dev/testCMAKE/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named testc11
+# Target rules for targets named testRead
 
 # Build rule for target.
-testc11: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testc11
-.PHONY : testc11
+testRead: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testRead
+.PHONY : testRead
 
 # fast build rule for target.
-testc11/fast:
-	$(MAKE) -f CMakeFiles/testc11.dir/build.make CMakeFiles/testc11.dir/build
-.PHONY : testc11/fast
+testRead/fast:
+	$(MAKE) -f CMakeFiles/testRead.dir/build.make CMakeFiles/testRead.dir/build
+.PHONY : testRead/fast
 
-testc++11.o: testc++11.cpp.o
+test_readMatrix.o: test_readMatrix.cpp.o
 
-.PHONY : testc++11.o
+.PHONY : test_readMatrix.o
 
 # target to build an object file
-testc++11.cpp.o:
-	$(MAKE) -f CMakeFiles/testc11.dir/build.make CMakeFiles/testc11.dir/testc++11.cpp.o
-.PHONY : testc++11.cpp.o
+test_readMatrix.cpp.o:
+	$(MAKE) -f CMakeFiles/testRead.dir/build.make CMakeFiles/testRead.dir/test_readMatrix.cpp.o
+.PHONY : test_readMatrix.cpp.o
 
-testc++11.i: testc++11.cpp.i
+test_readMatrix.i: test_readMatrix.cpp.i
 
-.PHONY : testc++11.i
+.PHONY : test_readMatrix.i
 
 # target to preprocess a source file
-testc++11.cpp.i:
-	$(MAKE) -f CMakeFiles/testc11.dir/build.make CMakeFiles/testc11.dir/testc++11.cpp.i
-.PHONY : testc++11.cpp.i
+test_readMatrix.cpp.i:
+	$(MAKE) -f CMakeFiles/testRead.dir/build.make CMakeFiles/testRead.dir/test_readMatrix.cpp.i
+.PHONY : test_readMatrix.cpp.i
 
-testc++11.s: testc++11.cpp.s
+test_readMatrix.s: test_readMatrix.cpp.s
 
-.PHONY : testc++11.s
+.PHONY : test_readMatrix.s
 
 # target to generate assembly for a file
-testc++11.cpp.s:
-	$(MAKE) -f CMakeFiles/testc11.dir/build.make CMakeFiles/testc11.dir/testc++11.cpp.s
-.PHONY : testc++11.cpp.s
+test_readMatrix.cpp.s:
+	$(MAKE) -f CMakeFiles/testRead.dir/build.make CMakeFiles/testRead.dir/test_readMatrix.cpp.s
+.PHONY : test_readMatrix.cpp.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... testc11"
-	@echo "... testc++11.o"
-	@echo "... testc++11.i"
-	@echo "... testc++11.s"
+	@echo "... testRead"
+	@echo "... test_readMatrix.o"
+	@echo "... test_readMatrix.i"
+	@echo "... test_readMatrix.s"
 .PHONY : help
 
 
