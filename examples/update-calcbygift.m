@@ -26,7 +26,7 @@ Drug2Sub = com2subs(:,UniqueColumn_sub);
 if is2d_txt > 0
   Sub_Domain_Result = importdata(s2d_filenm);
   lamda_SubOnly = vec2mat(Sub_Domain_Result, length(UniqueColumn_dom));
-  cler Sub_Domain_Result;
+  clear Sub_Domain_Result;
 else
   load('s2d_filenm');
 end
@@ -34,7 +34,7 @@ end
 Sub2Domain_Recover = zeros(size(lamda_SubOnly,1),length(size(Protein_Domain,2)));
 for i = 1:length(ColumnContent_dom)
   for j = 1:length(ColumnContent_dom{i})
-    Sub2Domain_Recover(:, ColumnContent_dom{i}{j}) = lamda_SubOnly(:,i);
+    Sub2Domain_Recover(:, ColumnContent_dom{i}(j)) = lamda_SubOnly(:,i);
   end
 end
 Sub2Domain_Recover(Sub2Domain_Recover>0.99) = 0.99;
