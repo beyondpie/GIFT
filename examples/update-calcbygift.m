@@ -46,7 +46,7 @@ for i = 1:nrow
   subs = Drug2Sub(i,:);
   for j = 1:ncol
     doms = Protein_Domain(j,:);
-    result = 1 - exp(sum(sum(log(1 - Sub2Domain_Recover(subs==1,doms==1)))));
+    com2pro(i,j) = 1 - exp(sum(sum(log(1 - Sub2Domain_Recover(subs==1,doms==1)))));
   end
 end
 save(d2p_savefn,'com2pro');
