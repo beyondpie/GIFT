@@ -1,0 +1,881 @@
+>= 4 H
+>= 8 H
+>= 16 H
+>= 32 H
+>= 1 Li
+>= 2 Li
+>= 1 B
+>= 2 B
+>= 4 B
+>= 2 C
+>= 4 C
+>= 8 C
+>= 16 C
+>= 32 C
+>= 1 N
+>= 2 N
+>= 4 N
+>= 8 N
+>= 1 O
+>= 2 O
+>= 4 O
+>= 8 O
+>= 16 O
+>= 1 F
+>= 2 F
+>= 4 F
+>= 1 Na
+>= 2 Na
+>= 1 Si
+>= 2 Si
+>= 1 P
+>= 2 P
+>= 4 P
+>= 1 S
+>= 2 S
+>= 4 S
+>= 8 S
+>= 1 Cl
+>= 2 Cl
+>= 4 Cl
+>= 8 Cl
+>= 1 K
+>= 2 K
+>= 1 Br
+>= 2 Br
+>= 4 Br
+>= 1 I
+>= 2 I
+>= 4 I
+>= 1 Be
+>= 1 Mg
+>= 1 Al
+>= 1 Ca
+>= 1 Sc
+>= 1 Ti
+>= 1 V
+>= 1 Cr
+>= 1 Mn
+>= 1 Fe
+>= 1 Co
+>= 1 Ni
+>= 1 Cu
+>= 1 Zn
+>= 1 Ga
+>= 1 Ge
+>= 1 As
+>= 1 Se
+>= 1 Kr
+>= 1 Rb
+>= 1 Sr
+>= 1 Y
+>= 1 Zr
+>= 1 Nb
+>= 1 Mo
+>= 1 Ru
+>= 1 Rh
+>= 1 Pd
+>= 1 Ag
+>= 1 Cd
+>= 1 In
+>= 1 Sn
+>= 1 Sb
+>= 1 Te
+>= 1 Xe
+>= 1 Cs
+>= 1 Ba
+>= 1 Lu
+>= 1 Hf
+>= 1 Ta
+>= 1 W
+>= 1 Re
+>= 1 Os
+>= 1 Ir
+>= 1 Pt
+>= 1 Au
+>= 1 Hg
+>= 1 Tl
+>= 1 Pb
+>= 1 Bi
+>= 1 La
+>= 1 Ce
+>= 1 Pr
+>= 1 Nd
+>= 1 Pm
+>= 1 Sm
+>= 1 Eu
+>= 1 Gd
+>= 1 Tb
+>= 1 Dy
+>= 1 Ho
+>= 1 Er
+>= 1 Tm
+>= 1 Yb
+>= 1 Tc
+>= 1 U
+>= 1 any ring size 3
+>= 1 saturated or aromatic carbon-only ring size 3
+>= 1 saturated or aromatic nitrogen-containing ring size 3
+>= 1 saturated or aromatic heteroatom-containing ring size 3
+>= 1 unsaturated non-aromatic carbon-only ring size 3
+>= 1 unsaturated non-aromatic nitrogen-containing ring size 3
+>= 1 unsaturated non-aromatic heteroatom-containing ring size 3
+>= 2 any ring size 3
+>= 2 saturated or aromatic carbon-only ring size 3
+>= 2 saturated or aromatic nitrogen-containing ring size 3
+>= 2 saturated or aromatic heteroatom-containing ring size 3
+>= 2 unsaturated non-aromatic carbon-only ring size 3
+>= 2 unsaturated non-aromatic nitrogen-containing ring size 3
+>= 2 unsaturated non-aromatic heteroatom-containing ring size 3
+>= 1 any ring size 4
+>= 1 saturated or aromatic carbon-only ring size 4
+>= 1 saturated or aromatic nitrogen-containing ring size 4
+>= 1 saturated or aromatic heteroatom-containing ring size 4
+>= 1 unsaturated non-aromatic carbon-only ring size 4
+>= 1 unsaturated non-aromatic nitrogen-containing ring size 4
+>= 1 unsaturated non-aromatic heteroatom-containing ring size 4
+>= 2 any ring size 4
+>= 2 saturated or aromatic carbon-only ring size 4
+>= 2 saturated or aromatic nitrogen-containing ring size 4
+>= 2 saturated or aromatic heteroatom-containing ring size 4
+>= 2 unsaturated non-aromatic carbon-only ring size 4
+>= 2 unsaturated non-aromatic nitrogen-containing ring size 4
+>= 2 unsaturated non-aromatic heteroatom-containing ring size 4
+>= 1 any ring size 5
+>= 1 saturated or aromatic carbon-only ring size 5
+>= 1 saturated or aromatic nitrogen-containing ring size 5
+>= 1 saturated or aromatic heteroatom-containing ring size 5
+>= 1 unsaturated non-aromatic carbon-only ring size 5
+>= 1 unsaturated non-aromatic nitrogen-containing ring size 5
+>= 1 unsaturated non-aromatic heteroatom-containing ring size 5
+>= 2 any ring size 5
+>= 2 saturated or aromatic carbon-only ring size 5
+>= 2 saturated or aromatic nitrogen-containing ring size 5
+>= 2 saturated or aromatic heteroatom-containing ring size 5
+>= 2 unsaturated non-aromatic carbon-only ring size 5
+>= 2 unsaturated non-aromatic nitrogen-containing ring size 5
+>= 2 unsaturated non-aromatic heteroatom-containing ring size 5
+>= 3 any ring size 5
+>= 3 saturated or aromatic carbon-only ring size 5
+>= 3 saturated or aromatic nitrogen-containing ring size 5
+>= 3 saturated or aromatic heteroatom-containing ring size 5
+>= 3 unsaturated non-aromatic carbon-only ring size 5
+>= 3 unsaturated non-aromatic nitrogen-containing ring size 5
+>= 3 unsaturated non-aromatic heteroatom-containing ring size 5
+>= 4 any ring size 5
+>= 4 saturated or aromatic carbon-only ring size 5
+>= 4 saturated or aromatic nitrogen-containing ring size 5
+>= 4 saturated or aromatic heteroatom-containing ring size 5
+>= 4 unsaturated non-aromatic carbon-only ring size 5
+>= 4 unsaturated non-aromatic nitrogen-containing ring size 5
+>= 4 unsaturated non-aromatic heteroatom-containing ring size 5
+>= 5 any ring size 5
+>= 5 saturated or aromatic carbon-only ring size 5
+>= 5 saturated or aromatic nitrogen-containing ring size 5
+>= 5 saturated or aromatic heteroatom-containing ring size 5
+>= 5 unsaturated non-aromatic carbon-only ring size 5
+>= 5 unsaturated non-aromatic nitrogen-containing ring size 5
+>= 5 unsaturated non-aromatic heteroatom-containing ring size 5
+>= 1 any ring size 6
+>= 1 saturated or aromatic carbon-only ring size 6
+>= 1 saturated or aromatic nitrogen-containing ring size 6
+>= 1 saturated or aromatic heteroatom-containing ring size 6
+>= 1 unsaturated non-aromatic carbon-only ring size 6
+>= 1 unsaturated non-aromatic nitrogen-containing ring size 6
+>= 1 unsaturated non-aromatic heteroatom-containing ring size 6
+>= 2 any ring size 6
+>= 2 saturated or aromatic carbon-only ring size 6
+>= 2 saturated or aromatic nitrogen-containing ring size 6
+>= 2 saturated or aromatic heteroatom-containing ring size 6
+>= 2 unsaturated non-aromatic carbon-only ring size 6
+>= 2 unsaturated non-aromatic nitrogen-containing ring size 6
+>= 2 unsaturated non-aromatic heteroatom-containing ring size 6
+>= 3 any ring size 6
+>= 3 saturated or aromatic carbon-only ring size 6
+>= 3 saturated or aromatic nitrogen-containing ring size 6
+>= 3 saturated or aromatic heteroatom-containing ring size 6
+>= 3 unsaturated non-aromatic carbon-only ring size 6
+>= 3 unsaturated non-aromatic nitrogen-containing ring size 6
+>= 3 unsaturated non-aromatic heteroatom-containing ring size 6
+>= 4 any ring size 6
+>= 4 saturated or aromatic carbon-only ring size 6
+>= 4 saturated or aromatic nitrogen-containing ring size 6
+>= 4 saturated or aromatic heteroatom-containing ring size 6
+>= 4 unsaturated non-aromatic carbon-only ring size 6
+>= 4 unsaturated non-aromatic nitrogen-containing ring size 6
+>= 4 unsaturated non-aromatic heteroatom-containing ring size 6
+>= 5 any ring size 6
+>= 5 saturated or aromatic carbon-only ring size 6
+>= 5 saturated or aromatic nitrogen-containing ring size 6
+>= 5 saturated or aromatic heteroatom-containing ring size 6
+>= 5 unsaturated non-aromatic carbon-only ring size 6
+>= 5 unsaturated non-aromatic nitrogen-containing ring size 6
+>= 5 unsaturated non-aromatic heteroatom-containing ring size 6
+>= 1 any ring size 7
+>= 1 saturated or aromatic carbon-only ring size 7
+>= 1 saturated or aromatic nitrogen-containing ring size 7
+>= 1 saturated or aromatic heteroatom-containing ring size 7
+>= 1 unsaturated non-aromatic carbon-only ring size 7
+>= 1 unsaturated non-aromatic nitrogen-containing ring size 7
+>= 1 unsaturated non-aromatic heteroatom-containing ring size 7
+>= 2 any ring size 7
+>= 2 saturated or aromatic carbon-only ring size 7
+>= 2 saturated or aromatic nitrogen-containing ring size 7
+>= 2 saturated or aromatic heteroatom-containing ring size 7
+>= 2 unsaturated non-aromatic carbon-only ring size 7
+>= 2 unsaturated non-aromatic nitrogen-containing ring size 7
+>= 2 unsaturated non-aromatic heteroatom-containing ring size 7
+>= 1 any ring size 8
+>= 1 saturated or aromatic carbon-only ring size 8
+>= 1 saturated or aromatic nitrogen-containing ring size 8
+>= 1 saturated or aromatic heteroatom-containing ring size 8
+>= 1 unsaturated non-aromatic carbon-only ring size 8
+>= 1 unsaturated non-aromatic nitrogen-containing ring size 8
+>= 1 unsaturated non-aromatic heteroatom-containing ring size 8
+>= 2 any ring size 8
+>= 2 saturated or aromatic carbon-only ring size 8
+>= 2 saturated or aromatic nitrogen-containing ring size 8
+>= 2 saturated or aromatic heteroatom-containing ring size 8
+>= 2 unsaturated non-aromatic carbon-only ring size 8
+>= 2 unsaturated non-aromatic nitrogen-containing ring size 8
+>= 2 unsaturated non-aromatic heteroatom-containing ring size 8
+>= 1 any ring size 9
+>= 1 saturated or aromatic carbon-only ring size 9
+>= 1 saturated or aromatic nitrogen-containing ring size 9
+>= 1 saturated or aromatic heteroatom-containing ring size 9
+>= 1 unsaturated non-aromatic carbon-only ring size 9
+>= 1 unsaturated non-aromatic nitrogen-containing ring size 9
+>= 1 unsaturated non-aromatic heteroatom-containing ring size 9
+>= 1 any ring size 10
+>= 1 saturated or aromatic carbon-only ring size 10
+>= 1 saturated or aromatic nitrogen-containing ring size 10
+>= 1 saturated or aromatic heteroatom-containing ring size 10
+>= 1 unsaturated non-aromatic carbon-only ring size 10
+>= 1 unsaturated non-aromatic nitrogen-containing ring size 10
+>= 1 unsaturated non-aromatic heteroatom-containing ring size 10
+>= 1 aromatic ring
+>= 1 hetero-aromatic ring
+>= 2 aromatic rings
+>= 2 hetero-aromatic rings
+>= 3 aromatic rings
+>= 3 hetero-aromatic rings
+>= 4 aromatic rings
+>= 4 hetero-aromatic rings
+Li-H
+Li-Li
+Li-B
+Li-C
+Li-O
+Li-F
+Li-P
+Li-S
+Li-Cl
+B-H
+B-B
+B-C
+B-N
+B-O
+B-F
+B-Si
+B-P
+B-S
+B-Cl
+B-Br
+C-H
+C-C
+C-N
+C-O
+C-F
+C-Na
+C-Mg
+C-Al
+C-Si
+C-P
+C-S
+C-Cl
+C-As
+C-Se
+C-Br
+C-I
+N-H
+N-N
+N-O
+N-F
+N-Si
+N-P
+N-S
+N-Cl
+N-Br
+O-H
+O-O
+O-Mg
+O-Na
+O-Al
+O-Si
+O-P
+O-K
+F-P
+F-S
+Al-H
+Al-Cl
+Si-H
+Si-Si
+Si-Cl
+P-H
+P-P
+As-H
+As-As
+C(~Br)(~C)
+C(~Br)(~C)(~C)
+C(~Br)(~H)
+C(~Br)(:C)
+C(~Br)(:N)
+C(~C)(~C)
+C(~C)(~C)(~C)
+C(~C)(~C)(~C)(~C)
+C(~C)(~C)(~C)(~H)
+C(~C)(~C)(~C)(~N)
+C(~C)(~C)(~C)(~O)
+C(~C)(~C)(~H)(~N)
+C(~C)(~C)(~H)(~O)
+C(~C)(~C)(~N)
+C(~C)(~C)(~O)
+C(~C)(~Cl)
+C(~C)(~Cl)(~H)
+C(~C)(~H)
+C(~C)(~H)(~N)
+C(~C)(~H)(~O)
+C(~C)(~H)(~O)(~O)
+C(~C)(~H)(~P)
+C(~C)(~H)(~S)
+C(~C)(~I)
+C(~C)(~N)
+C(~C)(~O)
+C(~C)(~S)
+C(~C)(~Si)
+C(~C)(:C)
+C(~C)(:C)(:C)
+C(~C)(:C)(:N)
+C(~C)(:N)
+C(~C)(:N)(:N)
+C(~Cl)(~Cl)
+C(~Cl)(~H)
+C(~Cl)(:C)
+C(~F)(~F)
+C(~F)(:C)
+C(~H)(~N)
+C(~H)(~O)
+C(~H)(~O)(~O)
+C(~H)(~S)
+C(~H)(~Si)
+C(~H)(:C)
+C(~H)(:C)(:C)
+C(~H)(:C)(:N)
+C(~H)(:N)
+C(~H)(~H)(~H)
+C(~N)(~N)
+C(~N)(:C)
+C(~N)(:C)(:C)
+C(~N)(:C)(:N)
+C(~N)(:N)
+C(~O)(~O)
+C(~O)(:C)
+C(~O)(:C)(:C)
+C(~S)(:C)
+C(:C)(:C)
+C(:C)(:C)(:C)
+C(:C)(:C)(:N)
+C(:C)(:N)
+C(:C)(:N)(:N)
+C(:N)(:N)
+N(~C)(~C)
+N(~C)(~C)(~C)
+N(~C)(~C)(~H)
+N(~C)(~H)
+N(~C)(~H)(~N)
+N(~C)(~O)
+N(~C)(:C)
+N(~C)(:C)(:C)
+N(~H)(~N)
+N(~H)(:C)
+N(~H)(:C)(:C)
+N(~O)(~O)
+N(~O)(:O)
+N(:C)(:C)
+N(:C)(:C)(:C)
+O(~C)(~C)
+O(~C)(~H)
+O(~C)(~P)
+O(~H)(~S)
+O(:C)(:C)
+P(~C)(~C)
+P(~O)(~O)
+S(~C)(~C)
+S(~C)(~H)
+S(~C)(~O)
+Si(~C)(~C)
+C=C
+C#C
+C=N
+C#N
+C=O
+C=S
+N=N
+N=O
+N=P
+P=O
+P=P
+C(#C)(-C)
+C(#C)(-H)
+C(#N)(-C)
+C(-C)(-C)(=C)
+C(-C)(-C)(=N)
+C(-C)(-C)(=O)
+C(-C)(-Cl)(=O)
+C(-C)(-H)(=C)
+C(-C)(-H)(=N)
+C(-C)(-H)(=O)
+C(-C)(-N)(=C)
+C(-C)(-N)(=N)
+C(-C)(-N)(=O)
+C(-C)(-O)(=O)
+C(-C)(=C)
+C(-C)(=N)
+C(-C)(=O)
+C(-Cl)(=O)
+C(-H)(-N)(=C)
+C(-H)(=C)
+C(-H)(=N)
+C(-H)(=O)
+C(-N)(=C)
+C(-N)(=N)
+C(-N)(=O)
+C(-O)(=O)
+N(-C)(=C)
+N(-C)(=O)
+N(-O)(=O)
+P(-O)(=O)
+S(-C)(=O)
+S(-O)(=O)
+S(=O)(=O)
+C-C-C#C
+O-C-C=N
+O-C-C=O
+N:C-S-[#1]
+N-C-C=C
+O=S-C-C
+N#C-C=C
+C=N-N-C
+O=S-C-N
+S-S-C:C
+C:C-C=C
+S:C:C:C
+C:N:C-C
+S-C:N:C
+S:C:C:N
+S-C=N-C
+C-O-C=C
+N-N-C:C
+S-C=N-[#1]
+S-C-S-C
+C:S:C-C
+O-S-C:C
+C:N-C:C
+N-S-C:C
+N-C:N:C
+N:C:C:N
+N-C:N:N
+N-C=N-C
+N-C=N-[#1]
+N-C-S-C
+C-C-C=C
+C-N:C-[#1]
+N-C:O:C
+O=C-C:C
+O=C-C:N
+C-N-C:C
+N:N-C-[#1]
+O-C:C:N
+O-C=C-C
+N-C:C:N
+C-S-C:C
+Cl-C:C-C
+N-C=C-[#1]
+Cl-C:C-[#1]
+N:C:N-C
+Cl-C:C-O
+C-C:N:C
+C-C-S-C
+S=C-N-C
+Br-C:C-C
+[#1]-N-N-[#1]
+S=C-N-[#1]
+C-[As]-O-[#1]
+S:C:C-[#1]
+O-N-C-C
+N-N-C-C
+[#1]-C=C-[#1]
+N-N-C-N
+O=C-N-N
+N=C-N-C
+C=C-C:C
+C:N-C-[#1]
+C-N-N-[#1]
+N:C:C-C
+C-C=C-C
+[As]-C:C-[#1]
+Cl-C:C-Cl
+C:C:N-[#1]
+[#1]-N-C-[#1]
+Cl-C-C-Cl
+N:C-C:C
+S-C:C-C
+S-C:C-[#1]
+S-C:C-N
+S-C:C-O
+O=C-C-C
+O=C-C-N
+O=C-C-O
+N=C-C-C
+N=C-C-[#1]
+C-N-C-[#1]
+O-C:C-C
+O-C:C-[#1]
+O-C:C-N
+O-C:C-O
+N-C:C-C
+N-C:C-[#1]
+N-C:C-N
+O-C-C:C
+N-C-C:C
+Cl-C-C-C
+Cl-C-C-O
+C:C-C:C
+O=C-C=C
+Br-C-C-C
+N=C-C=C
+C=C-C-C
+N:C-O-[#1]
+O=N-C:C
+O-C-N-[#1]
+N-C-N-C
+Cl-C-C=O
+Br-C-C=O
+O-C-O-C
+C=C-C=C
+C:C-O-C
+O-C-C-N
+O-C-C-O
+N#C-C-C
+N-C-C-N
+C:C-C-C
+[#1]-C-O-[#1]
+N:C:N:C
+O-C-C=C
+O-C-C:C-C
+O-C-C:C-O
+N=C-C:C-[#1]
+C:C-N-C:C
+C-C:C-C:C
+O=C-C-C-C
+O=C-C-C-N
+O=C-C-C-O
+C-C-C-C-C
+Cl-C:C-O-C
+C:C-C=C-C
+C-C:C-N-C
+C-S-C-C-C
+N-C:C-O-[#1]
+O=C-C-C=O
+C-C:C-O-C
+C-C:C-O-[#1]
+Cl-C-C-C-C
+N-C-C-C-C
+N-C-C-C-N
+C-O-C-C=C
+C:C-C-C-C
+N=C-N-C-C
+O=C-C-C:C
+Cl-C:C:C-C
+[#1]-C-C=C-[#1]
+N-C:C:C-C
+N-C:C:C-N
+O=C-C-N-C
+C-C:C:C-C
+C-O-C-C:C
+O=C-C-O-C
+O-C:C-C-C
+N-C-C-C:C
+C-C-C-C:C
+Cl-C-C-N-C
+C-O-C-O-C
+N-C-C-N-C
+N-C-O-C-C
+C-N-C-C-C
+C-C-O-C-C
+N-C-C-O-C
+C:C:N:N:C
+C-C-C-O-[#1]
+C:C-C-C:C
+O-C-C=C-C
+C:C-O-C-C
+N-C:C:C:N
+O=C-O-C:C
+O=C-C:C-C
+O=C-C:C-N
+O=C-C:C-O
+C-O-C:C-C
+O=[As]-C:C:C
+C-N-C-C:C
+S-C:C:C-N
+O-C:C-O-C
+O-C:C-O-[#1]
+C-C-O-C:C
+N-C-C:C-C
+C-C-C:C-C
+N-N-C-N-[#1]
+C-N-C-N-C
+O-C-C-C-C
+O-C-C-C-N
+O-C-C-C-O
+C=C-C-C-C
+O-C-C-C=C
+O-C-C-C=O
+[#1]-C-C-N-[#1]
+C-C=N-N-C
+O=C-N-C-C
+O=C-N-C-[#1]
+O=C-N-C-N
+O=N-C:C-N
+O=N-C:C-O
+O=C-N-C=O
+O-C:C:C-C
+O-C:C:C-N
+O-C:C:C-O
+N-C-N-C-C
+O-C-C-C:C
+C-C-N-C-C
+C-N-C:C-C
+C-C-S-C-C
+O-C-C-N-C
+C-C=C-C-C
+O-C-O-C-C
+O-C-C-O-C
+O-C-C-O-[#1]
+C-C=C-C=C
+N-C:C-C-C
+C=C-C-O-C
+C=C-C-O-[#1]
+C-C:C-C-C
+Cl-C:C-C=O
+Br-C:C:C-C
+O=C-C=C-C
+O=C-C=C-[#1]
+O=C-C=C-N
+N-C-N-C:C
+Br-C-C-C:C
+N#C-C-C-C
+C-C=C-C:C
+C-C-C=C-C
+C-C-C-C-C-C
+O-C-C-C-C-C
+O-C-C-C-C-O
+O-C-C-C-C-N
+N-C-C-C-C-C
+O=C-C-C-C-C
+O=C-C-C-C-N
+O=C-C-C-C-O
+O=C-C-C-C=O
+C-C-C-C-C-C-C
+O-C-C-C-C-C-C
+O-C-C-C-C-C-O
+O-C-C-C-C-C-N
+O=C-C-C-C-C-C
+O=C-C-C-C-C-O
+O=C-C-C-C-C=O
+O=C-C-C-C-C-N
+C-C-C-C-C-C-C-C
+C-C-C-C-C-C(C)-C
+O-C-C-C-C-C-C-C
+O-C-C-C-C-C(C)-C
+O-C-C-C-C-C-O-C
+O-C-C-C-C-C(O)-C
+O-C-C-C-C-C-N-C
+O-C-C-C-C-C(N)-C
+O=C-C-C-C-C-C-C
+O=C-C-C-C-C(O)-C
+O=C-C-C-C-C(=O)-C
+O=C-C-C-C-C(N)-C
+C-C(C)-C-C
+C-C(C)-C-C-C
+C-C-C(C)-C-C
+C-C(C)(C)-C-C
+C-C(C)-C(C)-C
+Cc1ccc(C)cc1
+Cc1ccc(O)cc1
+Cc1ccc(S)cc1
+Cc1ccc(N)cc1
+Cc1ccc(Cl)cc1
+Cc1ccc(Br)cc1
+Oc1ccc(O)cc1
+Oc1ccc(S)cc1
+Oc1ccc(N)cc1
+Oc1ccc(Cl)cc1
+Oc1ccc(Br)cc1
+Sc1ccc(S)cc1
+Sc1ccc(N)cc1
+Sc1ccc(Cl)cc1
+Sc1ccc(Br)cc1
+Nc1ccc(N)cc1
+Nc1ccc(Cl)cc1
+Nc1ccc(Br)cc1
+Clc1ccc(Cl)cc1
+Clc1ccc(Br)cc1
+Brc1ccc(Br)cc1
+Cc1cc(C)ccc1
+Cc1cc(O)ccc1
+Cc1cc(S)ccc1
+Cc1cc(N)ccc1
+Cc1cc(Cl)ccc1
+Cc1cc(Br)ccc1
+Oc1cc(O)ccc1
+Oc1cc(S)ccc1
+Oc1cc(N)ccc1
+Oc1cc(Cl)ccc1
+Oc1cc(Br)ccc1
+Sc1cc(S)ccc1
+Sc1cc(N)ccc1
+Sc1cc(Cl)ccc1
+Sc1cc(Br)ccc1
+Nc1cc(N)ccc1
+Nc1cc(Cl)ccc1
+Nc1cc(Br)ccc1
+Clc1cc(Cl)ccc1
+Clc1cc(Br)ccc1
+Brc1cc(Br)ccc1
+Cc1c(C)cccc1
+Cc1c(O)cccc1
+Cc1c(S)cccc1
+Cc1c(N)cccc1
+Cc1c(Cl)cccc1
+Cc1c(Br)cccc1
+Oc1c(O)cccc1
+Oc1c(S)cccc1
+Oc1c(N)cccc1
+Oc1c(Cl)cccc1
+Oc1c(Br)cccc1
+Sc1c(S)cccc1
+Sc1c(N)cccc1
+Sc1c(Cl)cccc1
+Sc1c(Br)cccc1
+Nc1c(N)cccc1
+Nc1c(Cl)cccc1
+Nc1c(Br)cccc1
+Clc1c(Cl)cccc1
+Clc1c(Br)cccc1
+Brc1c(Br)cccc1
+CC1CCC(C)CC1
+CC1CCC(O)CC1
+CC1CCC(S)CC1
+CC1CCC(N)CC1
+CC1CCC(Cl)CC1
+CC1CCC(Br)CC1
+OC1CCC(O)CC1
+OC1CCC(S)CC1
+OC1CCC(N)CC1
+OC1CCC(Cl)CC1
+OC1CCC(Br)CC1
+SC1CCC(S)CC1
+SC1CCC(N)CC1
+SC1CCC(Cl)CC1
+SC1CCC(Br)CC1
+NC1CCC(N)CC1
+NC1CCC(Cl)CC1
+NC1CCC(Br)CC1
+ClC1CCC(Cl)CC1
+ClC1CCC(Br)CC1
+BrC1CCC(Br)CC1
+CC1CC(C)CCC1
+CC1CC(O)CCC1
+CC1CC(S)CCC1
+CC1CC(N)CCC1
+CC1CC(Cl)CCC1
+CC1CC(Br)CCC1
+OC1CC(O)CCC1
+OC1CC(S)CCC1
+OC1CC(N)CCC1
+OC1CC(Cl)CCC1
+OC1CC(Br)CCC1
+SC1CC(S)CCC1
+SC1CC(N)CCC1
+SC1CC(Cl)CCC1
+SC1CC(Br)CCC1
+NC1CC(N)CCC1
+NC1CC(Cl)CCC1
+NC1CC(Br)CCC1
+ClC1CC(Cl)CCC1
+ClC1CC(Br)CCC1
+BrC1CC(Br)CCC1
+CC1C(C)CCCC1
+CC1C(O)CCCC1
+CC1C(S)CCCC1
+CC1C(N)CCCC1
+CC1C(Cl)CCCC1
+CC1C(Br)CCCC1
+OC1C(O)CCCC1
+OC1C(S)CCCC1
+OC1C(N)CCCC1
+OC1C(Cl)CCCC1
+OC1C(Br)CCCC1
+SC1C(S)CCCC1
+SC1C(N)CCCC1
+SC1C(Cl)CCCC1
+SC1C(Br)CCCC1
+NC1C(N)CCCC1
+NC1C(Cl)CCCC1
+NC1C(Br)CCCC1
+ClC1C(Cl)CCCC1
+ClC1C(Br)CCCC1
+BrC1C(Br)CCCC1
+CC1CC(C)CC1
+CC1CC(O)CC1
+CC1CC(S)CC1
+CC1CC(N)CC1
+CC1CC(Cl)CC1
+CC1CC(Br)CC1
+OC1CC(O)CC1
+OC1CC(S)CC1
+OC1CC(N)CC1
+OC1CC(Cl)CC1
+OC1CC(Br)CC1
+SC1CC(S)CC1
+SC1CC(N)CC1
+SC1CC(Cl)CC1
+SC1CC(Br)CC1
+NC1CC(N)CC1
+NC1CC(Cl)CC1
+NC1CC(Br)CC1
+ClC1CC(Cl)CC1
+ClC1CC(Br)CC1
+BrC1CC(Br)CC1
+CC1C(C)CCC1
+CC1C(O)CCC1
+CC1C(S)CCC1
+CC1C(N)CCC1
+CC1C(Cl)CCC1
+CC1C(Br)CCC1
+OC1C(O)CCC1
+OC1C(S)CCC1
+OC1C(N)CCC1
+OC1C(Cl)CCC1
+OC1C(Br)CCC1
+SC1C(S)CCC1
+SC1C(N)CCC1
+SC1C(Cl)CCC1
+SC1C(Br)CCC1
+NC1C(N)CCC1
+NC1C(Cl)CC1
+NC1C(Br)CCC1
+ClC1C(Cl)CCC1
+ClC1C(Br)CCC1
+BrC1C(Br)CCC1
