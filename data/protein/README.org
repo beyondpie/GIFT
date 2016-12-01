@@ -1,0 +1,10 @@
+* Information for proteins used in gift.
+** prot_uniprot.txt
+   protein uniprot IDs.
+** target_infor_gift.xlsx
+   Detailed information, such as protein names, pfam domains, pdb records and so
+   on, for the proteins in gift from uniprot database.
+   Note:
+   - Several different labels might correspond to the same protein or genes.
+   - We also have two proteins recorded as deleted.
+   - MGR2_HUMAN, CDC2_HUMAN have two different protein records, which seem strange.
