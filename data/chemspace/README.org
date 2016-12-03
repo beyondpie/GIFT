@@ -1,0 +1,4 @@
+* Chemical Space Data
+  - More than 9000 compounds from the ChEMBL database from a reference paper.
+    It's used as the chemical space.
+  - PubChem fingerprints of these compounds were then extracted.
