@@ -1,0 +1,25 @@
+* GIFT
+An algorithm called [[http://bioinfo.au.tsinghua.edu.cn/software/GIFT/ ][GIFT]] is used to infer the chemogenmic information based on
+drug-protein interactions. Here chemogenomic information means the interactions
+between the chemical substructures and protein domains. An Expection-Maximum
+algorithm is then derived.   
+
+Note: the updated version is maintained on GitHub.
+
+** How to install
+*** C++ Version [Recommend]
+- Download and install [[http://www.boost.org/][Boost C++ Library]]
+- Download and install [[http://www.gnu.org/software/gsl/][GSL-GNU]] Scientific Library.
+- Make sure append the boost and gsl include dir to the makefile *CFLAGS*.
+
+Then use make command directly,
+#+BEGIN_SRC shell
+make install
+#+END_SRC
+
+The binary file will be installed under the dirctory *bin*
+
+*** Matlab Version
+Please check the codes under *matlab_version* directory.
+** How to usage GIFT
+Please check the GIFT_UserManual under *doc* directory.

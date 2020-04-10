@@ -7,17 +7,21 @@ GCC = g++
 CFLAGS = -lboost_thread -lgsl -lgslcblas -lstdc++ -Wall -O3 
 OBJDIR = obj
 SRCDIR = src
-BIN = bin
+BINDIR = bin
 SRCS = $(notdir $(wildcard $(SRCDIR)/*.cpp))
 OBJS = $(patsubst %.cpp, $(OBJDIR)/%.o, $(SRCS))
-TARGET = $(BIN)/$(NAME)
+TARGET = $(BINDIR)/$(NAME)
 
 $(TARGET):$(OBJS)
+	-mkdir -p ${BINDIR}
 	$(GCC) -g $(CFLAGS) -o $@ $^
 $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
+	-mkdir -p ${OBJDIR}
 	$(GCC) -c -o $@ $<
+
+.PHONY: install
+install: ${TARGET}
 
 .PHONY: clean
 clean:
 	-rm $(TARGET) $(OBJDIR)/*.o
-									  
